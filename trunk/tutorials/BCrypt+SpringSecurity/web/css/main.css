@@ -1,0 +1,199 @@
+/* ----- Core elements ----- */
+
+body {
+    background: #FFF;
+    text-align: center;
+}
+
+h1 {
+    font-size: 161.6%;
+    padding-top: 16px;
+}
+
+h3 {
+    font-size: 138.5%;
+}
+
+h4 {
+    font-size: 116%;
+}
+
+input, select {
+    font-family: verdana,arial,helvetica,clean,sans-serif;
+    font-size: 85%;
+}
+
+a, a:visited {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+ul, li {
+    text-align: left;
+}
+
+label {
+    font-size: 85%;
+}
+
+/* ----- General positioning and global elements ----- */
+
+.errorBox {
+    color: #F00;
+    font-size: 92%;
+    padding-bottom: 8px;
+}
+
+.messageBox {
+    color: #003366;
+    font-size: 92%;
+    padding-bottom: 8px;
+}
+
+.inner {
+    margin: 0 auto;
+    position: relative;
+    width: 974px;
+}
+
+.utility {
+    font-size: 85%;
+    text-align: left;
+}
+
+.utility .inner ul {
+    float: right;
+}
+
+.utility .inner li {
+    float: left;
+    padding: 6px 0 0 24px;
+}
+
+.utility span {
+    float: left;
+    padding: 6px 0 0 0;
+}
+
+.header {
+    padding: 4px 0 8px 0;
+    text-align: left;
+}
+
+.navigation {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.navigation .inner ul {
+    width: 100%;
+}
+
+.navigation .inner li {
+    float: left;
+    padding: 8px 24px 8px 0;
+}
+
+.navigation .inner li.right {
+    float: right;
+    padding-right: 0;
+}
+
+.container {
+    text-align: left;
+}
+
+.container p {
+    font-size: 92%;
+    padding: 8px 0 16px 0;
+}
+
+.container .main {
+    width: 708px;
+}
+
+.container .sidebar {
+    width: 266px;
+}
+
+.page-nav {
+    display: inline;
+    float: right;
+    position: relative;
+    top: -15px;
+}
+
+.page-nav li {
+    display: inline;
+    padding-left: 18px;
+}
+
+.footer {
+    padding: 8px 0;
+}
+
+.footer p {
+    font-size: 77%;
+}
+
+.footer a {
+    color: #000;
+}
+
+/* ----- Common elements ----- */
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+.container .small {
+    font-size: 85%;
+    padding: 0;
+}
+
+.width50 {
+    width: 50%;
+}
+
+.paddingRight4 {
+    padding-right: 4px;
+    white-space: nowrap;
+}
+
+.padTop16 {
+    padding-top: 16px;
+}
+
+.valignTop {
+    vertical-align: top;
+}
+
+.valignBottom {
+    vertical-align: bottom;
+}
+
+.wide {
+    width: 100%;
+}
+
+/* ----- Clear fix ----- */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */

@@ -1,0 +1,7 @@
+﻿<flash_project name="Red5+Hibernate" version="1">
+    <project_folder name="Classes" expanded="true">
+        <project_file path="..:..:src/flash/net/sziebert/tutorials/Hibernate.as" filetype="as" />
+        <project_file path="..:..:src/flash/net/sziebert/tutorials/Runtime.as" filetype="as" />
+    </project_folder>
+    <project_file path="..:..:src/flash/hibernate.fla" filetype="fla" profile="" def_file="true" />
+</flash_project>
