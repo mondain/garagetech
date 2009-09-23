@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="net.sziebert.red5.tutorials.entity">
+
+	<class name="User" table="users">
+		<id name="id" type="long" column="id">
+			<generator class="native" />
+		</id>
+		<natural-id>
+			<property name="userName" column="user_name" length="32" not-null="true" unique="true" />
+		</natural-id>
+		<property name="password" not-null="true" />
+		<property name="firstName" column="first_name" length="64" />
+		<property name="lastName" column="last_name" length="64" />
+		<property name="email" not-null="true" />
+	</class>
+
+</hibernate-mapping>

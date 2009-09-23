@@ -1,0 +1,32 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+    <info organisation="garagetech" module="tutorials"/>
+    <configurations defaultconfmapping="default->*">
+        <conf name="compile"/>
+        <conf name="default"/>
+        <conf name="test" extends="default" description="Unit testing dependencies."/>
+    </configurations>
+    <dependencies>
+        <dependency name="commons-dbcp" org="commons" rev="1.2.2"/>
+        <dependency name="commons-lang" org="commons" rev="2.4" conf="compile->*"/>
+        <dependency name="dom4j" rev="1.6.1"/>
+        <dependency name="ejb3-persistence" rev="" conf="compile->*"/>
+        <dependency name="hibernate-annotations" org="hibernate" rev="3.4.0"/>
+        <dependency name="hibernate-commons-annotations" org="hibernate" rev="3.4.0"/>
+        <dependency name="hibernate-entitymanager" org="hibernate" rev="3.4.0"/>
+        <dependency name="hibernate-validator" org="hibernate" rev="3.1.0"/>
+        <dependency name="hibernate" org="hibernate" rev="3.3.1"/>
+        <dependency name="javassist" rev="3.4"/>
+        <dependency name="mysql-connector-java" rev="5.0.6-bin"/>
+        <dependency name="red5" rev="" changing="true" conf="compile->*"/>
+        <dependency name="slf4j-api" rev="1.5.6" conf="compile->*"/>
+        <dependency name="spring-aop" org="spring" rev="2.5.6" conf="compile->*"/>
+        <dependency name="spring-beans" org="spring" rev="2.5.6" conf="compile->*"/>
+        <dependency name="spring-context" org="spring" rev="2.5.6" conf="compile->*"/>
+        <dependency name="spring-core" org="spring" rev="2.5.6" conf="compile->*"/>
+        <dependency name="spring-jdbc" org="spring" rev="2.5.6"/>
+        <dependency name="spring-orm" org="spring" rev="2.5.6"/>
+        <dependency name="spring-tx" org="spring" rev="2.5.6"/>
+    </dependencies>
+</ivy-module>

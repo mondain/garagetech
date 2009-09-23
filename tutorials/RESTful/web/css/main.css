@@ -1,0 +1,54 @@
+/* ----- Common elements ----- */
+
+body {
+    background: #FFF;
+    text-align: center;
+}
+
+h1 {
+	font-size: 161.6%;
+}
+
+h3 {
+	font-size: 138.5%;
+}
+
+a, a:visited {
+	color: blue;
+	text-decoration: none;
+}
+
+.disabled {
+	color: #BBB;
+}
+
+.hidden {
+	display: none;
+}
+
+/* ----- Structural elements ----- */
+
+#wrapper {
+	margin: 0 auto;
+	padding: 8px 0;
+    position: relative;
+    text-align: left;
+    width: 848px;
+}
+
+/* ----- Clearfix ----- */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */

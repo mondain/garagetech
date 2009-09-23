@@ -1,0 +1,24 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+    <info organisation="garagetech" module="tutorials"/>
+    <configurations defaultconfmapping="default->*">
+        <conf name="compile"/>
+        <conf name="default"/>
+        <conf name="test" extends="default" description="Unit testing dependencies."/>
+    </configurations>
+    <dependencies>
+        <dependency name="jstl" rev="1.1.0"/>
+        <dependency name="jcl-over-slf4j" rev="1.5.6"/>
+        <dependency name="logback-classic" rev="0.9.11"/>
+        <dependency name="logback-core" rev="0.9.11"/>
+        <dependency name="slf4j-api" rev="1.5.6"/>
+        <dependency name="spring-beans" org="spring" rev="2.5.6"/>
+        <dependency name="spring-context" org="spring" rev="2.5.6"/>
+        <dependency name="spring-core" org="spring" rev="2.5.6"/>
+        <dependency name="spring-web" org="spring" rev="2.5.6"/>
+        <dependency name="spring-webmvc" org="spring" rev="2.5.6"/>
+        <dependency name="standard" rev=""/>
+        <dependency name="urlrewrite" rev="3.1.0"/>
+    </dependencies>
+</ivy-module>
