@@ -2,6 +2,8 @@ package net.sziebert.tutorials;
 
 import org.red5.logging.Red5LoggerFactory;
 import org.red5.server.api.IConnection;
+import org.red5.server.api.Red5;
+import org.red5.server.api.stream.IBroadcastStream;
 import org.red5.server.stream.ClientBroadcastStream;
 import org.slf4j.Logger;
 
@@ -17,16 +19,14 @@ public class StreamManager {
 	private Application app;
 
 	/**
-	 * Start recording the publishing stream for the specified
-	 * <code>IConnection</code>.
-	 * 
-	 * @param conn
+	 * Start recording the publishing stream for the specified <code>IConnection</code>.
 	 */
-	public void recordShow(IConnection conn) {
+	public void recordShow() {
+        IConnection conn = Red5.getConnectionLocal();
 		logger.debug("Recording show for: {}", conn.getScope().getContextPath());
 		String streamName = String.valueOf(System.currentTimeMillis());
 		// Get a reference to the current broadcast stream.
-		ClientBroadcastStream stream = (ClientBroadcastStream) app.getBroadcastStream(conn.getScope(), "hostStream");
+		IBroadcastStream stream = app.getBroadcastStream(conn.getScope(), "hostStream");
 		try {
 			// Save the stream to disk.
 			stream.saveAs(streamName, false);
@@ -36,12 +36,10 @@ public class StreamManager {
 	}
 
 	/**
-	 * Stops recording the publishing stream for the specified
-	 * <code>IConnection</code>.
-	 * 
-	 * @param conn
+	 * Stops recording the publishing stream for the specified <code>IConnection</code>.
 	 */
-	public void stopRecordingShow(IConnection conn) {
+	public void stopRecordingShow() {
+        IConnection conn = Red5.getConnectionLocal();
 		logger.debug("Stop recording show for: {}", conn.getScope().getContextPath());
 		// Get a reference to the current broadcast stream.
 		ClientBroadcastStream stream = (ClientBroadcastStream) app.getBroadcastStream(conn.getScope(), "hostStream");
