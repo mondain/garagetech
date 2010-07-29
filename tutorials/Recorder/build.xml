@@ -7,6 +7,11 @@
     <property file="${base.dir}/build.properties"/>
 
     <!-- // Set the global properties for this project. -->
+    <property name="ivy.install.version" value="2.2.0-rc1"/>
+    <property name="ivy.home" value="${user.home}/.ivy2"/>
+    <property name="ivy.jar.dir" value="${ivy.home}/lib"/>
+    <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy-${ivy.install.version}.jar"/>
+    <property name="ivy.report.dir" value="${base.dir}/reports"/>
     <property name="project.name" value="${project.publish.name}"/>
     <property name="src.java.dir" value="${base.dir}/src/java"/>
     <property name="src.test.dir" value="${base.dir}/src/test"/>
@@ -31,8 +36,40 @@
         <pathelement path="${dest.dir}"/>
     </path>
 
-    <!-- // Ivy related targets -->
-    <target name="retrieve" description="Retrieves the libraries if needed.">
+    <condition property="no-ivy">
+        <not>
+            <available file="${ivy.jar.file}"/>
+        </not>
+    </condition>
+
+    <target name="download-ivy" if="no-ivy" unless="offline" description="--> Download ivy version: ${ivy.install.version}">
+        <mkdir dir="${ivy.jar.dir}"/>
+        <get src="http://repo2.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar"
+             dest="${ivy.jar.file}"
+             usetimestamp="true"/>
+    </target>
+
+    <target name="install-ivy" depends="download-ivy" description="--> Install and prepare ivy">
+        <path id="ivy.lib.path">
+            <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
+        </path>
+        <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    </target>
+
+    <target name="remove-ivy" description="--> Remove the ivy installation">
+        <delete dir="${ivy.jar.dir}"/>
+    </target>
+
+    <target name="clean-ivy-cache" depends="install-ivy" description="--> Clean the ivy cache">
+        <ivy:cleancache/>
+        <delete dir="${ivy.report.dir}"/>
+        <delete includeemptydirs="true">
+            <fileset dir="${ext.dir}" excludes="**/ivy*.jar"/>
+            <fileset dir="${lib.dir}" excludes="**/ivy*.jar"/>
+        </delete>
+    </target>
+
+    <target name="retrieve" depends="install-ivy" description="Retrieves the libraries if needed.">
         <mkdir dir="${ext.dir}"/>
         <mkdir dir="${lib.dir}"/>
         <ivy:settings file="${base.dir}/ivysettings.xml"/>
@@ -47,14 +84,7 @@
                       pattern="${lib.dir}/[artifact](-[revision]).[ext]"/>
         <ivy:retrieve conf="compile"
                       pattern="${ext.dir}/[artifact](-[revision]).[ext]"/>
-    </target>
-
-    <target name="ivyclear" description="Clears out the ivy cache.">
-        <!--ivy:cleancache/-->
-        <delete includeemptydirs="true">
-            <fileset dir="${ext.dir}" excludes="**/ivy*.jar"/>
-            <fileset dir="${lib.dir}" excludes="**/ivy*.jar"/>
-        </delete>
+        <ivy:report conf="default" todir="${ivy.report.dir}" />
     </target>
 
     <target name="init" depends="retrieve" description="Initialize the build">
