@@ -1,0 +1,23 @@
+<ivysettings>
+    <properties file="${ivy.settings.dir}/ivysettings.properties"/>
+    <settings defaultResolver="remote"/>
+    <resolvers>
+        <chain name="internal" returnFirst="true">
+            <filesystem name="internal">
+                <ivy pattern="${repository.dir}/[type]/[organisation]/[module]/[revision]/[artifact](-[revision]).[ext]"/>
+                <artifact pattern="${repository.dir}/[type]/[organisation]/[module]/[revision]/[artifact](-[revision]).[ext]"/>
+            </filesystem>
+        </chain>
+        <chain name="remote" returnFirst="true">
+            <ibiblio name="maven2" m2compatible="true" usepoms="false"/>
+            <url name="jboss" m2compatible="true">
+				<artifact pattern="https://repository.jboss.org/nexus/content/groups/public/[organisation]/[module]/[revision]/[artifact](-[revision]).[ext]"/>
+			</url>
+            <ibiblio name="java-net-maven2" root="http://download.java.net/maven/2/" m2compatible="true" usepoms="false"/>
+        </chain>
+    </resolvers>
+    <modules>
+        <module organisation=".*" name="*" resolver="remote"/>
+    </modules>
+    <caches useOrigin="true"/>
+</ivysettings>

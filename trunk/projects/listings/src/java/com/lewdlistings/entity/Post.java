@@ -1,0 +1,232 @@
+package com.lewdlistings.entity;
+
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.hibernate.annotations.ForeignKey;
+import org.joda.time.DateTime;
+
+import javax.persistence.*;
+
+import java.util.List;
+
+import static org.apache.commons.lang.builder.CompareToBuilder.reflectionCompare;
+import static org.apache.commons.lang.builder.EqualsBuilder.reflectionEquals;
+import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode;
+
+@Entity
+@Table(name = "posts")
+@AttributeOverride(name = "id", column = @Column(name = "post_id"))
+public class Post extends BaseEntity {
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    @ForeignKey(name = "fk_author_id")
+    private User author;
+
+    @Column(name = "title", nullable = false, columnDefinition = "text")
+    private String title;
+
+    @Column(name = "content", nullable = false, columnDefinition = "longtext")
+    private String content;
+
+    @Column(name = "phone", length = 16)
+    private String phone;
+
+    @Column(name = "location", length = 200)
+    private String location;
+
+    @Column(name = "avg_rating")
+    private int averageRating;
+
+    @Column(name = "num_reviews")
+    private int numReviews;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", length = 20, nullable = false)
+    private Status status;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", length = 20, nullable = false)
+    private Type type;
+
+    @Column(name = "expires_at")
+    @org.hibernate.annotations.Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
+    private DateTime expires;
+
+    @ElementCollection
+    @CollectionTable(
+            name = "post_attributes",
+            joinColumns = @JoinColumn(name = "post_id")
+    )
+    @OrderBy("name")
+    private List<PostAttribute> attributes;
+
+    @OneToMany
+    @JoinColumn(name = "post_id")
+    @OrderBy("created")
+    private List<Review> reviews;
+
+    @ManyToMany
+    @JoinTable(
+            name = "post_category_assn",
+            joinColumns = {@JoinColumn(name = "post_id")},
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    @ForeignKey(name = "fk_post_category_id", inverseName = "fk_category_post_id")
+    @OrderBy("name")
+    private List<Category> categories;
+
+    @ManyToMany
+    @JoinTable(
+            name = "post_tag_assn",
+            joinColumns = {@JoinColumn(name = "post_id")},
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    @ForeignKey(name = "fk_post_tag_id", inverseName = "fk_tag_post_id")
+    @OrderBy("name")
+    private List<Tag> tags;
+
+    public enum Status {
+        ACTIVE, ARCHIVED, DRAFT, FLAGGED, SUSPENDED
+    }
+
+    public enum Type {
+        AD_HOC, BASIC, BUMP, FEATURED
+    }
+
+    public Post() {
+        this.status = Status.DRAFT;
+        this.type = Type.BASIC;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(int averageRating) {
+        this.averageRating = averageRating;
+    }
+
+    public int getNumReviews() {
+        return numReviews;
+    }
+
+    public void setNumReviews(int numReviews) {
+        this.numReviews = numReviews;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public DateTime getExpires() {
+        return expires;
+    }
+
+    public void setExpires(DateTime expires) {
+        this.expires = expires;
+    }
+
+    public List<PostAttribute> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(List<PostAttribute> attributes) {
+        this.attributes = attributes;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append(getId())
+                .toString();
+    }
+
+    public boolean equals(Post post) {
+        return reflectionEquals(this, post);
+    }
+
+    @Override
+    public int hashCode() {
+        return reflectionHashCode(17, 31, this);
+    }
+
+    public int compareTo(Post post) {
+        return reflectionCompare(this, post);
+    }
+}

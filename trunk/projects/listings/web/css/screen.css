@@ -1,0 +1,542 @@
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	margin: 0 auto;
+    width: 960px;
+}
+
+a, a:visited {
+    color: #0000ff;
+    outline: none;
+    text-decoration: none;
+}
+
+body > header {
+    height: 4em;
+    padding: .5em 0;
+}
+
+body > header > hgroup > h1 {
+    font-size: 2em;
+    margin-bottom: .2em;
+}
+
+body > header > hgroup > h1 > a,
+body > header > hgroup > h1 > a:visited {
+    color: #000;
+}
+
+body > header > hgroup > h2 {
+    font-size: .9em;
+}
+
+body > footer {
+    margin: .8em 0;
+}
+
+body > footer > p {
+    font-size: .75em;
+    text-align: center;
+}
+
+/* navigation */
+
+nav li {
+    float: left;
+    margin: 4px 32px 8px 0;
+}
+
+nav li a {
+    display: block;
+}
+
+nav li.right {
+    float: right;
+    margin: 4px 0 0 32px;
+}
+
+nav li.right a {
+    display: inline;
+}
+
+nav.subnav li {
+    margin: 0 32px 24px 0
+}
+
+nav.subnav li a {
+    font-size: .8em;
+}
+
+/* messages */
+
+#message {
+    font-size: .8em;
+    margin: 0 0 16px 0;
+    padding: 8px 6px;
+}
+
+div.info {
+    background-color: #d7ebf9 !important;
+}
+
+div.success {
+    background-color: #bef2a1 !important;
+}
+
+div.warning {
+    background-color: #fff6a9 !important;
+}
+
+div.error {
+    background-color: #ffdfdf !important;
+}
+
+label.error {
+    color: #f00;
+}
+
+/* featured posts */
+
+section.featured {
+    margin-bottom: 8px;
+}
+
+section.featured article {
+    border: 1px solid #ddd;
+    float: left;
+    height: 174px;
+    margin-right: 20px;
+    position: relative;
+    width: 174px;
+}
+
+section.featured article.last {
+    margin-right: 0;
+}
+
+section.featured div.feature {
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+section.featured div.feature a {
+    color: #ddd;
+}
+
+section.featured div.feature a span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 2px;
+    left: 0;
+    font-size: .9em;
+    font-weight: normal;
+    line-height: 1.3em;
+    background-color: #ccc;
+    font-family: Georgia, serif;
+}
+
+section.featured div.feature a span {
+    display: none;
+}
+
+section.featured div.feature a:hover span {
+    display: block;
+}
+
+section.featured div.feature a span {
+	background-color: rgba(0, 0, 0, .7);
+}
+
+section.featured div.feature a span strong {
+    display: block;
+    padding: 10px 10px 0 10px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+section.featured div.feature a span strong.rating {
+    padding: 5px 10px 0 10px;
+}
+
+section.featured div.feature a span em {
+    color: #e3c887;
+    display: block;
+    padding: 0 10px 10px 10px;
+    font-style: normal;
+}
+
+section.featured div.feature-img img {
+    max-width: 100%;
+}
+
+/* posts */
+
+section.posts {
+    padding-top: 16px;
+}
+
+section.posts header {
+    border-bottom: 1px solid #ccc;
+}
+
+section.posts article {
+    border-bottom: 1px solid #ccc;
+    margin-top: 16px;
+    padding-bottom: 16px;
+}
+
+section.posts article a {
+    color: #000;
+}
+
+section.posts article section {
+    float: right;
+    margin-top: 0;
+    width: 575px;
+}
+
+section.posts article img {
+    border: 1px solid #ddd;
+    float: left;
+    margin-right: 16px;
+    padding: 6px;
+}
+
+section.posts article header {
+    border-bottom: none;
+    font-size: .9em;
+    line-height: 1.3em;
+}
+
+section.posts article header h1 {
+    color: #555;
+    margin-bottom: 6px;
+}
+
+section.posts article header h1 strong {
+    color: #000;
+    margin: 0 24px;
+}
+
+section.posts article header h1 em {
+    font-size: .8em;
+    font-style: normal;
+}
+
+section.posts .rating {
+    margin-right: 24px;
+}
+
+section.posts .rating img {
+    border: none;
+    clear: left;
+    float: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 2px;
+}
+
+section.posts article footer {
+    color: #555;
+    font-size: .75em;
+    margin-top: 0;
+}
+
+section.posts article p {
+    font-size: .8em;
+    margin: 10px 0;
+}
+
+/* post types */
+
+.ad-types {
+    width: 100%;
+}
+
+.ad-types td,
+.ad-types th {
+    border: 1px solid #9f9f9f;
+    padding: 16px;
+    width: 25%;
+}
+
+.ad-types td.last,
+.ad-types th.last {
+    margin-right: 0;
+}
+
+.ad-types th h3 {
+    text-transform: uppercase;
+}
+
+.ad-types th p {
+    padding: 16px 0;
+}
+
+.ad-types th a.cta {
+    display: block;
+    margin: 0 auto;
+}
+
+.ad-types th {
+    background-color: #ddd;
+}
+
+.ad-types td {
+    font-size: .9em;
+}
+
+.ad-types td ol {
+    list-style: none;
+    text-align: left;
+}
+
+.ad-types td li {
+    padding-bottom: 8px;
+}
+
+/* profiles */
+
+section.profile h1 {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+section.profile p {
+    line-height: 125%;
+    margin-bottom: 24px;
+}
+
+section.profile section {
+    font-size: .9em;
+}
+
+section.profile section.featured {
+    margin-bottom: 24px;
+}
+
+div.content {
+    float: left;
+    margin-right: 20px;
+    width: 680px;
+}
+
+div.meta {
+    float: left;
+    margin-top: 3px;
+    width: 260px;
+}
+
+section.profile div.meta dd,
+section.profile div.meta dt {
+    float: left;
+    margin: 0 0 8px;
+}
+
+section.profile div.meta dt {
+    clear: both;
+    margin: 0 16px 8px 0;
+    text-align: right;
+    width: 50px;
+}
+
+section.profile div.meta dd {
+    color: #555;
+}
+
+section.profile div.meta p {
+    margin-top: 16px;
+}
+
+section.profile div.meta section {
+    margin-bottom: 24px;
+}
+
+section.profile ul li {
+    list-style: none;
+    position: relative;
+    margin: 0 0 2px 0;
+}
+
+section.profile ul li a {
+    color: #000;
+    display: block;
+    padding: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+* html section.profile ul li,
+* html section.profile ul li a {
+    height: 1%;
+}
+
+section.profile ul li em {
+    color: #555;
+    float: right;
+    font-style: normal;
+    font-weight: normal;
+    visibility: hidden;
+}
+
+section.profile ul li:hover em {
+    visibility: visible;
+}
+
+section.profile ul li span {
+    background: #ddd;
+    display: block;
+    height: 100%;
+    left: 0;
+    line-height: 2.55em;
+    position: absolute;
+    text-indent: -9999px;
+    top: 0;
+}
+
+section.profile ul li:hover span {
+    background: #ccc;
+}
+
+section.profile article.review h1 {
+    margin-bottom: 6px;
+}
+
+section.profile article.review p {
+    color: #555;
+}
+
+section.profile article.review .rating {
+    margin-right: 6px;
+}
+
+section.profile article.review .rating img {
+    border: none;
+    clear: left;
+    float: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 3px;
+}
+
+/* datagrid */
+
+div.page-actions {
+    float: right;
+    font-size: .9em;
+    margin: 0 0 8px 0;
+}
+
+.datagrid {
+    background: #fff;
+    border: 1px solid #9f9f9f;
+    width: 100%;
+}
+
+.datagrid th,
+.datagrid td {
+    border-bottom: 1px solid #9f9f9f;
+    font-size: .8em;
+    margin: 0;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: text-top;
+}
+
+.datagrid th {
+    font-size: .75em;
+}
+
+.datagrid .actions {
+    font-size: smaller;
+    margin: 6px 0 0;
+    visibility: hidden;
+}
+
+.datagrid .status {
+    color: #555;
+    margin: 6px 0 0;
+}
+
+.datagrid th.checkbox {
+    padding: 7px 0 8px 8px;
+    width: 2.2em;
+}
+
+.datagrid .name {
+    padding-left: 6px;
+}
+
+.datagrid .date {
+    white-space: nowrap;
+}
+
+.datagrid tr {
+    background: #fcfcfc;
+}
+
+.datagrid tr:hover,
+.datagrid tr.alt:hover {
+    background: #e6e6e6;
+}
+
+.datagrid tr:hover .actions {
+    visibility: visible;
+}
+
+.datagrid tr.alt {
+    background: #eee;
+}
+
+.datagrid thead th,
+.datagrid tfoot th {
+    background: #ddd;
+}
+
+.datagrid tfoot th {
+    border-bottom: none;
+}
+
+.datagrid td a,
+.datagrid td.name span {
+    color: #000;
+    font-weight: bold;
+}
+
+.datagrid td div.actions a {
+    color: #00f;
+}
+
+a.delete,
+.datagrid td div.actions a.delete,
+.datagrid td div.actions a.delete:visited {
+    color: #f00;
+}
+
+/* clearfix */
+
+.group:after {
+    display: block;
+    clear: both;
+    content: " ";
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.group {
+    display: inline-table;
+}
+
+/* Hides from IE-mac \*/
+* html .group {
+    height: 1%;
+}
+
+.group {
+    display: block;
+}
+/* End hide from IE-mac */

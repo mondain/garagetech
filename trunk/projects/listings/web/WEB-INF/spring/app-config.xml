@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <context:property-placeholder location="classpath:jdbc.properties,classpath:mail.properties"/>
+
+    <!-- Enforce @Required and @Autowired, as well as JSR 250's @Resource annotations. -->
+    <context:annotation-config/>
+
+    <!-- Scans the classpath of this application for @Components to deploy as beans -->
+    <context:component-scan base-package="com.lewdlistings"/>
+
+    <!-- Application Message Bundle -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/i18n/messages"/>
+        <property name="cacheSeconds" value="0"/>
+    </bean>
+
+    <!-- Enable declarative transaction management via annotations -->
+    <tx:annotation-driven/>
+
+    <!-- DataSource definition. NOTE: Could move this to a JDNI/Container managed resource -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.url}"
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}"
+          p:initialSize="2"
+          p:maxActive="5"
+          p:maxIdle="2"/>
+
+    <!-- Hibernate SessionFactory definition -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan">
+            <list>
+                <value>com.lewdlistings.entity</value>
+            </list>
+        </property>
+        <property name="annotatedPackages">
+            <list>
+                <value>com.lewdlistings.entity</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+                <prop key="hibernate.connection.characterEncoding">utf8</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+        <property name="entityInterceptor" ref="chainedInterceptor"/>
+    </bean>
+
+    <!-- Chained Interceptor definitions -->
+    <bean id="chainedInterceptor" class="com.lewdlistings.repository.interceptor.ChainedInterceptor">
+        <property name="interceptors">
+            <list>
+                <bean class="com.lewdlistings.repository.interceptor.AuditableInterceptor"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Wrapper to translate database exceptions into something more friendly -->
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+    <!-- Hibernate transaction management -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+          p:sessionFactory-ref="sessionFactory"/>
+
+    <!-- Encryption library definitions -->
+    <bean id="strongEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor"
+          p:algorithm="PBEWithMD5AndTripleDES"
+          p:password="cL3@rv!3w"
+          p:keyObtentionIterations="1000"/>
+
+    <!-- Register the encryption libraries with Hibernate -->
+    <bean id="hibernateStringEncryptor" class="org.jasypt.hibernate.encryptor.HibernatePBEStringEncryptor"
+          p:registeredName="strongHibernateEncryptor"
+          p:encryptor-ref="strongEncryptor"/>
+
+</beans>
