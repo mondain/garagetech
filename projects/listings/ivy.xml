@@ -1,0 +1,69 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+    <info organisation="garagetech" module="listings"/>
+    <configurations defaultconfmapping="default->*">
+        <conf name="compile"/>
+        <conf name="default" extends="compile"/>
+        <conf name="test" extends="default" description="Unit testing dependencies."/>
+    </configurations>
+    <dependencies>
+        <dependency org="antlr" name="antlr" rev="2.7.7"/>
+        <dependency org="aopalliance" name="aopalliance" rev="1.0"/>
+        <dependency org="asm" name="asm" rev="3.2"/>
+        <dependency org="asm" name="asm-attrs" rev="2.2"/>
+        <dependency org="cglib" name="cglib" rev="2.2"/>
+		<dependency org="ch.qos.logback" name="logback-classic" rev="0.9.24"/>
+		<dependency org="ch.qos.logback" name="logback-core" rev="0.9.24"/>
+        <dependency org="commons-beanutils" name="commons-beanutils" rev="1.8.3"/>
+        <dependency org="commons-codec" name="commons-codec" rev="1.4"/>
+        <dependency org="commons-collections" name="commons-collections" rev="3.2"/>
+        <dependency org="commons-dbcp" name="commons-dbcp" rev="1.4"/>
+		<dependency org="commons-digester" name="commons-digester" rev="2.0"/>
+        <dependency org="commons-fileupload" name="commons-fileupload" rev="1.2.2"/>
+        <dependency org="commons-io" name="commons-io" rev="1.4"/>
+        <dependency org="commons-lang" name="commons-lang" rev="2.5"/>
+		<dependency org="commons-pool" name="commons-pool" rev="1.5.4"/>
+        <dependency org="dom4j" name="dom4j" rev="1.6.1"/>
+        <dependency org="javassist" name="javassist" rev="3.8.0.GA"/>
+		<dependency org="javax.activation" name="activation" rev="1.1.1"/>
+		<dependency org="javax.mail" name="mail" rev="1.4"/>
+		<dependency org="javax.servlet" name="jstl" rev="1.1.2"/>
+		<dependency org="javax.transaction" name="jta" rev="1.1"/>
+        <dependency org="javax.validation" name="validation-api" rev="1.0.0.GA"/>
+        <dependency org="joda-time" name="joda-time" rev="1.6"/>
+        <dependency org="joda-time" name="joda-time-hibernate" rev="1.2"/>
+        <dependency org="joda-time" name="joda-time-jsptags" rev="1.0.2"/>
+        <dependency org="mysql" name="mysql-connector-java" rev="5.1.13"/>
+		<dependency org="opensymphony" name="sitemesh" rev="2.4.2"/>
+		<dependency org="org.hibernate" name="hibernate-core" rev="3.5.4-Final" conf="default->*,optional"/>
+		<dependency org="org.hibernate" name="hibernate-annotations" rev="3.5.4-Final" conf="default->*,optional"/>
+		<dependency org="org.hibernate" name="hibernate-commons-annotations" rev="3.2.0.Final" conf="default->*,optional"/>
+		<dependency org="org.hibernate" name="hibernate-validator" rev="4.1.0.Final" conf="default->*,optional"/>
+        <dependency org="org.hibernate.javax.persistence" name="hibernate-jpa-2.0-api" rev="1.0.0.Final"/>
+        <dependency org="org.jasypt" name="jasypt" rev="1.6"/>
+        <dependency org="org.json" name="json" rev="20090211"/>
+        <dependency org="org.slf4j" name="jcl-over-slf4j" rev="1.6.1"/>
+        <dependency org="org.slf4j" name="jul-to-slf4j" rev="1.6.1"/>
+        <dependency org="org.slf4j" name="log4j-over-slf4j" rev="1.6.1"/>
+        <dependency org="org.slf4j" name="slf4j-api" rev="1.6.1"/>
+        <dependency org="org.springframework" name="spring-aop" rev="3.0.3.RELEASE"/>
+        <dependency org="org.springframework" name="spring-asm" rev="3.0.3.RELEASE"/>
+        <dependency org="org.springframework" name="spring-beans" rev="3.0.3.RELEASE"/>
+		<dependency org="org.springframework" name="spring-context" rev="3.0.3.RELEASE"/>
+        <dependency org="org.springframework" name="spring-context-support" rev="3.0.3.RELEASE"/>
+        <dependency org="org.springframework" name="spring-core" rev="3.0.3.RELEASE"/>
+        <dependency org="org.springframework" name="spring-expression" rev="3.0.3.RELEASE"/>
+		<dependency org="org.springframework" name="spring-jdbc" rev="3.0.3.RELEASE"/>
+		<dependency org="org.springframework" name="spring-orm" rev="3.0.3.RELEASE"/>
+		<dependency org="org.springframework" name="spring-tx" rev="3.0.3.RELEASE"/>
+		<dependency org="org.springframework" name="spring-web" rev="3.0.3.RELEASE"/>
+		<dependency org="org.springframework" name="spring-webmvc" rev="3.0.3.RELEASE"/>
+        <dependency org="org.springframework.security" name="spring-security-config" rev="3.0.3.RELEASE"/>
+        <dependency org="org.springframework.security" name="spring-security-core" rev="3.0.3.RELEASE"/>
+        <dependency org="org.springframework.security" name="spring-security-taglibs" rev="3.0.3.RELEASE"/>
+        <dependency org="org.springframework.security" name="spring-security-web" rev="3.0.3.RELEASE"/>
+		<dependency org="org.tuckey" name="urlrewritefilter" rev="3.1.0"/>
+        <dependency org="taglibs" name="standard" rev="1.1.2"/>
+    </dependencies>
+</ivy-module>
