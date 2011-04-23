@@ -4,50 +4,7 @@
     <title>${label}</title>
     <script type="text/javascript" src="${ctx}/js/wufoo.js"></script>
     <script type="text/javascript" src="${ctx}/js/jquery.limitMaxLength.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            var $contentCounter = $("#contentCounter"),
-                $summaryCounter = $("#summaryCounter");
-
-            $("#content").limitMaxLength({
-                onEdit: function(remaining) {
-                    switch (remaining) {
-                        case 1:
-                            $contentCounter.html(remaining + " character remaining");
-                            break;
-                        default:
-                            $contentCounter.html(remaining + " characters remaining");
-                            break;
-                    }
-                    if (remaining > 0) {
-                        $contentCounter.removeClass("error");
-                    }
-                },
-                onLimit: function() {
-                    $contentCounter.addClass("error");
-                }
-            });
-
-            $("#summary").limitMaxLength({
-                onEdit: function(remaining) {
-                    switch (remaining) {
-                        case 1:
-                            $summaryCounter.html(remaining + " character remaining");
-                            break;
-                        default:
-                            $summaryCounter.html(remaining + " characters remaining");
-                            break;
-                    }
-                    if (remaining > 0) {
-                        $summaryCounter.removeClass("error");
-                    }
-                },
-                onLimit: function() {
-                    $summaryCounter.addClass("error");
-                }
-            });
-        });
-    </script>
+    <script type="text/javascript" src="${ctx}/js/post/edit.js"></script>
 </head>
 <header class="info">
     <h1>
@@ -91,8 +48,24 @@
                 <form:label path="location">Example: Some Location, CA or 95129</form:label>
             </div>
         </li>
-        <li class="leftHalf">
+        <li class="leftHalf complex">
             <form:label path="phone" cssClass="desc">Attributes</form:label>
+            <div>
+            <c:forEach var="attribute" items="${editPostForm.attributes}" varStatus="status">
+                <spring:bind path="editPostForm.attributes[${status.index}].name">
+                    <span class="left">
+                        <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
+                        <label for="<c:out value="${status.expression}"/>">Name</label>
+                    </span>
+                </spring:bind>
+                <spring:bind path="editPostForm.attributes[${status.index}].stringValue">
+                    <span class="right">
+                        <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
+                        <label for="<c:out value="${status.expression}"/>">Value</label>
+                    </span>
+                </spring:bind>
+            </c:forEach>
+            </div>
         </li>
         <li class="rightHalf">
             <form:label path="phone" cssClass="desc">Tags</form:label>

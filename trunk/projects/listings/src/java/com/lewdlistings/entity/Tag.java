@@ -21,28 +21,6 @@ import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode
 @AttributeOverride(name = "id", column = @Column(name = "tag_id"))
 public class Tag extends BaseEntity implements Comparable<Tag> {
 
-    /**
-     * Tag Comparator (by name).
-     */
-    public static final Comparator<Tag> NAME_COMPARATOR = new Comparator<Tag>() {
-        public int compare(Tag t1, Tag t2) {
-            String s1 = trimToEmpty(t1.getName());
-            String s2 = trimToEmpty(t2.getName());
-            return s1.compareTo(s2);
-        }
-    };
-
-    /**
-     * Tag Comparator (by slug).
-     */
-    public static final Comparator<Tag> SLUG_COMPARATOR = new Comparator<Tag>() {
-        public int compare(Tag t1, Tag t2) {
-            String s1 = trimToEmpty(t1.getSlug());
-            String s2 = trimToEmpty(t2.getSlug());
-            return s1.compareTo(s2);
-        }
-    };
-
     public Tag() {}
 
     public Tag(String name, String slug) {
@@ -127,4 +105,26 @@ public class Tag extends BaseEntity implements Comparable<Tag> {
     public int compareTo(Tag tag) {
         return reflectionCompare(this, tag);
     }
+
+    /**
+     * Tag Comparator (by name).
+     */
+    public static final Comparator<Tag> NAME_COMPARATOR = new Comparator<Tag>() {
+        public int compare(Tag t1, Tag t2) {
+            String s1 = trimToEmpty(t1.getName());
+            String s2 = trimToEmpty(t2.getName());
+            return s1.compareTo(s2);
+        }
+    };
+
+    /**
+     * Tag Comparator (by slug).
+     */
+    public static final Comparator<Tag> SLUG_COMPARATOR = new Comparator<Tag>() {
+        public int compare(Tag t1, Tag t2) {
+            String s1 = trimToEmpty(t1.getSlug());
+            String s2 = trimToEmpty(t2.getSlug());
+            return s1.compareTo(s2);
+        }
+    };
 }

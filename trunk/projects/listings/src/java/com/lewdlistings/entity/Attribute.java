@@ -27,7 +27,7 @@ public class Attribute implements Serializable {
     }
 
     public boolean getBooleanValue() {
-        return value.optBoolean(getName());
+        return value != null ? value.optBoolean(getName()) : null;
     }
 
     public void setBooleanValue(boolean value) {
@@ -39,7 +39,7 @@ public class Attribute implements Serializable {
     }
 
     public long getLongValue() {
-        return value.optLong(getName());
+        return value != null ? value.optLong(getName()) : null;
     }
 
     public void setLongValue(long value) {
@@ -51,7 +51,7 @@ public class Attribute implements Serializable {
     }
 
     public String getStringValue() {
-        return value.optString(getName());
+        return value != null ? value.optString(getName()) : null;
     }
 
     public void setStringValue(String value) {

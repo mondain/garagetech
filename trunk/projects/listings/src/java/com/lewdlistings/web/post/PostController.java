@@ -1,6 +1,8 @@
 package com.lewdlistings.web.post;
 
 import com.lewdlistings.entity.Post;
+import com.lewdlistings.entity.PostAttribute;
+import com.lewdlistings.entity.PostAttributes;
 import com.lewdlistings.entity.User;
 import com.lewdlistings.flash.FlashMap;
 import com.lewdlistings.service.PostService;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -73,7 +76,7 @@ public class PostController {
     @RequestMapping(value = "/post/new/{type}", method = GET)
     public String create(@PathVariable("type") String type, Model model) {
         logger.debug("Creating new post");
-        PostForm form = new PostForm();
+        PostForm form = defaultForm();
         try {
             form.setType(Post.Type.valueOf(type.toUpperCase()));
             model.addAttribute("editPostForm", form);
@@ -106,7 +109,7 @@ public class PostController {
     }
 
     @RequestMapping(method = POST)
-    public String persist(@ModelAttribute("editPostForm") @Valid PostForm form, BindingResult result) {
+    public String persist(Model model, @ModelAttribute("editPostForm") @Valid PostForm form, BindingResult result) {
         logger.debug("Saving post changes");
         if (!result.hasErrors()) {
             Post post = form.getPostId() != null ? postService.read(form.getPostId()) : new Post();
@@ -122,12 +125,23 @@ public class PostController {
             FlashMap.setSuccessMessage("Your post has been successfully saved.");
             return "redirect:/posts";
         }
+        model.addAttribute("isEdit", form.getPostId() != null);
         return "post/edit";
     }
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Post.Type.class, new EnumPropertyEditor(Post.Type.class));
-        binder.setAllowedFields("postId", "title", "content", "type", "hiddenAction", "phone", "location");
+        //binder.setAllowedFields("postId", "summary", "content", "type", "hiddenAction", "phone", "location");
+    }
+
+    private PostForm defaultForm() {
+        PostForm form = new PostForm();
+        List<PostAttribute> attributes = form.getAttributes();
+        for (PostAttributes attr : PostAttributes.values()) {
+            attributes.add(new PostAttribute(attr.name()));
+        }
+        form.setAttributes(attributes);
+        return form;
     }
 }
