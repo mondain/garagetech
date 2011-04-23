@@ -15,15 +15,15 @@ import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode
 @Entity
 @Table(name = "posts")
 @AttributeOverride(name = "id", column = @Column(name = "post_id"))
-public class Post extends BaseEntity {
+public class Post extends BaseEntity implements Comparable<Post> {
 
     @ManyToOne
     @JoinColumn(name = "author_id")
     @ForeignKey(name = "fk_author_id")
     private User author;
 
-    @Column(name = "title", nullable = false, columnDefinition = "text")
-    private String title;
+    @Column(name = "summary", nullable = false, columnDefinition = "text")
+    private String summary;
 
     @Column(name = "content", nullable = false, columnDefinition = "longtext")
     private String content;
@@ -35,7 +35,7 @@ public class Post extends BaseEntity {
     private String location;
 
     @Column(name = "avg_rating")
-    private int averageRating;
+    private double averageRating;
 
     @Column(name = "num_reviews")
     private int numReviews;
@@ -64,16 +64,6 @@ public class Post extends BaseEntity {
     @JoinColumn(name = "post_id")
     @OrderBy("created")
     private List<Review> reviews;
-
-    @ManyToMany
-    @JoinTable(
-            name = "post_category_assn",
-            joinColumns = {@JoinColumn(name = "post_id")},
-            inverseJoinColumns = @JoinColumn(name = "category_id")
-    )
-    @ForeignKey(name = "fk_post_category_id", inverseName = "fk_category_post_id")
-    @OrderBy("name")
-    private List<Category> categories;
 
     @ManyToMany
     @JoinTable(
@@ -106,12 +96,12 @@ public class Post extends BaseEntity {
         this.author = author;
     }
 
-    public String getTitle() {
-        return title;
+    public String getSummary() {
+        return summary;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public String getContent() {
@@ -138,11 +128,11 @@ public class Post extends BaseEntity {
         this.location = location;
     }
 
-    public int getAverageRating() {
+    public double getAverageRating() {
         return averageRating;
     }
 
-    public void setAverageRating(int averageRating) {
+    public void setAverageRating(double averageRating) {
         this.averageRating = averageRating;
     }
 
@@ -192,14 +182,6 @@ public class Post extends BaseEntity {
 
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
-    }
-
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
     }
 
     public List<Tag> getTags() {

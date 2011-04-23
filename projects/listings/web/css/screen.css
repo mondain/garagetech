@@ -1,5 +1,6 @@
 body {
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+    font-size: 82.5%; /* ~13px */
 	margin: 0 auto;
     width: 960px;
 }
@@ -26,7 +27,7 @@ body > header > hgroup > h1 > a:visited {
 }
 
 body > header > hgroup > h2 {
-    font-size: .9em;
+    font-size: 1em;
 }
 
 body > footer {
@@ -47,6 +48,7 @@ nav li {
 
 nav li a {
     display: block;
+    font-size: 1.1em;
 }
 
 nav li.right {
@@ -63,13 +65,12 @@ nav.subnav li {
 }
 
 nav.subnav li a {
-    font-size: .8em;
+    font-size: 1em;
 }
 
 /* messages */
 
 #message {
-    font-size: .8em;
     margin: 0 0 16px 0;
     padding: 8px 6px;
 }
@@ -426,7 +427,6 @@ section.profile article.review .rating img {
 
 div.page-actions {
     float: right;
-    font-size: .9em;
     margin: 0 0 8px 0;
 }
 
@@ -439,30 +439,26 @@ div.page-actions {
 .datagrid th,
 .datagrid td {
     border-bottom: 1px solid #9f9f9f;
-    font-size: .8em;
     margin: 0;
     padding: 8px 12px;
     text-align: left;
-    vertical-align: text-top;
-}
-
-.datagrid th {
-    font-size: .75em;
+    vertical-align: baseline;
 }
 
 .datagrid .actions {
-    font-size: smaller;
+    font-size: .9em;
     margin: 6px 0 0;
     visibility: hidden;
 }
 
 .datagrid .status {
     color: #555;
+    font-size: .9em;
     margin: 6px 0 0;
 }
 
 .datagrid th.checkbox {
-    padding: 7px 0 8px 8px;
+    padding: 6px 0 8px 8px;
     width: 2.2em;
 }
 
@@ -480,7 +476,7 @@ div.page-actions {
 
 .datagrid tr:hover,
 .datagrid tr.alt:hover {
-    background: #e6e6e6;
+    background: #eee;
 }
 
 .datagrid tr:hover .actions {
@@ -493,7 +489,11 @@ div.page-actions {
 
 .datagrid thead th,
 .datagrid tfoot th {
-    background: #ddd;
+    background: #ccc;
+}
+
+.datagrid thead th {
+    font-size: .9em;
 }
 
 .datagrid tfoot th {
@@ -508,6 +508,7 @@ div.page-actions {
 
 .datagrid td div.actions a {
     color: #00f;
+    font-weight: normal;
 }
 
 a.delete,

@@ -25,7 +25,7 @@
     </hgroup>
 </header>
 <section class="profile">
-    <p>${post.title}</p>
+    <p>${post.summary}</p>
     <section class="featured group">
         <article class="group">
             <div class="feature">

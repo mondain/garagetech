@@ -75,7 +75,7 @@
                                         </span>
                                         <em>32 reviews</em>
                                     </h1>
-                                    <h2><a href="${postUrl}">${post.title}</a></h2>
+                                    <h2><a href="${postUrl}">${post.summary}</a></h2>
                                 </hgroup>
                             </header>
                             <p><a href="${postUrl}">Call me at 408-555-1212. I'm available anytime. Some screening may be required.</a></p>

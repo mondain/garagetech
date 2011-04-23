@@ -40,7 +40,7 @@
                 <ol>
                     <li>Featured blah...</li>
                     <li>Runs for 30 days</li>
-                    <li>Bumps automatically every 12 hours</li>
+                    <li>Bumps automatically every hour</li>
                     <li>Manually bumped at will</li>
                     <li>Companion bump ad</li>
                     <li>Searchable profile</li>
@@ -52,7 +52,7 @@
                 <ol>
                     <li>Bump blah...</li>
                     <li>Runs for 30 days</li>
-                    <li>Bumps automatically every 12 hours</li>
+                    <li>Bumps automatically every 4 hours</li>
                     <li>Manually bumped at will</li>
                     <li>Searchable profile</li>
                     <li>Ratings and reviews</li>
@@ -62,7 +62,7 @@
                 <ol>
                     <li>Basic blah...</li>
                     <li>Runs for 30 days</li>
-                    <li>Bumps automatically every 24 hours</li>
+                    <li>Bumps automatically every 12 hours</li>
                     <li>Searchable profile</li>
                     <li>Ratings and reviews</li>
                 </ol>

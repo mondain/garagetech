@@ -25,6 +25,11 @@ public class PostServiceImpl implements PostService {
         this.postRepos = postRepos;
     }
 
+    public List<Post> listActive() {
+        logger.debug("Listing all active posts.");
+        return postRepos.listActive();
+    }
+
     @Transactional(readOnly = true)
     public List<Post> listFeatured() {
         logger.debug("Listing all featured posts.");

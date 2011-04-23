@@ -85,8 +85,8 @@ public class PostController {
         }
     }
 
-    // TODO: This should be a post
-    @RequestMapping(value = "/post/{postId}/bmp", method = POST)
+    // TODO: Remove this method
+    @RequestMapping(value = "/post/{postId}/bmp", method = GET)
     public String bump(@PathVariable("postId") Long postId) {
         logger.debug("Bumping post with id: {}", postId);
         Post post = postService.read(postId);
@@ -117,9 +117,7 @@ public class PostController {
             if (post.getExpires() == null) {
                 post.setExpires(new DateTime().plusDays(30));
             }
-            if (post.getStatus() == null) {
-                post.setStatus(Post.Status.ACTIVE);
-            }
+            post.setStatus(Post.Status.ACTIVE);
             postService.persist(post);
             FlashMap.setSuccessMessage("Your post has been successfully saved.");
             return "redirect:/posts";

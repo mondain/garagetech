@@ -1,12 +1,15 @@
 package com.lewdlistings.web.post;
 
 import com.lewdlistings.entity.Post;
+import com.lewdlistings.entity.PostAttribute;
+import com.lewdlistings.entity.Tag;
 import com.lewdlistings.io.Consumer;
 import com.lewdlistings.io.Producer;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
@@ -14,12 +17,12 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     private Long postId;
 
-    @NotNull
-    @Size(min = 1, max = 140, message = "error.title.empty")
-    private String title;
+    @NotNull(message = "error.summary.empty")
+    @Size(max = 200, message = "error.summary.too.long")
+    private String summary;
 
-    @NotNull
-    @Size(min = 1, message = "error.content.empty")
+    @NotNull(message = "error.content.empty")
+    @Size(max = 2000, message = "error.content.too.long")
     private String content;
 
     @NotNull
@@ -31,6 +34,9 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
     @NotNull
     private Post.Type type;
 
+    private List<Tag> tags;
+    private List<PostAttribute> attributes;
+
     public Long getPostId() {
         return postId;
     }
@@ -39,12 +45,12 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         this.postId = postId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getSummary() {
+        return summary;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public String getContent() {
@@ -79,20 +85,37 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         this.type = type;
     }
 
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
+    public List<PostAttribute> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(List<PostAttribute> attributes) {
+        this.attributes = attributes;
+    }
+
     @Override
     public void consume(Post post) {
         setPostId(post.getId());
-        setTitle(post.getTitle());
+        setSummary(post.getSummary());
         setContent(post.getContent());
         setType(post.getType());
         setPhone(post.getPhone());
         setLocation(post.getLocation());
+        // TODO: Merge in tags
     }
 
     @Override
     public void produce(Post post) {
         post.setId(getPostId());
-        post.setTitle(getTitle());
+        post.setSummary(getSummary());
         post.setContent(getContent());
         post.setType(getType());
         post.setPhone(getPhone());

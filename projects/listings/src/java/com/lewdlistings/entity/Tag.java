@@ -19,7 +19,7 @@ import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode
 @Entity
 @Table(name = "tags")
 @AttributeOverride(name = "id", column = @Column(name = "tag_id"))
-public class Tag extends BaseEntity {
+public class Tag extends BaseEntity implements Comparable<Tag> {
 
     /**
      * Tag Comparator (by name).
@@ -53,8 +53,11 @@ public class Tag extends BaseEntity {
     @Column(name = "name", unique = true, nullable = false, length = 255)
     private String name;
 
-    @Column(name = "slug", unique = true, nullable = false, length = 255)
+    @Column(name = "description", nullable = true, columnDefinition = "text")
+    private String description;
+
     // The canonical representation of the name. eg. rainy-day for Rainy Day
+    @Column(name = "slug", unique = true, nullable = false, length = 255)
     private String slug;
 
     @Column(name = "count")
@@ -70,6 +73,14 @@ public class Tag extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getSlug() {

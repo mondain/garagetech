@@ -7,7 +7,7 @@
     <script type="text/javascript">
         $(function() {
             var $contentCounter = $("#contentCounter"),
-                $titleCounter = $("#titleCounter");
+                $summaryCounter = $("#summaryCounter");
 
             $("#content").limitMaxLength({
                 onEdit: function(remaining) {
@@ -28,22 +28,22 @@
                 }
             });
 
-            $("#title").limitMaxLength({
+            $("#summary").limitMaxLength({
                 onEdit: function(remaining) {
                     switch (remaining) {
                         case 1:
-                            $titleCounter.html(remaining + " character remaining");
+                            $summaryCounter.html(remaining + " character remaining");
                             break;
                         default:
-                            $titleCounter.html(remaining + " characters remaining");
+                            $summaryCounter.html(remaining + " characters remaining");
                             break;
                     }
                     if (remaining > 0) {
-                        $titleCounter.removeClass("error");
+                        $summaryCounter.removeClass("error");
                     }
                 },
                 onLimit: function() {
-                    $titleCounter.addClass("error");
+                    $summaryCounter.addClass("error");
                 }
             });
         });
@@ -64,61 +64,12 @@
     <ul>
         <form:errors path="*" cssClass="error" element="li"/>
         <li>
-            <form:label path="title" cssClass="desc">Teaser <span class="req">*</span></form:label>
+            <form:label path="summary" cssClass="desc">Teaser <span class="req">*</span></form:label>
             <div>
-                <form:textarea path="title" id="title" cssClass="field textarea" maxlength="140" tabindex="1"/>
-                <form:label id="titleCounter" path="title">&nbsp;</form:label>
+                <form:textarea path="summary" id="summary" cssClass="field textarea" maxlength="200" tabindex="1"/>
+                <form:label id="summaryCounter" path="summary">&nbsp;</form:label>
             </div>
         </li>
-        <%--li>
-            <section class="featured group">
-                <article class="group">
-                    <div class="feature">
-                        <div class="feature-img">
-                            <a href="">
-                                <img alt="carlsz" src="${ctx}/img/carlsz.jpg" width="154" height="154" border="0"/>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <article class="group">
-                    <div class="feature">
-                        <div class="feature-img">
-                            <a href="">
-                                <img alt="carlsz" src="${ctx}/img/carlsz.jpg" width="154" height="154" border="0"/>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <article class="group">
-                    <div class="feature">
-                        <div class="feature-img">
-                            <a href="">
-                                <img alt="carlsz" src="${ctx}/img/carlsz.jpg" width="154" height="154" border="0"/>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <article class="group">
-                    <div class="feature">
-                        <div class="feature-img">
-                            <a href="">
-                                <img alt="carlsz" src="${ctx}/img/carlsz.jpg" width="154" height="154" border="0"/>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <article class="group last">
-                    <div class="feature">
-                        <div class="feature-img">
-                            <a href="">
-                                <img alt="carlsz" src="${ctx}/img/carlsz.jpg" width="154" height="154" border="0"/>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </section>
-        </li--%>
         <li>
             <form:label path="content" cssClass="desc">Content <span class="req">*</span></form:label>
             <div>
@@ -139,6 +90,12 @@
                 <form:input path="location" id="location" cssClass="field text medium" maxlength="32" tabindex="4" />
                 <form:label path="location">Example: Some Location, CA or 95129</form:label>
             </div>
+        </li>
+        <li class="leftHalf">
+            <form:label path="phone" cssClass="desc">Attributes</form:label>
+        </li>
+        <li class="rightHalf">
+            <form:label path="phone" cssClass="desc">Tags</form:label>
         </li>
         <li class="buttons">
             <c:choose>

@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface PostRepository extends GenericRepository<Post, Long> {
 
+    List<Post> listActive();
+
     List<Post> listFeatured();
 
     List<Post> listForUser(User user);
