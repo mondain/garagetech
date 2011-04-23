@@ -20,7 +20,7 @@ import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode
 @Entity
 @Table(name = "users")
 @AttributeOverride(name = "id", column = @Column(name = "user_id"))
-public class User extends BaseEntity {
+public class User extends BaseEntity implements Comparable<User> {
 
     @Column(name = "username", length = 32, nullable = false, unique = true)
     private String username;

@@ -1,10 +1,13 @@
 package com.lewdlistings.repository.hibernate;
 
+import com.lewdlistings.entity.Role;
 import com.lewdlistings.entity.User;
 import com.lewdlistings.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 import static org.hibernate.criterion.Restrictions.eq;
 
@@ -22,4 +25,10 @@ public class UserRepositoryImpl extends GenericRepositoryImpl<User, Long> implem
         logger.debug("Finding user by username: {}", username);
         return uniqueResult(criteria().add(eq("username", username)));
     }
+
+    public List<User> listByRole(Role role) {
+        logger.debug("Listing users for role: {}", role);
+        return list(criteria().add(eq("role", role)));
+    }
+
 }

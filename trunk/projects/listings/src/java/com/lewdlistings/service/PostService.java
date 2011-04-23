@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface PostService {
 
+    List<Post> listActive();
+
     List<Post> listFeatured();
 
     List<Post> listForUser(User user);

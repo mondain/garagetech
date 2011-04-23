@@ -42,7 +42,7 @@
                     <tr class="${altClass}">
                         <th class="checkbox" scope="row"><input type="checkbox" value="${post.id}"/></th>
                         <td class="name">
-                            <a href="${postUrl}">${post.title}</a>
+                            <a href="${postUrl}">${post.summary}</a>
                             <div class="actions">
                                 <a href="${editUrl}">Edit</a> |
                                 <c:if test="${post.status == 'ACTIVE' && (post.type == 'BUMP' || post.type == 'FEATURED')}">
@@ -65,8 +65,9 @@
                             <time datetime="<joda:format value="${post.created}" style="MS"/>" pubdate><joda:format value="${post.created}" style="MS"/></time>
                             <div class="status">
                                 <c:choose>
-                                    <c:when test="${post.status == 'FLAGGED'}">Flagged for review</c:when>
                                     <c:when test="${post.status == 'ACTIVE'}">Active</c:when>
+                                    <c:when test="${post.status == 'ARCHIVED'}">Archived</c:when>
+                                    <c:when test="${post.status == 'FLAGGED'}">Flagged for review</c:when>
                                     <c:when test="${post.status == 'SUSPENDED'}">Suspended</c:when>
                                     <c:otherwise>Draft</c:otherwise>
                                 </c:choose>

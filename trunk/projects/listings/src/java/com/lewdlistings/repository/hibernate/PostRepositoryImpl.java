@@ -20,6 +20,17 @@ public class PostRepositoryImpl extends GenericRepositoryImpl<Post, Long> implem
 
     private static final Logger logger = LoggerFactory.getLogger(PostRepositoryImpl.class);
 
+    public List<Post> listActive() {
+        logger.debug("Listing all active posts");
+        Criteria criteria = criteria();
+        criteria.add(gt("expires", new DateTime()));
+        criteria.add(eq("status", Post.Status.ACTIVE));
+        criteria.addOrder(desc("averageRating"));
+        criteria.addOrder(desc("numReviews"));
+        criteria.addOrder(desc("created"));
+        return list(criteria);
+    }
+
     public List<Post> listFeatured() {
         logger.debug("Listing all featured posts.");
         Criteria criteria = criteria();

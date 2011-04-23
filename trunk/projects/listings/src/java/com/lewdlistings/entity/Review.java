@@ -27,10 +27,10 @@ public class Review extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "post_id", nullable = false)
     @ForeignKey(name = "fk_review_post_id")
-    private Post profile;
+    private Post post;
 
     @Column(name = "rating", nullable = false)
-    private int rating;
+    private double rating;
 
     @Column(name = "content", nullable = false, columnDefinition = "text")
     private String content;
@@ -46,19 +46,19 @@ public class Review extends BaseEntity {
         this.author = author;
     }
 
-    public Post getProfile() {
-        return profile;
+    public Post getPost() {
+        return post;
     }
 
-    public void setProfile(Post profile) {
-        this.profile = profile;
+    public void setPost(Post post) {
+        this.post = post;
     }
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 

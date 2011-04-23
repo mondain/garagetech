@@ -1,6 +1,7 @@
 package com.lewdlistings.service.impl;
 
 import com.lewdlistings.entity.Role;
+import com.lewdlistings.entity.Roles;
 import com.lewdlistings.entity.User;
 import com.lewdlistings.entity.UserDetailsImpl;
 import com.lewdlistings.repository.RoleRepository;
@@ -58,6 +59,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public User findByUsername(String username) {
         logger.debug("Finding user by username: {}", username);
         return userRepos.findByUsername(username);
+    }
+
+    @Transactional(readOnly = true)
+    public List<User> listActiveProviders() {
+        return userRepos.listByRole(roleRepos.findByName(Roles.ROLE_PROVIDER));
     }
 
     @Transactional(readOnly = true)
