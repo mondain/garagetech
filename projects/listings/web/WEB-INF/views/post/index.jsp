@@ -129,31 +129,19 @@
         </section>
     </div>
     <div class="meta">
-        <section class="group">
-            <header>
-                <h1>Attributes</h1>
-            </header>
-            <dl>
-                <dt>Bust</dt>
-                <dd>34C</dd>
-                <dt>Waist</dt>
-                <dd>27</dd>
-                <dt>Hips</dt>
-                <dd>32</dd>
-                <dt>Height</dt>
-                <dd>5' 4"</dd>
-                <dt>Weight</dt>
-                <dd>120 lbs.</dd>
-                <dt>Hair</dt>
-                <dd>Blonde</dd>
-                <dt>Eyes</dt>
-                <dd>Blue</dd>
-                <dt>Age</dt>
-                <dd>29</dd>
-                <dt>Kitty</dt>
-                <dd>Shaved</dd>
-            </dl>
-        </section>
+        <c:if test="${not empty post.attributes}">
+            <section class="group">
+                <header>
+                    <h1>Attributes</h1>
+                </header>
+                <dl>
+                    <c:forEach var="attribute" items="${post.attributes}" varStatus="status">
+                        <dt>${attribute.name}</dt>
+                        <dd>${attribute.stringValue}</dd>
+                    </c:forEach>
+                </dl>
+            </section>
+        </c:if>
         <section class="group">
             <header>
                 <h1>Tags</h1>

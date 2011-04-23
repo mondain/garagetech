@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Transactional(readOnly = true)
     public List<User> listActiveProviders() {
-        return userRepos.listByRole(roleRepos.findByName(Roles.ROLE_PROVIDER));
+        return userRepos.listByRole(roleRepos.findByName(Roles.ROLE_PROVIDER.name()));
     }
 
     @Transactional(readOnly = true)

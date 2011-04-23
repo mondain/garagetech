@@ -20,7 +20,6 @@
         <link rel="stylesheet" href="${ctx}/css/html5reset.css" type="text/css"/>
         <link rel="stylesheet" href="${ctx}/css/form.css" type="text/css"/>
         <link rel="stylesheet" href="${ctx}/css/screen.css" type="text/css"/>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>        
     </head>
     <body>
         <header>
@@ -36,6 +35,7 @@
         <footer>
             <p>Copyright &copy; 2011</p>
         </footer>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
         <%-- Use decorator:head to consolidate JS files at the bottom of the page for faster page rendering. --%>
         <decorator:head/>
     </body>

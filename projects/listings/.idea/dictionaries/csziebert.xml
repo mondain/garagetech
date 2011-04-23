@@ -21,11 +21,14 @@
       <w>lewdlistings</w>
       <w>login</w>
       <w>logout</w>
+      <w>maxlength</w>
       <w>opensymphony</w>
       <w>repos</w>
       <w>sitemesh</w>
       <w>stdout</w>
+      <w>tabindex</w>
       <w>taglibs</w>
+      <w>textarea</w>
       <w>urlrewrite</w>
       <w>username</w>
       <w>usertype</w>

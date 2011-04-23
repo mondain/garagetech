@@ -5,10 +5,14 @@ import com.lewdlistings.entity.PostAttribute;
 import com.lewdlistings.entity.Tag;
 import com.lewdlistings.io.Consumer;
 import com.lewdlistings.io.Producer;
+import org.apache.commons.collections.FactoryUtils;
+import org.apache.commons.collections.list.LazyList;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
@@ -17,12 +21,12 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     private Long postId;
 
-    @NotNull(message = "error.summary.empty")
-    @Size(max = 200, message = "error.summary.too.long")
+    @Max(value = 200, message = "error.summary.too.long")
+    @Min(value = 1, message = "error.summary.empty")
     private String summary;
 
-    @NotNull(message = "error.content.empty")
-    @Size(max = 2000, message = "error.content.too.long")
+    @Max(value = 2000, message = "error.content.too.long")
+    @Min(value = 1, message = "error.content.empty")
     private String content;
 
     @NotNull
@@ -35,7 +39,12 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
     private Post.Type type;
 
     private List<Tag> tags;
-    private List<PostAttribute> attributes;
+
+    @SuppressWarnings({"unchecked"})
+    private List<PostAttribute> attributes =
+            LazyList.decorate(
+                    new ArrayList<PostAttribute>(),
+                    FactoryUtils.instantiateFactory(PostAttribute.class));
 
     public Long getPostId() {
         return postId;
@@ -109,6 +118,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         setType(post.getType());
         setPhone(post.getPhone());
         setLocation(post.getLocation());
+        setAttributes(post.getAttributes());
         // TODO: Merge in tags
     }
 
@@ -120,5 +130,6 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         post.setType(getType());
         post.setPhone(getPhone());
         post.setLocation(getLocation());
+        post.setAttributes(getAttributes());
     }
 }
