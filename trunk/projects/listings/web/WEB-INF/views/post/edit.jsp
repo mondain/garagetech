@@ -4,6 +4,7 @@
     <title>${label}</title>
     <script type="text/javascript" src="${ctx}/js/wufoo.js"></script>
     <script type="text/javascript" src="${ctx}/js/jquery.limitMaxLength.js"></script>
+    <script type="text/javascript" src="${ctx}/js/ICanHaz.min.js"></script>
     <script type="text/javascript" src="${ctx}/js/post/edit.js"></script>
 </head>
 <header class="info">
@@ -49,9 +50,13 @@
             </div>
         </li>
         <li class="leftHalf complex">
-            <form:label path="phone" cssClass="desc">Attributes</form:label>
-            <div>
+            <form:label path="phone" cssClass="desc">Attributes <a id="newAttribute" href="#">New attribute</a></form:label>
+            <div id="attributeEditor">
             <c:forEach var="attribute" items="${editPostForm.attributes}" varStatus="status">
+                <div class="editor-row">
+                    <span class="delete">
+                        <a class="ui-icon ui-icon-trash" href="#"></a>
+                    </span>
                 <spring:bind path="editPostForm.attributes[${status.index}].name">
                     <span class="left">
                         <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
@@ -64,6 +69,7 @@
                         <label for="<c:out value="${status.expression}"/>">Value</label>
                     </span>
                 </spring:bind>
+                </div>
             </c:forEach>
             </div>
         </li>
@@ -83,3 +89,18 @@
         </li>
     </ul>
 </form:form>
+<script id="newAttributeTmpl" type="text/html">
+    <div class="editor-row">
+        <span class="delete">
+            <a class="ui-icon ui-icon-trash" href="#"></a>
+        </span>
+        <span class="left">
+            <input type="text" name="attributes[{{idx}}].name" id="attributes[{{idx}}].name" class="field text addr" value=""/>
+            <label for="attributes[{{idx}}].name">Name</label>
+        </span>
+        <span class="right">
+            <input type="text" name="attributes[{{idx}}].stringValue" id="attributes[{{idx}}].stringValue" class="field text addr" value=""/>
+            <label for="attributes[{{idx}}].stringValue">Value</label>
+        </span>
+    </div>
+</script>

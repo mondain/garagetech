@@ -241,6 +241,10 @@ label.desc {
     display: block;
 }
 
+label.desc a {
+    float: right;
+}
+
 label.choice {
     display: block;
     font-size: .95em;
