@@ -69,4 +69,11 @@ public class Attribute implements Serializable {
     protected void setValue(JSONObject value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return "Attribute{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

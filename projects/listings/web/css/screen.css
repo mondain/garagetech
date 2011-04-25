@@ -423,6 +423,18 @@ section.profile article.review .rating img {
     top: 3px;
 }
 
+/* form extensions */
+
+div.editor-row {
+    position: relative;
+}
+
+div.editor-row span.delete {
+    left: -24px;
+    position: absolute;
+    top: 2px;
+}
+
 /* datagrid */
 
 div.page-actions {

@@ -2,15 +2,15 @@ package com.lewdlistings.web.post;
 
 import com.lewdlistings.entity.Post;
 import com.lewdlistings.entity.PostAttribute;
+import com.lewdlistings.entity.PostAttributes;
 import com.lewdlistings.entity.Tag;
 import com.lewdlistings.io.Consumer;
 import com.lewdlistings.io.Producer;
-import org.apache.commons.collections.FactoryUtils;
+import org.apache.commons.collections.Factory;
 import org.apache.commons.collections.list.LazyList;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +21,10 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     private Long postId;
 
-    @Max(value = 200, message = "error.summary.too.long")
-    @Min(value = 1, message = "error.summary.empty")
+    @Size(min = 1, max = 200, message = "error.summary.min.max")
     private String summary;
 
-    @Max(value = 2000, message = "error.content.too.long")
-    @Min(value = 1, message = "error.content.empty")
+    @Size(min = 1, max = 2000, message = "error.content.min.max")
     private String content;
 
     @NotNull
@@ -42,9 +40,22 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     @SuppressWarnings({"unchecked"})
     private List<PostAttribute> attributes =
-            LazyList.decorate(
-                    new ArrayList<PostAttribute>(),
-                    FactoryUtils.instantiateFactory(PostAttribute.class));
+            LazyList.decorate(new ArrayList<PostAttribute>(), new Factory() {
+                @Override
+                public Object create() {
+                    return new PostAttribute();
+                }
+            });
+
+    public static PostForm defaultForm() {
+        PostForm form = new PostForm();
+        List<PostAttribute> attributes = form.getAttributes();
+        for (PostAttributes attr : PostAttributes.values()) {
+            attributes.add(new PostAttribute(attr.name()));
+        }
+        form.setAttributes(attributes);
+        return form;
+    }
 
     public Long getPostId() {
         return postId;

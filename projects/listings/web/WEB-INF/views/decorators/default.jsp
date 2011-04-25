@@ -18,8 +18,10 @@
         <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <link rel="stylesheet" href="${ctx}/css/html5reset.css" type="text/css"/>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css"/>
         <link rel="stylesheet" href="${ctx}/css/form.css" type="text/css"/>
         <link rel="stylesheet" href="${ctx}/css/screen.css" type="text/css"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     </head>
     <body>
         <header>
@@ -35,7 +37,7 @@
         <footer>
             <p>Copyright &copy; 2011</p>
         </footer>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
         <%-- Use decorator:head to consolidate JS files at the bottom of the page for faster page rendering. --%>
         <decorator:head/>
     </body>

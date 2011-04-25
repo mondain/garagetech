@@ -1,8 +1,6 @@
 package com.lewdlistings.web.post;
 
 import com.lewdlistings.entity.Post;
-import com.lewdlistings.entity.PostAttribute;
-import com.lewdlistings.entity.PostAttributes;
 import com.lewdlistings.entity.User;
 import com.lewdlistings.flash.FlashMap;
 import com.lewdlistings.service.PostService;
@@ -22,7 +20,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
-import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -59,7 +56,7 @@ public class PostController {
     public String edit(@PathVariable("postId") Long postId, Model model) {
         logger.debug("Editing post with id: {}", postId);
         Post post = postService.read(postId);
-        PostForm form = new PostForm();
+        PostForm form = PostForm.defaultForm();
         form.consume(post);
         model.addAttribute("editPostForm", form);
         model.addAttribute("isEdit", true);
@@ -76,7 +73,7 @@ public class PostController {
     @RequestMapping(value = "/post/new/{type}", method = GET)
     public String create(@PathVariable("type") String type, Model model) {
         logger.debug("Creating new post");
-        PostForm form = defaultForm();
+        PostForm form = PostForm.defaultForm();
         try {
             form.setType(Post.Type.valueOf(type.toUpperCase()));
             model.addAttribute("editPostForm", form);
@@ -133,15 +130,5 @@ public class PostController {
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Post.Type.class, new EnumPropertyEditor(Post.Type.class));
         //binder.setAllowedFields("postId", "summary", "content", "type", "hiddenAction", "phone", "location");
-    }
-
-    private PostForm defaultForm() {
-        PostForm form = new PostForm();
-        List<PostAttribute> attributes = form.getAttributes();
-        for (PostAttributes attr : PostAttributes.values()) {
-            attributes.add(new PostAttribute(attr.name()));
-        }
-        form.setAttributes(attributes);
-        return form;
     }
 }
