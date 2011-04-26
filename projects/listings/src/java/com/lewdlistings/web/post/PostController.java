@@ -129,6 +129,5 @@ public class PostController {
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Post.Type.class, new EnumPropertyEditor(Post.Type.class));
-        //binder.setAllowedFields("postId", "summary", "content", "type", "hiddenAction", "phone", "location");
     }
 }
