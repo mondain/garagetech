@@ -21,9 +21,11 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     private Long postId;
 
+    @NotNull
     @Size(min = 1, max = 200, message = "error.summary.min.max")
     private String summary;
 
+    @NotNull
     @Size(min = 1, max = 2000, message = "error.content.min.max")
     private String content;
 
@@ -36,7 +38,16 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
     @NotNull
     private Post.Type type;
 
-    private List<Tag> tags;
+    private String tagInput;
+
+    @SuppressWarnings({"unchecked"})
+    private List<Tag> tags =
+            LazyList.decorate(new ArrayList<Tag>(), new Factory() {
+                @Override
+                public Object create() {
+                    return new Tag();
+                }
+            });
 
     @SuppressWarnings({"unchecked"})
     private List<PostAttribute> attributes =
@@ -105,6 +116,15 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         this.type = type;
     }
 
+    public String getTagInput() {
+        return tagInput;
+    }
+
+    public void setTagInput(String tagInput) {
+        this.tagInput = tagInput;
+        // TODO: Parse the strings into tags
+    }
+
     public List<Tag> getTags() {
         return tags;
     }
@@ -130,7 +150,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         setPhone(post.getPhone());
         setLocation(post.getLocation());
         setAttributes(post.getAttributes());
-        // TODO: Merge in tags
+        setTags(post.getTags());
     }
 
     @Override
@@ -142,5 +162,6 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         post.setPhone(getPhone());
         post.setLocation(getLocation());
         post.setAttributes(getAttributes());
+        post.setTags(getTags());
     }
 }

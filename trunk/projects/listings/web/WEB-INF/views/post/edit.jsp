@@ -57,32 +57,36 @@
                     <span class="delete">
                         <a class="ui-icon ui-icon-trash" href="#"></a>
                     </span>
-                <spring:bind path="editPostForm.attributes[${status.index}].name">
+                    <spring:bind path="editPostForm.attributes[${status.index}].name">
                     <span class="left">
                         <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
                         <label for="<c:out value="${status.expression}"/>">Name</label>
                     </span>
-                </spring:bind>
-                <spring:bind path="editPostForm.attributes[${status.index}].stringValue">
+                    </spring:bind>
+                    <spring:bind path="editPostForm.attributes[${status.index}].stringValue">
                     <span class="right">
                         <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
                         <label for="<c:out value="${status.expression}"/>">Value</label>
                     </span>
-                </spring:bind>
+                    </spring:bind>
                 </div>
             </c:forEach>
             </div>
         </li>
         <li class="rightHalf">
-            <form:label path="phone" cssClass="desc">Tags</form:label>
+            <form:label path="tags" cssClass="desc">Tags</form:label>
+            <div>
+                <form:input path="tags" id="tags" cssClass="field text medium" maxlength="32" tabindex="5" />
+                <form:label path="tags">Keyword or label that categorizes your ad with other, similar ads. Max of 10 tags.</form:label>
+            </div>
         </li>
         <li class="buttons">
             <c:choose>
                 <c:when test="${isEdit}">
-                    <input id="saveBtn" class="btTxt" type="submit" tabindex="5" value="Update"/>
+                    <input id="saveBtn" class="btTxt" type="submit" tabindex="6" value="Update"/>
                 </c:when>
                 <c:otherwise>
-                    <input id="saveBtn" class="btTxt" type="submit" tabindex="5" value="Create"/>
+                    <input id="saveBtn" class="btTxt" type="submit" tabindex="6" value="Create"/>
                 </c:otherwise>
             </c:choose>
             <a href="${cancelUrl}">Or, cancel and return to the list of posts.</a>
@@ -95,11 +99,11 @@
             <a class="ui-icon ui-icon-trash" href="#"></a>
         </span>
         <span class="left">
-            <input type="text" name="attributes[{{idx}}].name" id="attributes[{{idx}}].name" class="field text addr" value=""/>
+            <input type="text" name="attributes[{{idx}}].name" id="attributes[{{idx}}].name" class="field text addr"/>
             <label for="attributes[{{idx}}].name">Name</label>
         </span>
         <span class="right">
-            <input type="text" name="attributes[{{idx}}].stringValue" id="attributes[{{idx}}].stringValue" class="field text addr" value=""/>
+            <input type="text" name="attributes[{{idx}}].stringValue" id="attributes[{{idx}}].stringValue" class="field text addr"/>
             <label for="attributes[{{idx}}].stringValue">Value</label>
         </span>
     </div>

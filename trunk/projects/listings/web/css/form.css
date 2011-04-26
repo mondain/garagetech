@@ -10,13 +10,14 @@ Last Updated : March 2, 2010
 
 .wufoo {
     font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+    left: -1%;
     letter-spacing: .01em;
+    position: relative;
     text-rendering: optimizeLegibility;
-    margin-left: -1%;
 }
 
 .wufoo li {
-    width: 100%;
+    width: 99%;
 }
 
 /* ----- INFO ----- */

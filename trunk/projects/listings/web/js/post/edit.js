@@ -1,12 +1,5 @@
 (function($) {
 
-    var $attributeEditor = $("#attributeEditor"),
-        $content = $("#content"),
-        $contentCounter = $("#contentCounter"),
-        $newAttribute = $("#newAttribute"),
-        $summary = $("#summary"),
-        $summaryCounter = $("#summaryCounter");
-
     function limitMaxLength($formElem, $countElem) {
         $formElem.limitMaxLength({
             onEdit: function(remaining) {
@@ -29,7 +22,7 @@
     }
 
     function initAttributeEditor() {
-        $newAttribute.click(function(e) {
+        $("#newAttribute").click(function(e) {
             e.preventDefault();
             newAttribute();
         });
@@ -40,22 +33,22 @@
     }
 
     function newAttribute() {
-        var next = updateIndicies();
-        $attributeEditor.append(ich.newAttributeTmpl({ idx: next }));
+        var next = updateIndices();
+        $("#attributeEditor").append(ich.newAttributeTmpl({ idx: next }));
+        // The backslashes are key to making the selector work here
+        $("#attributes\\[" + next + "\\]\\.name").focus();
     }
 
     function deleteAttribute($elem) {
-        var parent = $elem.parents(".editor-row");
-        console.log("parent: %o", parent);
+        var $parent = $elem.parents(".editor-row");
         $elem.die("click");
-        $attributeEditor[0].removeChild(parent[0]);
-        updateIndicies();
-        console.log("Delete!");
+        // Using jQuery $elem.remove doesn't seem to work
+        $("#attributeEditor")[0].removeChild($parent[0]);
+        updateIndices();
     }
 
-    function updateIndicies() {
-        var current, idx, $input, $inputs, suffix;
-        // Loop over each editor row and get the position. Then update the attribute.
+    function updateIndices() {
+        var current, idx = -1, $input, $inputs, suffix;
         $(".editor-row", ".complex").each(function(i) {
             $inputs = $(this).find("input[type=text]");
             $($inputs).each(function(j, input) {
@@ -70,8 +63,8 @@
     }
 
     $(function() {
-        limitMaxLength($content, $contentCounter);
-        limitMaxLength($summary, $summaryCounter);
+        limitMaxLength($("#content"), $("#contentCounter"));
+        limitMaxLength($("#summary"), $("#summaryCounter"));
         initAttributeEditor();
     });
 
