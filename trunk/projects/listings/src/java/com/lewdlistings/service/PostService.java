@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface PostService {
 
+    Post findByGuid(String guid);
+
     List<Post> listActive();
 
     List<Post> listFeatured();

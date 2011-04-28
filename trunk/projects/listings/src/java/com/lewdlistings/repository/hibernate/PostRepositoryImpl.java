@@ -20,6 +20,13 @@ public class PostRepositoryImpl extends GenericRepositoryImpl<Post, Long> implem
 
     private static final Logger logger = LoggerFactory.getLogger(PostRepositoryImpl.class);
 
+    public Post findByGuid(String guid) {
+        logger.debug("Finding post by guid: {}", guid);
+        Criteria criteria = criteria();
+        criteria.add(eq("guid", guid));
+        return uniqueResult(criteria);
+    }
+
     public List<Post> listActive() {
         logger.debug("Listing all active posts");
         Criteria criteria = criteria();

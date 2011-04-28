@@ -4,6 +4,7 @@ import com.lewdlistings.entity.Post;
 import com.lewdlistings.entity.User;
 import com.lewdlistings.flash.FlashMap;
 import com.lewdlistings.service.PostService;
+import com.lewdlistings.util.RandomStringGenerator;
 import com.lewdlistings.web.propertyeditor.EnumPropertyEditor;
 import com.lewdlistings.web.util.UserThreadLocal;
 import org.joda.time.DateTime;
@@ -44,18 +45,18 @@ public class PostController {
         return "post/list";
     }
 
-    @RequestMapping(value = "/post/{postId}", method = GET)
-    public String find(@PathVariable("postId") Long postId, Model model) {
-        logger.debug("Displaying post for id: {}", postId);
-        Post post = postService.read(postId);
+    @RequestMapping(value = "/post/{guid}", method = GET)
+    public String find(@PathVariable("guid") String guid, Model model) {
+        logger.debug("Displaying post for guid: {}", guid);
+        Post post = postService.findByGuid(guid);
         model.addAttribute("post", post);
         return "post/index";
     }
 
-    @RequestMapping(value = "/post/{postId}/edit", method = GET)
-    public String edit(@PathVariable("postId") Long postId, Model model) {
-        logger.debug("Editing post with id: {}", postId);
-        Post post = postService.read(postId);
+    @RequestMapping(value = "/post/{guid}/edit", method = GET)
+    public String edit(@PathVariable("guid") String guid, Model model) {
+        logger.debug("Editing post with guid: {}", guid);
+        Post post = postService.findByGuid(guid);
         PostForm form = PostForm.defaultForm();
         form.consume(post);
         model.addAttribute("editPostForm", form);
@@ -86,10 +87,10 @@ public class PostController {
     }
 
     // TODO: Remove this method
-    @RequestMapping(value = "/post/{postId}/bmp", method = GET)
-    public String bump(@PathVariable("postId") Long postId) {
-        logger.debug("Bumping post with id: {}", postId);
-        Post post = postService.read(postId);
+    @RequestMapping(value = "/post/{guid}/bmp", method = GET)
+    public String bump(@PathVariable("guid") String guid) {
+        logger.debug("Bumping post with guid: {}", guid);
+        Post post = postService.findByGuid(guid);
         // TODO: Make sure this doesn't overwrite up negative types
         post.setStatus(Post.Status.ACTIVE);
         postService.persist(post);
@@ -98,9 +99,9 @@ public class PostController {
     }
 
     // TODO: This should be a delete or post
-    @RequestMapping(value = "/post/{postId}/delete", method = POST)
-    public String delete(@PathVariable("postId") Long postId) {
-        logger.debug("Deleting post with id: {}", postId);
+    @RequestMapping(value = "/post/{guid}/delete", method = POST)
+    public String delete(@PathVariable("guid") String guid) {
+        logger.debug("Deleting post with guid: {}", guid);
         FlashMap.setSuccessMessage("Your post has been successfully deleted.");
         return "redirect:/posts";
     }
@@ -116,6 +117,9 @@ public class PostController {
             }
             if (post.getExpires() == null) {
                 post.setExpires(new DateTime().plusDays(30));
+            }
+            if (post.getGuid() == null) {
+                post.setGuid(RandomStringGenerator.getNextRandomString());
             }
             post.setStatus(Post.Status.ACTIVE);
             postService.persist(post);

@@ -25,6 +25,11 @@ public class PostServiceImpl implements PostService {
         this.postRepos = postRepos;
     }
 
+    public Post findByGuid(String guid) {
+        logger.debug("Finding post by guid: {}", guid);
+        return postRepos.findByGuid(guid);
+    }
+
     public List<Post> listActive() {
         logger.debug("Listing all active posts.");
         return postRepos.listActive();
