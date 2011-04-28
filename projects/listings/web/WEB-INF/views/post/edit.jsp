@@ -18,6 +18,7 @@
 </header>
 <form:form modelAttribute="editPostForm" cssClass="wufoo topLabel group">
     <form:hidden path="postId"/>
+    <form:hidden path="guid"/>
     <form:hidden path="type"/>
     <ul>
         <form:errors path="*" cssClass="error" element="li"/>
@@ -74,10 +75,10 @@
             </div>
         </li>
         <li class="rightHalf">
-            <form:label path="tags" cssClass="desc">Tags</form:label>
+            <form:label path="tagInput" cssClass="desc">Tags</form:label>
             <div>
-                <form:input path="tags" id="tags" cssClass="field text medium" maxlength="32" tabindex="5" />
-                <form:label path="tags">Keyword or label that categorizes your ad with other, similar ads. Max of 10 tags.</form:label>
+                <form:input path="tagInput" id="tagInput" cssClass="field text medium" maxlength="32" tabindex="5" />
+                <form:label path="tagInput">Keyword or label that categorizes your ad with other, similar ads. Max of 10 tags.</form:label>
             </div>
         </li>
         <li class="buttons">

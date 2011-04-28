@@ -35,12 +35,12 @@
                             <c:set var="altClass" value=""/>
                         </c:otherwise>
                     </c:choose>
-                    <c:url var="bumpUrl" value="/post/${post.id}/bmp"/>
-                    <c:url var="deleteUrl" value="/post/${post.id}/delete"/>
-                    <c:url var="editUrl" value="/post/${post.id}/edit"/>
-                    <c:url var="postUrl" value="/post/${post.id}"/>
+                    <c:url var="bumpUrl" value="/post/${post.guid}/bmp"/>
+                    <c:url var="deleteUrl" value="/post/${post.guid}/delete"/>
+                    <c:url var="editUrl" value="/post/${post.guid}/edit"/>
+                    <c:url var="postUrl" value="/post/${post.guid}"/>
                     <tr class="${altClass}">
-                        <th class="checkbox" scope="row"><input type="checkbox" value="${post.id}"/></th>
+                        <th class="checkbox" scope="row"><input type="checkbox" value="${post.guid}"/></th>
                         <td class="name">
                             <a href="${postUrl}">${post.summary}</a>
                             <div class="actions">

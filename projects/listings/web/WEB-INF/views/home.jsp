@@ -22,7 +22,7 @@
             </hgroup>
         </header>
         <c:forEach var="post" items="${featured}" varStatus="status">
-            <c:set var="postUrl" value="/post/${post.id}"/>
+            <c:set var="postUrl" value="/post/${post.guid}"/>
             <article class="group">
                 <div class="feature">
                     <div class="feature-img">
@@ -57,7 +57,7 @@
         <c:choose>
             <c:when test="${not empty posts}">
                 <c:forEach var="post" items="${posts}" varStatus="status">
-                    <c:set var="postUrl" value="/post/${post.id}"/>
+                    <c:set var="postUrl" value="/post/${post.guid}"/>
                     <article class="group">
                         <a href="${postUrl}">
                             <img alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="75" height="75" border="0"/>

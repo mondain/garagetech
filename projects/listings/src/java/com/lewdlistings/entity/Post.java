@@ -22,6 +22,9 @@ public class Post extends BaseEntity implements Comparable<Post> {
     @ForeignKey(name = "fk_author_id")
     private User author;
 
+    @Column(name = "guid", length = 256, nullable = false, unique = true)
+    private String guid;
+
     @Column(name = "summary", nullable = false, columnDefinition = "text")
     private String summary;
 
@@ -94,6 +97,14 @@ public class Post extends BaseEntity implements Comparable<Post> {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public String getGuid() {
+        return guid;
+    }
+
+    public void setGuid(String guid) {
+        this.guid = guid;
     }
 
     public String getSummary() {

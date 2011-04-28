@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/views/partials/taglibs.jsp" %>
-<c:set var="editUrl" value="/post/${post.id}/edit"/>
+<c:set var="editUrl" value="/post/${post.guid}/edit"/>
 <header class="info">
     <hgroup>
         <h1>
