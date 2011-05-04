@@ -22,6 +22,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
     private Long postId;
 
     private String guid;
+    private String displayName;
 
     @NotNull
     @Size(min = 1, max = 200, message = "error.summary.min.max")
@@ -84,6 +85,14 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     public void setGuid(String guid) {
         this.guid = guid;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public String getSummary() {
@@ -162,6 +171,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         setAttributes(post.getAttributes());
         setTags(post.getTags());
         setGuid(post.getGuid());
+        setDisplayName(post.getDisplayName());
     }
 
     @Override
@@ -175,5 +185,6 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         post.setAttributes(getAttributes());
         post.setTags(getTags());
         post.setGuid(getGuid());
+        post.setDisplayName(getDisplayName());
     }
 }

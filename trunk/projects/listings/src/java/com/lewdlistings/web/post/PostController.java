@@ -119,7 +119,7 @@ public class PostController {
                 post.setExpires(new DateTime().plusDays(30));
             }
             if (post.getGuid() == null) {
-                post.setGuid(RandomStringGenerator.getNextRandomString());
+                post.setGuid(RandomStringGenerator.getNextRandomString().toLowerCase());
             }
             post.setStatus(Post.Status.ACTIVE);
             postService.persist(post);

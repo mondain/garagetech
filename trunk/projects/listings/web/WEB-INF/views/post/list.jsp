@@ -19,7 +19,7 @@
             <thead>
                 <tr>
                     <th class="checkbox" scope="col"><input type="checkbox"/></th>
-                    <th class="name" scope="col">Content</th>
+                    <th class="name" scope="col">Ad Contents</th>
                     <th scope="col">Type</th>
                     <th scope="col">Date / Status</th>
                 </tr>
@@ -42,6 +42,7 @@
                     <tr class="${altClass}">
                         <th class="checkbox" scope="row"><input type="checkbox" value="${post.guid}"/></th>
                         <td class="name">
+                            <a href="${postUrl}"><img class="profile" alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="52" height="52" border="0"/></a>
                             <a href="${postUrl}">${post.summary}</a>
                             <div class="actions">
                                 <a href="${editUrl}">Edit</a> |

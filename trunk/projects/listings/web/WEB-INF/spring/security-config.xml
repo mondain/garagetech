@@ -12,9 +12,9 @@
         <intercept-url pattern="/img/*" filters="none"/>
         <intercept-url pattern="/js/*" filters="none"/>
         <intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
-        <intercept-url pattern="/account/**" access="ROLE_USER"/>
-        <intercept-url pattern="/post/**" access="ROLE_USER"/>
-        <intercept-url pattern="/posts/**" access="ROLE_USER"/>
+        <intercept-url pattern="/account/**" access="ROLE_USER, ROLE_PROVIDER"/>
+        <intercept-url pattern="/post/**" access="ROLE_USER, ROLE_PROVIDER"/>
+        <intercept-url pattern="/posts/**" access="ROLE_USER, ROLE_PROVIDER"/>
         <form-login login-page="/login" authentication-failure-url="/login?error" default-target-url="/"
                     always-use-default-target="false"/>
         <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
