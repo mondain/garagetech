@@ -25,6 +25,9 @@ public class Post extends BaseEntity implements Comparable<Post> {
     @Column(name = "guid", length = 256, nullable = false, unique = true)
     private String guid;
 
+    @Column(name = "display_name", length = 256)
+    private String displayName;
+
     @Column(name = "summary", nullable = false, columnDefinition = "text")
     private String summary;
 
@@ -105,6 +108,14 @@ public class Post extends BaseEntity implements Comparable<Post> {
 
     public void setGuid(String guid) {
         this.guid = guid;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public String getSummary() {

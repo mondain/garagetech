@@ -1,10 +1,10 @@
 <%@ include file="/WEB-INF/views/partials/taglibs.jsp" %>
 <c:set var="editUrl" value="/post/${post.guid}/edit"/>
+<c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
 <header class="info">
     <hgroup>
         <h1>
-            Carl Sziebert
-            <em>(${post.author.username})</em>
+            ${name}
             <span class="group">
                 <a href="${editUrl}">Edit</a>
                 <a href="">Add your review</a>
@@ -19,8 +19,8 @@
                 <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
                 <img src="${ctx}/img/rate_off_16x16.png" alt="rating" border="0"/>
             </span>
-            <span>408-555-1212</span>
-            <span>Some Location, CA</span>
+            <span>${post.phone}</span>
+            <span>${post.location}</span>
         </h2>
     </hgroup>
 </header>
@@ -31,7 +31,7 @@
             <div class="feature">
                 <div class="feature-img">
                     <a href="">
-                        <img alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
+                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
                     </a>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <div class="feature">
                 <div class="feature-img">
                     <a href="">
-                        <img alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
+                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
                     </a>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="feature">
                 <div class="feature-img">
                     <a href="">
-                        <img alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
+                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
                     </a>
                 </div>
             </div>
@@ -58,7 +58,7 @@
             <div class="feature">
                 <div class="feature-img">
                     <a href="">
-                        <img alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
+                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
                     </a>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div class="feature">
                 <div class="feature-img">
                     <a href="">
-                        <img alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
+                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
                     </a>
                 </div>
             </div>
@@ -125,7 +125,7 @@
                 </header>
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
             </article>
-            <p>Have you seen Carl Sziebert recently? <a href="">Add your review now!</a></p>
+            <p>Have you seen ${name} recently? <a href="">Add your review now!</a></p>
         </section>
     </div>
     <div class="meta">

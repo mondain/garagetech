@@ -488,7 +488,7 @@ div.page-actions {
 
 .datagrid tr:hover,
 .datagrid tr.alt:hover {
-    background: #eee;
+    background: #dedede;
 }
 
 .datagrid tr:hover .actions {
@@ -518,6 +518,14 @@ div.page-actions {
     font-weight: bold;
 }
 
+.datagrid td img.profile {
+    background: #fff;
+    border: 1px solid #9f9f9f;
+    float: left;
+    margin-right: 8px;
+    padding: 2px;
+}
+
 .datagrid td div.actions a {
     color: #00f;
     font-weight: normal;
@@ -527,6 +535,80 @@ a.delete,
 .datagrid td div.actions a.delete,
 .datagrid td div.actions a.delete:visited {
     color: #f00;
+}
+
+/* tags */
+
+.wufoo .tags {
+    margin-top: 12px;
+}
+
+.tags li, .tags a {
+    float: left;
+    font-size: .9em;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+}
+
+.tags li {
+    clear: none;
+    margin: 0 0 8px 0;
+    padding: 0;
+    position: static;
+    width: auto;
+}
+
+.tags a {
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    background: #9f9f9f;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #fff;
+    margin-left: 20px;
+    padding: 0 10px 0 12px;
+    text-decoration: none;
+}
+
+.tags a:before {
+    border-color: transparent #9f9f9f transparent transparent;
+    border-style: solid;
+    border-width: 12px 12px 12px 0;
+    content: "";
+    float: left;
+    height: 0;
+    left: -12px;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+
+.tags a:after {
+    -moz-border-radius: 2px;
+    -moz-box-shadow: -1px -1px 2px #444;
+    -webkit-border-radius: 2px;
+    -webkit-box-shadow: -1px -1px 2px #444;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: -1px -1px 2px #444;
+    content: "";
+    float: left;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 4px;
+}
+
+.tags a:hover {
+    background: #555;
+}
+
+.tags a:hover:before {
+    border-color: transparent #555 transparent transparent;
 }
 
 /* clearfix */

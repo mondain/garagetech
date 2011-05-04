@@ -1,4 +1,4 @@
-(function($) {
+(function($, undefined) {
 
     function limitMaxLength($formElem, $countElem) {
         $formElem.limitMaxLength({

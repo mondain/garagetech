@@ -22,32 +22,40 @@
     <form:hidden path="type"/>
     <ul>
         <form:errors path="*" cssClass="error" element="li"/>
-        <li>
-            <form:label path="summary" cssClass="desc">Teaser <span class="req">*</span></form:label>
+        <li class="leftHalf">
+            <form:label path="displayName" cssClass="desc">Display Name</form:label>
             <div>
-                <form:textarea path="summary" id="summary" cssClass="field textarea" maxlength="200" tabindex="1"/>
-                <form:label id="summaryCounter" path="summary">&nbsp;</form:label>
+                <form:input path="displayName" id="displayName" cssClass="field text medium" maxlength="255" tabindex="1"/>
+                <form:label path="displayName">If provided, this will display instead of your username within the ad.</form:label>
             </div>
         </li>
-        <li>
-            <form:label path="content" cssClass="desc">Content <span class="req">*</span></form:label>
-            <div>
-                <form:textarea path="content" id="content" cssClass="field textarea large" maxlength="2000" tabindex="2"/>
-                <form:label id="contentCounter" path="content">&nbsp;</form:label>
-            </div>
-        </li>
+        <li class="rightHalf"></li>
         <li class="leftHalf">
             <form:label path="phone" cssClass="desc">Phone Number <span class="req">*</span></form:label>
             <div>
-                <form:input path="phone" id="phone" cssClass="field text medium" maxlength="32" tabindex="3" />
+                <form:input path="phone" id="phone" cssClass="field text medium" maxlength="32" tabindex="4"/>
                 <form:label path="phone">(###) ###-####</form:label>
             </div>
         </li>
         <li class="rightHalf">
             <form:label path="location" cssClass="desc">Location <span class="req">*</span></form:label>
             <div>
-                <form:input path="location" id="location" cssClass="field text medium" maxlength="32" tabindex="4" />
+                <form:input path="location" id="location" cssClass="field text medium" maxlength="32" tabindex="5"/>
                 <form:label path="location">Example: Some Location, CA or 95129</form:label>
+            </div>
+        </li>
+        <li>
+            <form:label path="summary" cssClass="desc">Teaser <span class="req">*</span></form:label>
+            <div>
+                <form:textarea path="summary" id="summary" cssClass="field textarea" maxlength="200" tabindex="2"/>
+                <form:label id="summaryCounter" path="summary">&nbsp;</form:label>
+            </div>
+        </li>
+        <li>
+            <form:label path="content" cssClass="desc">Content <span class="req">*</span></form:label>
+            <div>
+                <form:textarea path="content" id="content" cssClass="field textarea large" maxlength="2000" tabindex="3"/>
+                <form:label id="contentCounter" path="content">&nbsp;</form:label>
             </div>
         </li>
         <li class="leftHalf complex">
@@ -77,17 +85,30 @@
         <li class="rightHalf">
             <form:label path="tagInput" cssClass="desc">Tags</form:label>
             <div>
-                <form:input path="tagInput" id="tagInput" cssClass="field text medium" maxlength="32" tabindex="5" />
-                <form:label path="tagInput">Keyword or label that categorizes your ad with other, similar ads. Max of 10 tags.</form:label>
+                <form:input path="tagInput" id="tagInput" cssClass="field text medium" maxlength="32" tabindex="6" />
+                <form:label path="tagInput">Keywords or labels that categorize your ad with other, similar ads. Max of 10 tags.</form:label>
+            </div>
+            <div>
+                <ul class="tags">
+                    <li><a href="#">Blonde</a></li>
+                    <li><a href="#">Tall</a></li>
+                    <li><a href="#">Hot</a></li>
+                    <li><a href="#">Blonde</a></li>
+                    <li><a href="#">Tall</a></li>
+                    <li><a href="#">Hot</a></li>
+                    <li><a href="#">Blonde</a></li>
+                    <li><a href="#">Tall</a></li>
+                    <li><a href="#">Hot</a></li>
+                </ul>
             </div>
         </li>
         <li class="buttons">
             <c:choose>
                 <c:when test="${isEdit}">
-                    <input id="saveBtn" class="btTxt" type="submit" tabindex="6" value="Update"/>
+                    <input id="saveBtn" class="btTxt" type="submit" tabindex="7" value="Update"/>
                 </c:when>
                 <c:otherwise>
-                    <input id="saveBtn" class="btTxt" type="submit" tabindex="6" value="Create"/>
+                    <input id="saveBtn" class="btTxt" type="submit" tabindex="7" value="Create"/>
                 </c:otherwise>
             </c:choose>
             <a href="${cancelUrl}">Or, cancel and return to the list of posts.</a>

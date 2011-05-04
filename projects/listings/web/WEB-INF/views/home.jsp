@@ -23,13 +23,14 @@
         </header>
         <c:forEach var="post" items="${featured}" varStatus="status">
             <c:set var="postUrl" value="/post/${post.guid}"/>
+            <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
             <article class="group">
                 <div class="feature">
                     <div class="feature-img">
                         <a href="${postUrl}">
-                            <img alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
+                            <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
                             <span>
-                                <strong>Carl Sziebert</strong>
+                                <strong>${name}</strong>
                                 <strong class="rating">
                                     <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
                                     <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
@@ -37,7 +38,7 @@
                                     <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
                                     <img src="${ctx}/img/rate_off_16x16_white.png" alt="rating" border="0"/>
                                 </strong>
-                                <em>408-555-1212<br/>Some Location, CA</em>
+                                <em>${post.phone}<br/>Some Location, CA</em>
                             </span>
                         </a>
                     </div>
@@ -58,14 +59,15 @@
             <c:when test="${not empty posts}">
                 <c:forEach var="post" items="${posts}" varStatus="status">
                     <c:set var="postUrl" value="/post/${post.guid}"/>
+                    <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
                     <article class="group">
                         <a href="${postUrl}">
-                            <img alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="75" height="75" border="0"/>
+                            <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="75" height="75" border="0"/>
                         </a>
                         <section class="group">
                             <header>
                                 <hgroup>
-                                    <h1>${post.author.username} <strong>Carl Sziebert</strong>
+                                    <h1>${post.author.username} <strong>${name}</strong>
                                         <span class="rating">
                                             <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
                                             <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
@@ -78,7 +80,7 @@
                                     <h2><a href="${postUrl}">${post.summary}</a></h2>
                                 </hgroup>
                             </header>
-                            <p><a href="${postUrl}">Call me at 408-555-1212. I'm available anytime. Some screening may be required.</a></p>
+                            <p><a href="${postUrl}">Call me at ${post.phone}. I'm available anytime. Some screening may be required.</a></p>
                             <footer>
                                 posted <time datetime="<joda:format value="${post.created}" style="MS"/>" pubdate><joda:format value="${post.created}" style="MS"/></time> &#8226; in services &#8226; near Some Location, CA
                             </footer>

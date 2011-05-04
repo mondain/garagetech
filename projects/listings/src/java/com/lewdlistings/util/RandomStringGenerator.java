@@ -4,7 +4,7 @@ import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
 
 public final class RandomStringGenerator {
 
-    public static final int MIN_LENGTH = 8;
+    public static final int MIN_LENGTH = 12;
     protected static java.util.Random random = new java.util.Random();
 
     /*
