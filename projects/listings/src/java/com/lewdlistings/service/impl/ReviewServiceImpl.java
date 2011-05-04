@@ -1,5 +1,6 @@
 package com.lewdlistings.service.impl;
 
+import com.lewdlistings.entity.Post;
 import com.lewdlistings.entity.Review;
 import com.lewdlistings.repository.ReviewRepository;
 import com.lewdlistings.service.ReviewService;
@@ -25,8 +26,31 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Transactional(readOnly = true)
+    public Review findByGuid(String guid) {
+        logger.debug("Finding review by guid: {}", guid);
+        return reviewRepos.findByGuid(guid);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Review> listForPost(Post post, int start, int limit) {
+        logger.debug("Listing reviews for post: {}", post.getGuid());
+        return reviewRepos.listForPost(post, start, limit);
+    }
+
+    @Transactional(readOnly = true)
     public List<Review> listRecent(int start, int limit) {
         logger.debug("Listing recent reviews");
         return reviewRepos.listRecent(start, limit);
+    }
+
+    public void persist(Review review) {
+        logger.debug("Saving review changes");
+        reviewRepos.saveOrUpdate(review);
+    }
+
+    @Transactional(readOnly = true)
+    public Review read(Long reviewId) {
+        logger.debug("Finding review by id: {}", reviewId);
+        return reviewRepos.read(reviewId);
     }
 }

@@ -41,7 +41,7 @@
         <security:authorize ifAnyGranted="ROLE_USER">
             <c:if test="${uri == '/account' || uri == '/posts'}">
                 <li><a href="${accountUrl}">Dashboard</a></li>
-                <li><a href="${postsUrl}">Posts</a></li>
+                <li><a href="${postsUrl}">My Ads</a></li>
             </c:if>
         </security:authorize>
         <li>&nbsp;</li>

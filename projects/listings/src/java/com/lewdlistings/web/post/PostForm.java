@@ -19,8 +19,6 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     private static final long serialVersionUID = 1329081043883208387L;
 
-    private Long postId;
-
     private String guid;
     private String displayName;
 
@@ -69,14 +67,6 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         }
         form.setAttributes(attributes);
         return form;
-    }
-
-    public Long getPostId() {
-        return postId;
-    }
-
-    public void setPostId(Long postId) {
-        this.postId = postId;
     }
 
     public String getGuid() {
@@ -162,7 +152,6 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     @Override
     public void consume(Post post) {
-        setPostId(post.getId());
         setSummary(post.getSummary());
         setContent(post.getContent());
         setType(post.getType());
@@ -176,7 +165,6 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     @Override
     public void produce(Post post) {
-        post.setId(getPostId());
         post.setSummary(getSummary());
         post.setContent(getContent());
         post.setType(getType());

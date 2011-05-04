@@ -1,42 +1,50 @@
 package com.lewdlistings.web.review;
 
-import com.lewdlistings.entity.Post;
 import com.lewdlistings.entity.Review;
 import com.lewdlistings.io.Consumer;
 import com.lewdlistings.io.Producer;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 public class ReviewForm implements Consumer<Review>, Producer<Review>, Serializable {
 
     private static final long serialVersionUID = 687670214894351278L;
 
-    private Long reviewId;
-    private Post post;
-    private double rating;
+    private String guid;
+
+    @NotNull
+    private String postGuid;
+
+    @NotNull
+    private Double rating;
+
+    @NotNull
+    @Size(min = 1, max = 2000, message = "error.content.min.max")
     private String content;
 
-    public Long getReviewId() {
-        return reviewId;
+    public String getGuid() {
+        return guid;
     }
 
-    public void setReviewId(Long reviewId) {
-        this.reviewId = reviewId;
+    public void setGuid(String guid) {
+        this.guid = guid;
     }
 
-    public Post getPost() {
-        return post;
+    public String getPostGuid() {
+        return postGuid;
     }
 
-    public void setPost(Post post) {
-        this.post = post;
+    public void setPostGuid(String postGuid) {
+        this.postGuid = postGuid;
     }
 
-    public double getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 
@@ -50,16 +58,14 @@ public class ReviewForm implements Consumer<Review>, Producer<Review>, Serializa
 
     @Override
     public void consume(Review review) {
-        setReviewId(review.getId());
-        setPost(review.getPost());
+        setGuid(review.getGuid());
         setRating(review.getRating());
         setContent(review.getContent());
     }
 
     @Override
     public void produce(Review review) {
-        review.setId(getReviewId());
-        review.setPost(getPost());
+        review.setGuid(getGuid());
         review.setRating(getRating());
         review.setContent(getContent());
     }

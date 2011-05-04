@@ -1,12 +1,12 @@
 <%@ include file="/WEB-INF/views/partials/taglibs.jsp" %>
-<c:url var="newAdUrl" value="/post/new"/>
+<c:url var="newAdUrl" value="/ad/new"/>
 <head>
-    <title>My posts</title>
+    <title>My ads</title>
 </head>
 <header class="info">
     <hgroup>
-        <h1>My posts</h1>
-        <h2>List of posts created by the current user</h2>
+        <h1>My ads</h1>
+        <h2>List of ads created by the current user</h2>
     </hgroup>
 </header>
 <%@ include file="/WEB-INF/views/partials/messages.jsp" %>
@@ -35,10 +35,10 @@
                             <c:set var="altClass" value=""/>
                         </c:otherwise>
                     </c:choose>
-                    <c:url var="bumpUrl" value="/post/${post.guid}/bmp"/>
-                    <c:url var="deleteUrl" value="/post/${post.guid}/delete"/>
-                    <c:url var="editUrl" value="/post/${post.guid}/edit"/>
-                    <c:url var="postUrl" value="/post/${post.guid}"/>
+                    <c:url var="bumpUrl" value="/ad/${post.guid}/bmp"/>
+                    <c:url var="deleteUrl" value="/ad/${post.guid}/delete"/>
+                    <c:url var="editUrl" value="/ad/${post.guid}/edit"/>
+                    <c:url var="postUrl" value="/ad/${post.guid}"/>
                     <tr class="${altClass}">
                         <th class="checkbox" scope="row"><input type="checkbox" value="${post.guid}"/></th>
                         <td class="name">

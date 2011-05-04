@@ -22,7 +22,7 @@
             </hgroup>
         </header>
         <c:forEach var="post" items="${featured}" varStatus="status">
-            <c:set var="postUrl" value="/post/${post.guid}"/>
+            <c:set var="postUrl" value="/ad/${post.guid}"/>
             <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
             <article class="group">
                 <div class="feature">
@@ -38,7 +38,7 @@
                                     <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
                                     <img src="${ctx}/img/rate_off_16x16_white.png" alt="rating" border="0"/>
                                 </strong>
-                                <em>${post.phone}<br/>Some Location, CA</em>
+                                <em>${post.phone}<br/>${post.location}</em>
                             </span>
                         </a>
                     </div>
@@ -58,7 +58,7 @@
         <c:choose>
             <c:when test="${not empty posts}">
                 <c:forEach var="post" items="${posts}" varStatus="status">
-                    <c:set var="postUrl" value="/post/${post.guid}"/>
+                    <c:set var="postUrl" value="/ad/${post.guid}"/>
                     <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
                     <article class="group">
                         <a href="${postUrl}">
@@ -67,7 +67,7 @@
                         <section class="group">
                             <header>
                                 <hgroup>
-                                    <h1>${post.author.username} <strong>${name}</strong>
+                                    <h1><strong>${name}</strong>
                                         <span class="rating">
                                             <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
                                             <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
@@ -82,7 +82,7 @@
                             </header>
                             <p><a href="${postUrl}">Call me at ${post.phone}. I'm available anytime. Some screening may be required.</a></p>
                             <footer>
-                                posted <time datetime="<joda:format value="${post.created}" style="MS"/>" pubdate><joda:format value="${post.created}" style="MS"/></time> &#8226; in services &#8226; near Some Location, CA
+                                posted by ${name} &#8226; <time datetime="<joda:format value="${post.created}" style="MS"/>" pubdate><joda:format value="${post.created}" style="MS"/></time> &#8226; near ${post.location}
                             </footer>
                         </section>
                     </article>
