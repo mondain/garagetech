@@ -17,7 +17,7 @@ import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode
 @Entity
 @Table(name = "reviews")
 @AttributeOverride(name = "id", column = @Column(name = "review_id"))
-public class Review extends BaseEntity {
+public class Review extends BaseEntity implements Comparable<Review> {
 
     @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
@@ -28,6 +28,9 @@ public class Review extends BaseEntity {
     @JoinColumn(name = "post_id", nullable = false)
     @ForeignKey(name = "fk_review_post_id")
     private Post post;
+
+    @Column(name = "guid", length = 256, nullable = false, unique = true)
+    private String guid;
 
     @Column(name = "rating", nullable = false)
     private double rating;
@@ -52,6 +55,14 @@ public class Review extends BaseEntity {
 
     public void setPost(Post post) {
         this.post = post;
+    }
+
+    public String getGuid() {
+        return guid;
+    }
+
+    public void setGuid(String guid) {
+        this.guid = guid;
     }
 
     public double getRating() {

@@ -1,13 +1,16 @@
 <%@ include file="/WEB-INF/views/partials/taglibs.jsp" %>
-<c:set var="editUrl" value="/post/${post.guid}/edit"/>
+<c:url var="editUrl" value="/ad/${post.guid}/edit"/>
+<c:url var="newReviewUrl" value="/review/new?post=${post.guid}"/>
+<c:url var="reviewsUrl" value="/ad/${post.guid}/reviews"/>
 <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
+<%@ include file="/WEB-INF/views/partials/messages.jsp" %>
 <header class="info">
     <hgroup>
         <h1>
             ${name}
             <span class="group">
                 <a href="${editUrl}">Edit</a>
-                <a href="">Add your review</a>
+                <a href="${newReviewUrl}">Add your review</a>
                 <a class="delete" href="">Report</a>
             </span>
         </h1>
@@ -78,7 +81,7 @@
         <p>I'm available anytime. Some screening may be required.</p>
         <section class="reviews group">
             <header>
-                <h1>Selected Reviews</h1>
+                <h1>Selected Reviews | <a href="${reviewsUrl}">Read all reviews</a></h1>
             </header>
             <article class="review">
                 <header>
@@ -125,7 +128,7 @@
                 </header>
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
             </article>
-            <p>Have you seen ${name} recently? <a href="">Add your review now!</a></p>
+            <p>Have you seen ${name} recently? <a href="${newReviewUrl}">Add your review now!</a></p>
         </section>
     </div>
     <div class="meta">
@@ -146,13 +149,22 @@
             <header>
                 <h1>Tags</h1>
             </header>
-            <ul>
+            <ul class="tag-list">
                 <li><a href=""><em>53</em> Blonde</a> <span style="width: 63%">&nbsp;</span></li>
                 <li><a href=""><em>46</em> Tall</a> <span style="width: 47%">&nbsp;</span></li>
                 <li><a href=""><em>31</em> Skinny</a> <span style="width: 31%">&nbsp;</span></li>
                 <li><a href=""><em>14</em> Hot</a> <span style="width: 14%">&nbsp;</span></li>
             </ul>
             <p><a href="">Add your tags too!</a></p>
+        </section>
+        <section class="group">
+            <header>
+                <h1>Links</h1>
+            </header>
+            <ul class="links">
+                <li><a href="">Twitter</a></li>
+                <li><a href="">Facebook</a></li>
+            </ul>
         </section>
     </div>
 </section>

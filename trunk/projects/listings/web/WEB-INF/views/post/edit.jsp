@@ -1,23 +1,25 @@
 <%@ include file="/WEB-INF/views/partials/taglibs.jsp" %>
-<c:url var="cancelUrl" value="/posts"/>
+<c:url var="cancelUrl" value="/ads"/>
+<c:choose>
+    <c:when test="${isEdit}">
+        <c:set var="title" value="Update my ${fn:toLowerCase(editPostForm.type)} ad"/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="title" value="Create a new ${fn:toLowerCase(editPostForm.type)} ad"/>
+    </c:otherwise>
+</c:choose>
 <head>
-    <title>${label}</title>
+    <title>${title}</title>
     <script type="text/javascript" src="${ctx}/js/wufoo.js"></script>
     <script type="text/javascript" src="${ctx}/js/jquery.limitMaxLength.js"></script>
     <script type="text/javascript" src="${ctx}/js/ICanHaz.min.js"></script>
     <script type="text/javascript" src="${ctx}/js/post/edit.js"></script>
 </head>
 <header class="info">
-    <h1>
-        <c:choose>
-            <c:when test="${isEdit}">Update my ${fn:toLowerCase(editPostForm.type)} ad</c:when>
-            <c:otherwise>Create a new ${fn:toLowerCase(editPostForm.type)} ad</c:otherwise>
-        </c:choose>
-    </h1>
-    <h2>No hassle postings.</h2>
+    <h1>${title}</h1>
+    <h2>No hassle classifieds</h2>
 </header>
 <form:form modelAttribute="editPostForm" cssClass="wufoo topLabel group">
-    <form:hidden path="postId"/>
     <form:hidden path="guid"/>
     <form:hidden path="type"/>
     <ul>
@@ -26,7 +28,7 @@
             <form:label path="displayName" cssClass="desc">Display Name</form:label>
             <div>
                 <form:input path="displayName" id="displayName" cssClass="field text medium" maxlength="255" tabindex="1"/>
-                <form:label path="displayName">If provided, this will display instead of your username within the ad.</form:label>
+                <form:label path="displayName">If provided, this will display instead of your username within the ad</form:label>
             </div>
         </li>
         <li class="rightHalf"></li>
@@ -111,7 +113,7 @@
                     <input id="saveBtn" class="btTxt" type="submit" tabindex="7" value="Create"/>
                 </c:otherwise>
             </c:choose>
-            <a href="${cancelUrl}">Or, cancel and return to the list of posts.</a>
+            <a href="${cancelUrl}">Or, cancel and return to the list of your ads.</a>
         </li>
     </ul>
 </form:form>

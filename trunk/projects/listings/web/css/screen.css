@@ -95,6 +95,20 @@ label.error {
     color: #f00;
 }
 
+/* common page structure */
+
+div.content {
+    float: left;
+    margin-right: 20px;
+    width: 680px;
+}
+
+div.meta {
+    float: left;
+    margin-top: 3px;
+    width: 260px;
+}
+
 /* featured posts */
 
 section.featured {
@@ -217,7 +231,7 @@ section.posts article header h1 {
 
 section.posts article header h1 strong {
     color: #000;
-    margin: 0 24px;
+    margin: 0 24px 0 0;
 }
 
 section.posts article header h1 em {
@@ -298,6 +312,7 @@ section.posts article p {
     padding-bottom: 8px;
 }
 
+
 /* profiles */
 
 section.profile h1 {
@@ -316,18 +331,6 @@ section.profile section {
 
 section.profile section.featured {
     margin-bottom: 24px;
-}
-
-div.content {
-    float: left;
-    margin-right: 20px;
-    width: 680px;
-}
-
-div.meta {
-    float: left;
-    margin-top: 3px;
-    width: 260px;
 }
 
 section.profile div.meta dd,
@@ -401,12 +404,17 @@ section.profile ul li:hover span {
     background: #ccc;
 }
 
+section.profile section.reviews h1 {
+    margin-bottom: 18px;
+}
+
 section.profile article.review h1 {
     margin-bottom: 6px;
 }
 
 section.profile article.review p {
     color: #555;
+    margin-bottom: 18px;
 }
 
 section.profile article.review .rating {
@@ -421,6 +429,12 @@ section.profile article.review .rating img {
     padding: 0;
     position: relative;
     top: 3px;
+}
+
+section.profile ul.links li a {
+    color: #0000ff;
+    margin: 6px 0;
+    padding: 0;
 }
 
 /* form extensions */
@@ -470,7 +484,7 @@ div.page-actions {
 }
 
 .datagrid th.checkbox {
-    padding: 6px 0 8px 8px;
+    padding: 5px 0 6px 8px;
     width: 2.2em;
 }
 

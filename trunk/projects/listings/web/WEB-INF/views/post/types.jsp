@@ -1,9 +1,9 @@
 <%@ include file="/WEB-INF/views/partials/taglibs.jsp" %>
-<c:url var="adHocUrl" value="/post/new/ad_hoc"/>
-<c:url var="basicUrl" value="/post/new/basic"/>
-<c:url var="bumpUrl" value="/post/new/bump"/>
-<c:url var="cancelUrl" value="/posts"/>
-<c:url var="featuredUrl" value="/post/new/featured"/>
+<c:url var="adHocUrl" value="/ad/new/ad_hoc"/>
+<c:url var="basicUrl" value="/ad/new/basic"/>
+<c:url var="bumpUrl" value="/ad/new/bump"/>
+<c:url var="cancelUrl" value="/ads"/>
+<c:url var="featuredUrl" value="/ad/new/featured"/>
 <header class="info">
     <h1>Type &amp; Pricing</h1>
     <h2>List of posts types and their prices</h2>
