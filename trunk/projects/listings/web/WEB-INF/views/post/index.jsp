@@ -135,7 +135,7 @@
         <c:if test="${not empty post.attributes}">
             <section class="group">
                 <header>
-                    <h1>Attributes</h1>
+                    <h1>Details</h1>
                 </header>
                 <dl>
                     <c:forEach var="attribute" items="${post.attributes}" varStatus="status">

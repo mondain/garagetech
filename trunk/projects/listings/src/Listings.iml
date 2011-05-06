@@ -37,7 +37,6 @@
     <orderEntry type="library" name="Tomcat" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="Classpath" level="project" />
     <orderEntry type="library" name="Tomcat" level="application" />
-    <orderEntry type="library" name="Unnamed" level="application" />
   </component>
 </module>
 
