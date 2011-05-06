@@ -154,6 +154,7 @@ public class PostController {
         binder.registerCustomEditor(PhoneNumber.class, new PhoneNumberPropertyEditor());
         binder.setAllowedFields("postId", "guid", "displayName", "summary", "content", "phone.areaCode",
                 "phone.prefix", "phone.suffix", "location", "type", "tagInput",
-                "attributes[*].name", "attributes[*].stringValue");
+                "attributes[*].name", "attributes[*].stringValue",
+                "links[*].alias", "links[*].url");
     }
 }

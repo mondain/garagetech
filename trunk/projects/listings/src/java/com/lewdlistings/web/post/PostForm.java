@@ -55,6 +55,15 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
                 }
             });
 
+    @SuppressWarnings({"unchecked"})
+    private List<PostLink> links =
+            LazyList.decorate(new ArrayList<PostLink>(), new Factory() {
+                @Override
+                public Object create() {
+                    return new PostLink();
+                }
+            });
+
     public static PostForm defaultForm() {
         PostForm form = new PostForm();
         List<PostAttribute> attributes = form.getAttributes();
@@ -62,6 +71,12 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
             attributes.add(new PostAttribute(attr.name()));
         }
         form.setAttributes(attributes);
+        List<PostLink> links = form.getLinks();
+        links.add(new PostLink("Facebook", null));
+        links.add(new PostLink("Twitter", null));
+        links.add(new PostLink("Lovings", null));
+        links.add(new PostLink("Redbook", null));
+        form.setLinks(links);
         return form;
     }
 
@@ -146,6 +161,14 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         this.attributes = attributes;
     }
 
+    public List<PostLink> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<PostLink> links) {
+        this.links = links;
+    }
+
     @Override
     public void consume(Post post) {
         setSummary(post.getSummary());
@@ -157,6 +180,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         setTags(post.getTags());
         setGuid(post.getGuid());
         setDisplayName(post.getDisplayName());
+        setLinks(post.getLinks());
     }
 
     @Override
@@ -170,5 +194,6 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         post.setTags(getTags());
         post.setGuid(getGuid());
         post.setDisplayName(getDisplayName());
+        post.setLinks(getLinks());
     }
 }

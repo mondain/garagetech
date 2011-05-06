@@ -46,10 +46,11 @@ public class PostAttribute extends Attribute implements Comparable<PostAttribute
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .append(getPost().getId())
-                .append(getName())
-                .toString();
+        ToStringBuilder builder = new ToStringBuilder(this);
+        if (getPost() != null && getPost().getId() != null) {
+            builder.append(getPost().getId());
+        }
+        return builder.append(getName()).toString();
     }
 
     @Override

@@ -27,7 +27,7 @@
         <header>
             <hgroup>
                 <h1><a href="${homeUrl}">Listings</a></h1>
-                <h2>This is a generic listings site and is used to experiment with Spring, Hibernate and jQuery.</h2>
+                <h2>Classifieds for the fun of it</h2>
             </hgroup>
         </header>
         <%@ include file="/WEB-INF/views/partials/nav.jsp" %>

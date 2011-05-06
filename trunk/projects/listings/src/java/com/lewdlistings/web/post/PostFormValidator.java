@@ -1,8 +1,10 @@
 package com.lewdlistings.web.post;
 
 import com.lewdlistings.entity.PostAttribute;
+import com.lewdlistings.entity.PostLink;
 import com.lewdlistings.entity.validator.PhoneNumberValidator;
 import com.lewdlistings.entity.validator.PostAttributeValidator;
+import com.lewdlistings.entity.validator.PostLinkValidator;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -14,10 +16,12 @@ public class PostFormValidator implements Validator {
 
     private final PhoneNumberValidator phoneNumberValidator;
     private final PostAttributeValidator postAttributeValidator;
+    private final PostLinkValidator postLinkValidator;
 
     public PostFormValidator() {
         phoneNumberValidator = new PhoneNumberValidator();
         postAttributeValidator = new PostAttributeValidator();
+        postLinkValidator = new PostLinkValidator();
     }
 
     @Override
@@ -47,6 +51,7 @@ public class PostFormValidator implements Validator {
 
         validatePhone(errors, form);
         validateAttributes(errors, form);
+        validateLinks(errors, form);
     }
 
     private void validatePhone(Errors errors, PostForm form) {
@@ -64,6 +69,18 @@ public class PostFormValidator implements Validator {
             try {
                 errors.pushNestedPath("attributes[" + index++ + "]");
                 ValidationUtils.invokeValidator(postAttributeValidator, attribute, errors);
+            } finally {
+                errors.popNestedPath();
+            }
+        }
+    }
+
+    private void validateLinks(Errors errors, PostForm form) {
+        int index = 0;
+        for (PostLink link : form.getLinks()) {
+            try {
+                errors.pushNestedPath("links[" + index++ + "]");
+                ValidationUtils.invokeValidator(postLinkValidator, link, errors);
             } finally {
                 errors.popNestedPath();
             }
