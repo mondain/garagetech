@@ -157,14 +157,17 @@
             </ul>
             <p><a href="">Add your tags too!</a></p>
         </section>
-        <section class="group">
-            <header>
-                <h1>Links</h1>
-            </header>
-            <ul class="links">
-                <li><a href="">Twitter</a></li>
-                <li><a href="">Facebook</a></li>
-            </ul>
-        </section>
+        <c:if test="${not empty post.links}">
+            <section class="group">
+                <header>
+                    <h1>Links</h1>
+                </header>
+                <ul class="links">
+                    <c:forEach var="link" items="${post.links}" varStatus="status">
+                        <li><a href="${link.url}">${link.alias}</a></li>
+                    </c:forEach>
+                </ul>
+            </section>
+        </c:if>
     </div>
 </section>

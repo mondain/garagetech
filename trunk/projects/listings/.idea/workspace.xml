@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="4df3984d-8de3-4b51-962e-2efd48c48aef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostLink.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostLinkValidator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ivy.xml" afterPath="$PROJECT_DIR$/ivy.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Attribute.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Attribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostAttribute.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostAttribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" afterPath="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/decorators/default.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/decorators/default.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/screen.css" afterPath="$PROJECT_DIR$/web/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/post/edit.js" afterPath="$PROJECT_DIR$/web/js/post/edit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp" />
     </list>
     <ignored path="$USER_HOME$/.griffon/" />
     <ignored path="$USER_HOME$/.grails/" />
@@ -166,13 +153,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostLinkValidator.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PostLinkValidator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostLinkValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="13" selection-start="604" selection-end="604" vertical-scroll-proportion="0.51306415">
+            <state line="18" column="13" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="159" column="42" selection-start="8024" selection-end="8024" vertical-scroll-proportion="0.78503686">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -200,7 +196,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/post/list.jsp" />
         <option value="$PROJECT_DIR$/web/css/form.css" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/decorators/default.jsp" />
         <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Attribute.java" />
@@ -216,6 +211,7 @@
         <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostLink.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp" />
         <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostLinkValidator.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp" />
       </list>
     </option>
   </component>
@@ -1050,7 +1046,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32848838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14385027" sideWeight="0.6618217" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.54457366" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54457366" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39631784" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1123,13 +1119,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostAttributeValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="49" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivy.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="76" selection-start="168" selection-end="168" vertical-scroll-proportion="0.023928216">
@@ -1232,10 +1221,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostLinkValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="604" selection-end="604" vertical-scroll-proportion="0.51306415">
+        <state line="18" column="13" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="42" selection-start="8024" selection-end="8024" vertical-scroll-proportion="0.78503686">
+          <folding />
         </state>
       </provider>
     </entry>
