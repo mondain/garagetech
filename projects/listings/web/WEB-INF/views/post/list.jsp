@@ -52,6 +52,7 @@
                                 <c:if test="${post.status == 'DRAFT'}">
                                     <a href="${bumpUrl}">Publish</a> |
                                 </c:if>
+                                <a href="">Renew</a> |
                                 <a class="delete" href="${deleteUrl}">Trash</a>
                            </div>
                         </td>

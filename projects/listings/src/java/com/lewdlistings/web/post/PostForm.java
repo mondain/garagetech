@@ -1,9 +1,6 @@
 package com.lewdlistings.web.post;
 
-import com.lewdlistings.entity.Post;
-import com.lewdlistings.entity.PostAttribute;
-import com.lewdlistings.entity.PostAttributes;
-import com.lewdlistings.entity.Tag;
+import com.lewdlistings.entity.*;
 import com.lewdlistings.io.Consumer;
 import com.lewdlistings.io.Producer;
 import org.apache.commons.collections.Factory;
@@ -30,8 +27,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
     @Size(min = 1, max = 2000, message = "error.content.min.max")
     private String content;
 
-    @NotNull
-    private String phone;
+    private PhoneNumber phone;
 
     @NotNull
     private String location;
@@ -101,11 +97,11 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         this.content = content;
     }
 
-    public String getPhone() {
+    public PhoneNumber getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(PhoneNumber phone) {
         this.phone = phone;
     }
 

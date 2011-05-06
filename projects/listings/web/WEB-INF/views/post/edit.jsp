@@ -24,50 +24,75 @@
     <form:hidden path="type"/>
     <ul>
         <form:errors path="*" cssClass="error" element="li"/>
-        <li class="leftHalf">
+        <!--li class="section">
+            <section>
+                <h3>The Basics</h3>
+                <div>&nbsp;</div>
+            </section>
+        </li-->
+        <li class="leftThird">
             <form:label path="displayName" cssClass="desc">Display Name</form:label>
             <div>
-                <form:input path="displayName" id="displayName" cssClass="field text medium" maxlength="255" tabindex="1"/>
-                <form:label path="displayName">If provided, this will display instead of your username within the ad</form:label>
+                <form:input path="displayName" id="displayName" cssClass="field text small" maxlength="255" tabindex="1"/>
+                <form:label path="displayName">Displays instead of your username within the ad</form:label>
             </div>
         </li>
-        <li class="rightHalf"></li>
-        <li class="leftHalf">
+        <li class="middleThird">
             <form:label path="phone" cssClass="desc">Phone Number <span class="req">*</span></form:label>
+            <span class="symbol">(</span>
+            <span>
+                <form:input path="phone.areaCode" id="phone.areaCode" cssClass="field text" size="3" maxlength="3" tabindex="2"/>
+                <form:label path="phone.areaCode">###</form:label>
+            </span>
+            <span class="symbol">)</span>
+            <span>
+                <form:input path="phone.prefix" id="phone.prefix" cssClass="field text" size="3" maxlength="3" tabindex="3"/>
+                <form:label path="phone.prefix">###</form:label>
+            </span>
+            <span class="symbol">-</span>
+            <span>
+                <form:input path="phone.suffix" id="phone.suffix" cssClass="field text" size="4" maxlength="4" tabindex="4"/>
+                <form:label path="phone.suffix">####</form:label>
+            </span>
+        </li>
+        <li class="rightThird">
+            <form:label path="location" cssClass="desc">Zip Code <span class="req">*</span></form:label>
             <div>
-                <form:input path="phone" id="phone" cssClass="field text medium" maxlength="32" tabindex="4"/>
-                <form:label path="phone">(###) ###-####</form:label>
+                <form:input path="location" id="location" cssClass="field text" size="5" maxlength="5" tabindex="5"/>
+                <form:label path="location">#####</form:label>
             </div>
         </li>
-        <li class="rightHalf">
-            <form:label path="location" cssClass="desc">Location <span class="req">*</span></form:label>
-            <div>
-                <form:input path="location" id="location" cssClass="field text medium" maxlength="32" tabindex="5"/>
-                <form:label path="location">Example: Some Location, CA or 95129</form:label>
-            </div>
-        </li>
+        <!--li class="section">
+            <section>
+                <h3>Content</h3>
+                <div>&nbsp;</div>
+            </section>
+        </li-->
         <li>
             <form:label path="summary" cssClass="desc">Teaser <span class="req">*</span></form:label>
             <div>
-                <form:textarea path="summary" id="summary" cssClass="field textarea" maxlength="200" tabindex="2"/>
+                <form:textarea path="summary" id="summary" cssClass="field textarea" maxlength="200" tabindex="6"/>
                 <form:label id="summaryCounter" path="summary">&nbsp;</form:label>
             </div>
         </li>
         <li>
             <form:label path="content" cssClass="desc">Content <span class="req">*</span></form:label>
             <div>
-                <form:textarea path="content" id="content" cssClass="field textarea large" maxlength="2000" tabindex="3"/>
+                <form:textarea path="content" id="content" cssClass="field textarea large" maxlength="2000" tabindex="7"/>
                 <form:label id="contentCounter" path="content">&nbsp;</form:label>
             </div>
         </li>
-        <li class="leftHalf complex">
-            <form:label path="phone" cssClass="desc">Attributes <a id="newAttribute" href="#">New attribute</a></form:label>
+        <!--li class="section">
+            <section>
+                <h3>Details, Links & Tags</h3>
+                <div>&nbsp;</div>
+            </section>
+        </li-->
+        <li class="leftThird complex">
+            <form:label path="phone" cssClass="desc">Details | <a id="newAttribute" href="#">Add details</a></form:label>
             <div id="attributeEditor">
             <c:forEach var="attribute" items="${editPostForm.attributes}" varStatus="status">
                 <div class="editor-row">
-                    <span class="delete">
-                        <a class="ui-icon ui-icon-trash" href="#"></a>
-                    </span>
                     <spring:bind path="editPostForm.attributes[${status.index}].name">
                     <span class="left">
                         <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
@@ -75,19 +100,22 @@
                     </span>
                     </spring:bind>
                     <spring:bind path="editPostForm.attributes[${status.index}].stringValue">
-                    <span class="right">
+                    <span class="middle">
                         <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
                         <label for="<c:out value="${status.expression}"/>">Value</label>
                     </span>
                     </spring:bind>
+                    <span class="delete">
+                        <a class="ui-icon ui-icon-trash" href="#"></a>
+                    </span>
                 </div>
             </c:forEach>
             </div>
         </li>
-        <li class="rightHalf">
+        <li class="middleThird">
             <form:label path="tagInput" cssClass="desc">Tags</form:label>
             <div>
-                <form:input path="tagInput" id="tagInput" cssClass="field text medium" maxlength="32" tabindex="6" />
+                <form:input path="tagInput" id="tagInput" cssClass="field text medium" maxlength="32" tabindex="8" />
                 <form:label path="tagInput">Keywords or labels that categorize your ad with other, similar ads. Max of 10 tags.</form:label>
             </div>
             <div>
@@ -104,13 +132,16 @@
                 </ul>
             </div>
         </li>
+        <li class="rightThird">
+            
+        </li>
         <li class="buttons">
             <c:choose>
                 <c:when test="${isEdit}">
-                    <input id="saveBtn" class="btTxt" type="submit" tabindex="7" value="Update"/>
+                    <input id="saveBtn" class="btTxt" type="submit" tabindex="9" value="Update"/>
                 </c:when>
                 <c:otherwise>
-                    <input id="saveBtn" class="btTxt" type="submit" tabindex="7" value="Create"/>
+                    <input id="saveBtn" class="btTxt" type="submit" tabindex="9" value="Create"/>
                 </c:otherwise>
             </c:choose>
             <a href="${cancelUrl}">Or, cancel and return to the list of your ads.</a>

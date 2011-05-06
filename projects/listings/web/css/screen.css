@@ -342,12 +342,13 @@ section.profile div.meta dt {
 section.profile div.meta dt {
     clear: both;
     margin: 0 16px 8px 0;
-    text-align: right;
+    text-align: left;
     width: 50px;
 }
 
 section.profile div.meta dd {
     color: #555;
+    font-weight: bold;
 }
 
 section.profile div.meta p {
@@ -443,10 +444,44 @@ div.editor-row {
     position: relative;
 }
 
+form li.complex div.editor-row span.left,
+form li.complex div.editor-row span.middle {
+    width: 43% !important;
+}
+
+form li.complex div.editor-row span.middle {
+    clear: none !important;
+    float: left;
+    margin-left: 5% !important;
+}
+
 div.editor-row span.delete {
-    left: -24px;
-    position: absolute;
-    top: 2px;
+    clear: none !important;
+    float: right;
+    position: relative;
+    top: 1px;
+    width: 16px;
+}
+
+form li.leftThird, form li.middleThird, form li.rightThird {
+    width: 30% !important;
+}
+
+form li.leftHalf, form li.leftThird {
+    clear: left !important;
+    float: left;
+}
+
+form li.middleThird {
+    clear: none !important;
+    float: left;
+    width: 30% !important;
+    margin-left: 2% !important;
+}
+
+form li.rightHalf, form li.rightThird {
+    clear: none !important;
+    float: right;
 }
 
 /* datagrid */

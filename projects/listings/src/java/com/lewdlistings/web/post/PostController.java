@@ -1,5 +1,6 @@
 package com.lewdlistings.web.post;
 
+import com.lewdlistings.entity.PhoneNumber;
 import com.lewdlistings.entity.Post;
 import com.lewdlistings.entity.Review;
 import com.lewdlistings.entity.User;
@@ -8,6 +9,7 @@ import com.lewdlistings.service.PostService;
 import com.lewdlistings.service.ReviewService;
 import com.lewdlistings.util.RandomStringGenerator;
 import com.lewdlistings.web.propertyeditor.EnumPropertyEditor;
+import com.lewdlistings.web.propertyeditor.PhoneNumberPropertyEditor;
 import com.lewdlistings.web.util.UserThreadLocal;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
@@ -22,7 +24,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
 import java.util.List;
 
 import static org.apache.commons.lang.StringUtils.isNotBlank;
@@ -113,8 +114,9 @@ public class PostController {
     }
 
     @RequestMapping(method = POST)
-    public String persist(@ModelAttribute("editPostForm") @Valid PostForm form, BindingResult result, Model model) {
+    public String persist(@ModelAttribute("editPostForm") PostForm form, BindingResult result, Model model) {
         logger.debug("Saving post changes");
+        new PostFormValidator().validate(form, result);
         if (!result.hasErrors()) {
             Post post = isNotBlank(form.getGuid()) ? postService.findByGuid(form.getGuid()) : new Post();
             form.produce(post);
@@ -149,7 +151,9 @@ public class PostController {
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Post.Type.class, new EnumPropertyEditor(Post.Type.class));
-        binder.setAllowedFields("postId", "guid", "displayName", "summary", "content", "phone", "location", "type",
-                "tagInput", "attributes[*].name", "attributes[*].stringValue");
+        binder.registerCustomEditor(PhoneNumber.class, new PhoneNumberPropertyEditor());
+        binder.setAllowedFields("postId", "guid", "displayName", "summary", "content", "phone.areaCode",
+                "phone.prefix", "phone.suffix", "location", "type", "tagInput",
+                "attributes[*].name", "attributes[*].stringValue");
     }
 }

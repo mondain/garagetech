@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
-
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -41,8 +39,9 @@ public class JoinController {
     }
 
     @RequestMapping(method = POST)
-    public String persist(@ModelAttribute("joinForm") @Valid JoinForm form, BindingResult result) {
+    public String persist(@ModelAttribute("joinForm") JoinForm form, BindingResult result) {
         logger.debug("Processing join form.");
+        new JoinFormValidator().validate(form, result);
         if (!result.hasErrors()) {
             User user = new User(
                     form.getUsername(),

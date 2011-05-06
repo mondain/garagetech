@@ -5,7 +5,7 @@
 <c:url var="joinUrl" value="/join"/>
 <c:url var="loginUrl" value="/login"/>
 <c:url var="logoutUrl" value="/logout"/>
-<c:url var="postsUrl" value="/posts"/>
+<c:url var="postsUrl" value="/ads"/>
 <c:url var="reviewsUrl" value="/reviews"/>
 <c:set var="uri" value="${pageContext.request.requestURI}"/>
 <nav class="group">

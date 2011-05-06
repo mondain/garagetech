@@ -35,7 +35,8 @@ public class Post extends BaseEntity implements Comparable<Post> {
     private String content;
 
     @Column(name = "phone", length = 16)
-    private String phone;
+    @org.hibernate.annotations.Type(type = "phone")
+    private PhoneNumber phone;
 
     @Column(name = "location", length = 200)
     private String location;
@@ -134,11 +135,11 @@ public class Post extends BaseEntity implements Comparable<Post> {
         this.content = content;
     }
 
-    public String getPhone() {
+    public PhoneNumber getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(PhoneNumber phone) {
         this.phone = phone;
     }
 
