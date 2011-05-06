@@ -15,7 +15,7 @@ public class Attribute implements Serializable {
     private String name;
 
     @Column(name = "value", nullable = true, columnDefinition = "longtext")
-    @Type(type = "com.lewdlistings.repository.usertype.JsonUserType")
+    @Type(type = "json")
     private JSONObject value;
 
     public String getName() {

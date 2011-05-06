@@ -82,6 +82,14 @@ public class Post extends BaseEntity implements Comparable<Post> {
     @OrderBy("name")
     private List<Tag> tags;
 
+    @ElementCollection
+    @CollectionTable(
+            name = "post_links",
+            joinColumns = @JoinColumn(name = "post_id")
+    )
+    @OrderBy("alias")
+    private List<PostLink> links;
+
     public enum Status {
         ACTIVE, ARCHIVED, DRAFT, FLAGGED, SUSPENDED
     }
@@ -213,6 +221,14 @@ public class Post extends BaseEntity implements Comparable<Post> {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public List<PostLink> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<PostLink> links) {
+        this.links = links;
     }
 
     @Override

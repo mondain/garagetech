@@ -26,14 +26,14 @@
             e.preventDefault();
             newAttribute();
         });
-        $(".editor-row span.delete a", ".complex").live("click", function(e) {
+        $("#attributeEditor .editor-row span.delete a", ".complex").live("click", function(e) {
             e.preventDefault();
             deleteAttribute($(this));
         });
     }
 
     function newAttribute() {
-        var next = updateIndices();
+        var next = updateAttributeIndices();
         $("#attributeEditor").append(ich.newAttributeTmpl({ idx: next }));
         // The backslashes are key to making the selector work here
         $("#attributes\\[" + next + "\\]\\.name").focus();
@@ -44,12 +44,12 @@
         $elem.die("click");
         // Using jQuery $elem.remove doesn't seem to work
         $("#attributeEditor")[0].removeChild($parent[0]);
-        updateIndices();
+        updateAttributeIndices();
     }
 
-    function updateIndices() {
+    function updateAttributeIndices() {
         var current, idx = -1, $input, $inputs, suffix;
-        $(".editor-row", ".complex").each(function(i) {
+        $("#attributeEditor .editor-row", ".complex").each(function(i) {
             $inputs = $(this).find("input[type=text]");
             $($inputs).each(function(j, input) {
                 $input = $(input);
@@ -62,10 +62,52 @@
         return idx + 1;
     }
 
+    function initLinkEditor() {
+        $("#newLink").click(function(e) {
+            e.preventDefault();
+            newLink();
+        });
+        $("#linkEditor .editor-row span.delete a", ".complex").live("click", function(e) {
+            e.preventDefault();
+            deleteLink($(this));
+        });
+    }
+
+    function newLink() {
+        var next = updateLinkIndices();
+        $("#linkEditor").append(ich.newLinkTmpl({ idx: next }));
+        // The backslashes are key to making the selector work here
+        $("#links\\[" + next + "\\]\\.alias").focus();
+    }
+
+    function deleteLink($elem) {
+        var $parent = $elem.parents(".editor-row");
+        $elem.die("click");
+        // Using jQuery $elem.remove doesn't seem to work
+        $("#linkEditor")[0].removeChild($parent[0]);
+        updateLinkIndices();
+    }
+
+    function updateLinkIndices() {
+        var current, idx = -1, $input, $inputs, suffix;
+        $("#linkEditor .editor-row", ".complex").each(function(i) {
+            $inputs = $(this).find("input[type=text]");
+            $($inputs).each(function(j, input) {
+                $input = $(input);
+                suffix = $input.attr("name").split(".")[1];
+                current = "links[" + i + "]." + suffix;
+                $input.attr("name", current).attr("id", current);
+            });
+            idx = i;
+        });
+        return idx + 1;
+    }
+
     $(function() {
         limitMaxLength($("#content"), $("#contentCounter"));
         limitMaxLength($("#summary"), $("#summaryCounter"));
         initAttributeEditor();
+        initLinkEditor();
     });
 
 }(jQuery));

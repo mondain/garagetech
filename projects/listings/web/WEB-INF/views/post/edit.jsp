@@ -89,7 +89,7 @@
             </section>
         </li-->
         <li class="leftThird complex">
-            <form:label path="phone" cssClass="desc">Details | <a id="newAttribute" href="#">Add details</a></form:label>
+            <form:label path="attributes" cssClass="desc">Details | <a id="newAttribute" href="#">Add details</a></form:label>
             <div id="attributeEditor">
             <c:forEach var="attribute" items="${editPostForm.attributes}" varStatus="status">
                 <div class="editor-row">
@@ -132,8 +132,29 @@
                 </ul>
             </div>
         </li>
-        <li class="rightThird">
-            
+        <li class="rightThird complex">
+            <form:label path="links" cssClass="desc">Links | <a id="newLink" href="#">Add link</a></form:label>
+            <div id="linkEditor">
+            <c:forEach var="link" items="${editPostForm.links}" varStatus="status">
+                <div class="editor-row">
+                    <spring:bind path="editPostForm.links[${status.index}].alias">
+                    <span class="left">
+                        <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
+                        <label for="<c:out value="${status.expression}"/>">Alias</label>
+                    </span>
+                    </spring:bind>
+                    <spring:bind path="editPostForm.links[${status.index}].url">
+                    <span class="middle">
+                        <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
+                        <label for="<c:out value="${status.expression}"/>">Url</label>
+                    </span>
+                    </spring:bind>
+                    <span class="delete">
+                        <a class="ui-icon ui-icon-trash" href="#"></a>
+                    </span>
+                </div>
+            </c:forEach>
+            </div>
         </li>
         <li class="buttons">
             <c:choose>
@@ -150,16 +171,31 @@
 </form:form>
 <script id="newAttributeTmpl" type="text/html">
     <div class="editor-row">
-        <span class="delete">
-            <a class="ui-icon ui-icon-trash" href="#"></a>
-        </span>
         <span class="left">
             <input type="text" name="attributes[{{idx}}].name" id="attributes[{{idx}}].name" class="field text addr"/>
             <label for="attributes[{{idx}}].name">Name</label>
         </span>
-        <span class="right">
+        <span class="middle">
             <input type="text" name="attributes[{{idx}}].stringValue" id="attributes[{{idx}}].stringValue" class="field text addr"/>
             <label for="attributes[{{idx}}].stringValue">Value</label>
+        </span>
+        <span class="delete">
+            <a class="ui-icon ui-icon-trash" href="#"></a>
+        </span>
+    </div>
+</script>
+<script id="newLinkTmpl" type="text/html">
+    <div class="editor-row">
+        <span class="left">
+            <input type="text" name="links[{{idx}}].alias" id="links[{{idx}}].alias" class="field text addr"/>
+            <label for="links[{{idx}}].alias">Alias</label>
+        </span>
+        <span class="middle">
+            <input type="text" name="links[{{idx}}].url" id="links[{{idx}}].url" class="field text addr"/>
+            <label for="links[{{idx}}].url">Url</label>
+        </span>
+        <span class="delete">
+            <a class="ui-icon ui-icon-trash" href="#"></a>
         </span>
     </div>
 </script>

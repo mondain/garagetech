@@ -2,28 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="4df3984d-8de3-4b51-962e-2efd48c48aef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/exception" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PhoneNumber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PhoneNumberValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostAttributeValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/exception/PhoneNumberFormatException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/repository/usertype/PhoneNumberUserType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/propertyeditor/PhoneNumberPropertyEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listings.iml" afterPath="$PROJECT_DIR$/src/Listings.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostLink.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostLinkValidator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ivy.xml" afterPath="$PROJECT_DIR$/ivy.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Attribute.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Attribute.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/package-info.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/package-info.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/JoinController.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/JoinController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostAttribute.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostAttribute.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" afterPath="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/partials/nav.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/partials/nav.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/decorators/default.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/decorators/default.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/post/list.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/post/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/form.css" afterPath="$PROJECT_DIR$/web/css/form.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/screen.css" afterPath="$PROJECT_DIR$/web/css/screen.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/post/edit.js" afterPath="$PROJECT_DIR$/web/js/post/edit.js" />
     </list>
     <ignored path="$USER_HOME$/.griffon/" />
     <ignored path="$USER_HOME$/.grails/" />
@@ -103,52 +95,7 @@
       <file leaf-file-name="edit.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="14" selection-start="3998" selection-end="3998" vertical-scroll-proportion="-4.428571">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="screen.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/screen.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="460" column="23" selection-start="6964" selection-end="6964" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/form.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="805" column="14" selection-start="13260" selection-end="13260" vertical-scroll-proportion="-12.653846">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/list.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="41" selection-start="2684" selection-end="2684" vertical-scroll-proportion="-30.857143">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostForm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Post.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="32" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.4666002">
+            <state line="145" column="78" selection-start="7349" selection-end="7349" vertical-scroll-proportion="-12.428572">
               <folding />
             </state>
           </provider>
@@ -157,7 +104,43 @@
       <file leaf-file-name="PostController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="60" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0">
+            <state line="83" column="38" selection-start="3324" selection-end="3324" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="screen.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/screen.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="463" column="1" selection-start="6997" selection-end="6997" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/post/edit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="41" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostForm.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="27" selection-start="1887" selection-end="1887" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostAttribute.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostAttribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="28" selection-start="732" selection-end="732" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -166,8 +149,30 @@
       <file leaf-file-name="PostFormValidator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="52" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.0">
+            <state line="51" column="36" selection-start="1978" selection-end="1978" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostLink.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostLink.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostLinkValidator.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostLinkValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="13" selection-start="604" selection-end="604" vertical-scroll-proportion="0.51306415">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,7 +180,7 @@
       <file leaf-file-name="messages.properties" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="111" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0">
+            <state line="13" column="30" selection-start="945" selection-end="945" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -195,22 +200,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/package-info.java" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/propertyeditor/PhoneNumberPropertyEditor.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/partials/nav.jsp" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PhoneNumber.java" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PhoneNumberValidator.java" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostAttributeValidator.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/JoinController.java" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/post/list.jsp" />
-        <option value="$PROJECT_DIR$/web/css/screen.css" />
         <option value="$PROJECT_DIR$/web/css/form.css" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/decorators/default.jsp" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Attribute.java" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java" />
+        <option value="$PROJECT_DIR$/ivy.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java" />
+        <option value="$PROJECT_DIR$/web/js/post/edit.js" />
+        <option value="$PROJECT_DIR$/web/css/screen.css" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostAttribute.java" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostLink.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostLinkValidator.java" />
       </list>
     </option>
   </component>
@@ -345,6 +350,94 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="decorators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="i18n" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -554,6 +647,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lewdlistings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="validator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane">
@@ -579,7 +702,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.lastSelected" value="editor.preferences.tabs" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="project.structure.side.proportion" value="0.16763006" />
@@ -927,15 +1050,15 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32848838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14385027" sideWeight="0.6618217" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54457366" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39631784" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.54457366" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39631784" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.55420053" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22513369" sideWeight="0.5416667" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22513369" sideWeight="0.60368216" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22513369" sideWeight="0.45542637" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1000,70 +1123,51 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/partials/nav.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="49" selection-start="563" selection-end="563" vertical-scroll-proportion="0.15885948" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/validation/constraints/FieldMatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="18" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.2563581" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/JoinForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0854527" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/JoinFormValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="468" selection-end="468" vertical-scroll-proportion="0.06103764" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostAttributeValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="619" selection-end="619" vertical-scroll-proportion="0.22731805" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PhoneNumberValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1289" selection-end="1289" vertical-scroll-proportion="0.43070787" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/JoinController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="54" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.3110668" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="111" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="41" selection-start="2684" selection-end="2684" vertical-scroll-proportion="-30.857143">
+        <state line="13" column="49" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/screen.css">
+    <entry file="file://$PROJECT_DIR$/ivy.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="460" column="23" selection-start="6964" selection-end="6964" vertical-scroll-proportion="0.0">
+        <state line="2" column="76" selection-start="168" selection-end="168" vertical-scroll-proportion="0.023928216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="30" selection-start="945" selection-end="945" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="52" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.0">
+        <state line="51" column="36" selection-start="1978" selection-end="1978" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java">
+    <entry file="file://$PROJECT_DIR$/web/js/post/edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="60" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0">
+        <state line="35" column="41" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/html5reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/screen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="463" column="1" selection-start="6997" selection-end="6997" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1075,101 +1179,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp">
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostAttributes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="14" selection-start="3998" selection-end="3998" vertical-scroll-proportion="-4.428571">
+        <state line="2" column="12" selection-start="46" selection-end="46" vertical-scroll-proportion="0.023928216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="38" selection-start="3324" selection-end="3324" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Attribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="270" selection-end="270" vertical-scroll-proportion="0.06103764">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
+        <state line="66" column="27" selection-start="1887" selection-end="1887" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java">
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostAttribute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="32" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.4666002">
+        <state line="22" column="28" selection-start="732" selection-end="732" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/PostLink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="78" selection-start="7349" selection-end="7349" vertical-scroll-proportion="-12.428572">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/PostLinkValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="604" selection-end="604" vertical-scroll-proportion="0.51306415">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>Web</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="Copyright.UI">
         <settings>
           <splitter-proportions />
         </settings>
       </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Android</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <last-edited>Tomcat</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.16763006" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.16763006" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Listings</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.16763006" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Classpath</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
