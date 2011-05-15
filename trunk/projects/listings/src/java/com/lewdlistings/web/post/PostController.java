@@ -8,10 +8,12 @@ import com.lewdlistings.flash.FlashMap;
 import com.lewdlistings.service.PostService;
 import com.lewdlistings.service.ReviewService;
 import com.lewdlistings.util.RandomStringGenerator;
+import com.lewdlistings.web.propertyeditor.DateTimePropertyEditor;
 import com.lewdlistings.web.propertyeditor.EnumPropertyEditor;
 import com.lewdlistings.web.propertyeditor.PhoneNumberPropertyEditor;
 import com.lewdlistings.web.util.UserThreadLocal;
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -150,10 +152,13 @@ public class PostController {
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(DateTime.class, new DateTimePropertyEditor("M/dd/yyyy", DateTimeZone.UTC, true));
         binder.registerCustomEditor(Post.Type.class, new EnumPropertyEditor(Post.Type.class));
         binder.registerCustomEditor(PhoneNumber.class, new PhoneNumberPropertyEditor());
         binder.setAllowedFields("postId", "guid", "displayName", "summary", "content", "phone.areaCode",
-                "phone.prefix", "phone.suffix", "location", "type", "tagInput",
+                "phone.prefix", "phone.suffix", "type", "tagInput",
+                "currentAvailability.start", "currentAvailability.end", "currentAvailability.zipCode",
+                "prebookAvailability.start", "prebookAvailability.end", "prebookAvailability.zipCode",
                 "attributes[*].name", "attributes[*].stringValue", "attributes[*].type",
                 "links[*].name", "links[*].stringValue", "links[*].type");
     }

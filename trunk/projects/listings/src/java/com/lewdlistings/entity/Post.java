@@ -4,7 +4,22 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.annotations.ForeignKey;
 import org.joda.time.DateTime;
 
-import javax.persistence.*;
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -37,8 +52,23 @@ public class Post extends BaseEntity implements Comparable<Post> {
     @org.hibernate.annotations.Type(type = "phone")
     private PhoneNumber phone;
 
-    @Column(name = "location", length = 200)
-    private String location;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "zipCode", column = @Column(name = "current_zip_code")),
+            @AttributeOverride(name = "location", column = @Column(name = "current_location")),
+            @AttributeOverride(name = "start", column = @Column(name = "current_starts_at")),
+            @AttributeOverride(name = "end", column = @Column(name = "current_ends_at"))
+    })
+    private Availability currentAvailability;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "zipCode", column = @Column(name = "prebook_zip_code", nullable = true)),
+            @AttributeOverride(name = "location", column = @Column(name = "prebook_location")),
+            @AttributeOverride(name = "start", column = @Column(name = "prebook_starts_at", nullable = true)),
+            @AttributeOverride(name = "end", column = @Column(name = "prebook_ends_at", nullable = true))
+    })
+    private Availability prebookAvailability;
 
     @Column(name = "avg_rating")
     private double averageRating;
@@ -142,12 +172,20 @@ public class Post extends BaseEntity implements Comparable<Post> {
         this.phone = phone;
     }
 
-    public String getLocation() {
-        return location;
+    public Availability getCurrentAvailability() {
+        return currentAvailability;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setCurrentAvailability(Availability currentAvailability) {
+        this.currentAvailability = currentAvailability;
+    }
+
+    public Availability getPrebookAvailability() {
+        return prebookAvailability;
+    }
+
+    public void setPrebookAvailability(Availability prebookAvailability) {
+        this.prebookAvailability = prebookAvailability;
     }
 
     public double getAverageRating() {

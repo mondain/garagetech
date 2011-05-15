@@ -103,7 +103,17 @@
         return idx + 1;
     }
 
+    function initDatePickers() {
+        $(".date").datepicker({
+            showOn: "both",
+			buttonImage: "/img/calendar.png",
+            buttonImageOnly: true,
+            dateFormat: "m/dd/yy"
+        });
+    }
+
     $(function() {
+        initDatePickers();
         limitMaxLength($("#content"), $("#contentCounter"));
         limitMaxLength($("#summary"), $("#summaryCounter"));
         initAttributeEditor();

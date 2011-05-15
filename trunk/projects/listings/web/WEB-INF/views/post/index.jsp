@@ -23,7 +23,7 @@
                 <img src="${ctx}/img/rate_off_16x16.png" alt="rating" border="0"/>
             </span>
             <span>${post.phone}</span>
-            <span>${post.location}</span>
+            <span>${post.currentAvailability.zipCode}</span>
         </h2>
     </hgroup>
 </header>

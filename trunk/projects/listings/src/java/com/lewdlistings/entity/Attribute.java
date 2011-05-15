@@ -50,6 +50,18 @@ public class Attribute implements Serializable {
         }
     }
 
+    public Object getObjectValue() {
+        return value != null ? value.opt(getName()) : null;
+    }
+
+    public void setObjectValue(Object value) {
+        try {
+            setValue(new JSONObject().putOpt(getName(), value));
+        } catch (JSONException ignore) {
+            // Do nothing...
+        }
+    }
+
     public String getStringValue() {
         return value != null ? value.optString(getName()) : null;
     }

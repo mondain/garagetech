@@ -38,7 +38,7 @@
                                     <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
                                     <img src="${ctx}/img/rate_off_16x16_white.png" alt="rating" border="0"/>
                                 </strong>
-                                <em>${post.phone}<br/>${post.location}</em>
+                                <em>${post.phone}<br/>${post.currentAvailability.zipCode}</em>
                             </span>
                         </a>
                     </div>
@@ -82,7 +82,7 @@
                             </header>
                             <p><a href="${postUrl}">Call me at ${post.phone}. I'm available anytime. Some screening may be required.</a></p>
                             <footer>
-                                posted by ${name} &#8226; <time datetime="<joda:format value="${post.created}" style="MS"/>" pubdate><joda:format value="${post.created}" style="MS"/></time> &#8226; near ${post.location}
+                                posted by ${name} &#8226; <time datetime="<joda:format value="${post.created}" style="MS"/>" pubdate><joda:format value="${post.created}" style="MS"/></time> &#8226; near ${post.currentAvailability.zipCode}
                             </footer>
                         </section>
                     </article>

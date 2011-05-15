@@ -1,6 +1,8 @@
 package com.lewdlistings.web.post;
 
+import com.lewdlistings.entity.Post;
 import com.lewdlistings.entity.PostAttribute;
+import com.lewdlistings.entity.validator.AvailabilityValidator;
 import com.lewdlistings.entity.validator.PhoneNumberValidator;
 import com.lewdlistings.entity.validator.PostAttributeValidator;
 import com.lewdlistings.entity.validator.PostLinkValidator;
@@ -32,7 +34,6 @@ public class PostFormValidator implements Validator {
     public void validate(Object obj, Errors errors) {
         PostForm form = (PostForm) obj;
 
-        rejectIfEmptyOrWhitespace(errors, "location", "error.post.location.empty");
         rejectIfEmptyOrWhitespace(errors, "summary", "error.post.summary.empty");
         rejectIfEmptyOrWhitespace(errors, "content", "error.post.content.empty");
 
@@ -48,9 +49,31 @@ public class PostFormValidator implements Validator {
             }
         }
 
+        validateCurrentAvailability(errors, form);
+        if (Post.Type.FEATURED.equals(form.getType())) {
+            validatePrebookAvailability(errors, form);
+        }
         validatePhone(errors, form);
         validateAttributes(errors, form);
         validateLinks(errors, form);
+    }
+
+    private void validateCurrentAvailability(Errors errors, PostForm form) {
+        try {
+            errors.pushNestedPath("currentAvailability");
+            ValidationUtils.invokeValidator(new AvailabilityValidator(true), form.getCurrentAvailability(), errors);
+        } finally {
+            errors.popNestedPath();
+        }
+    }
+
+    private void validatePrebookAvailability(Errors errors, PostForm form) {
+        try {
+            errors.pushNestedPath("prebookAvailability");
+            ValidationUtils.invokeValidator(new AvailabilityValidator(false), form.getPrebookAvailability(), errors);
+        } finally {
+            errors.popNestedPath();
+        }
     }
 
     private void validatePhone(Errors errors, PostForm form) {
