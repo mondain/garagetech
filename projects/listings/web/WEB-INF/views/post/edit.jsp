@@ -30,14 +30,14 @@
                 <div>&nbsp;</div>
             </section>
         </li-->
-        <li class="leftThird">
+        <li class="leftHalf">
             <form:label path="displayName" cssClass="desc">Display Name</form:label>
             <div>
-                <form:input path="displayName" id="displayName" cssClass="field text small" maxlength="255" tabindex="1"/>
+                <form:input path="displayName" id="displayName" cssClass="field text medium" maxlength="255" tabindex="1"/>
                 <form:label path="displayName">Displays instead of your username within the ad</form:label>
             </div>
         </li>
-        <li class="middleThird">
+        <li class="rightHalf">
             <form:label path="phone" cssClass="desc">Phone Number <span class="req">*</span></form:label>
             <span class="symbol">(</span>
             <span>
@@ -55,12 +55,39 @@
                 <form:label path="phone.suffix">####</form:label>
             </span>
         </li>
-        <li class="rightThird">
-            <form:label path="location" cssClass="desc">Zip Code <span class="req">*</span></form:label>
-            <div>
-                <form:input path="location" id="location" cssClass="field text" size="5" maxlength="5" tabindex="5"/>
-                <form:label path="location">#####</form:label>
-            </div>
+        <li class="leftHalf complex">
+            <form:label path="currentAvailability.zipCode" cssClass="desc">Currently Available <span class="req">*</span></form:label>
+            <span>
+                <form:input path="currentAvailability.start" id="currentAvailability.start" cssClass="field text date" size="11" maxlength="11" tabindex="5"/>
+                <form:label path="currentAvailability.start">From</form:label>
+            </span>
+            <span>
+                <form:input path="currentAvailability.end" id="currentAvailability.end" cssClass="field text date" size="11" maxlength="11" tabindex="6"/>
+                <form:label path="currentAvailability.end">Until</form:label>
+            </span>
+            <span class="symbol desc">&nbsp;Near&nbsp;</span>
+            <span>
+                <form:input path="currentAvailability.zipCode" id="currentAvailability.zipCode" cssClass="field text" size="5" maxlength="5" tabindex="7"/>
+                <form:label path="currentAvailability.zipCode">Zip Code</form:label>
+            </span>
+        </li>
+        <li class="rightHalf complex">
+            <c:if test="${editPostForm.type == 'FEATURED'}">
+                <form:label path="prebookAvailability.zipCode" cssClass="desc">Prebooking</form:label>
+                <span>
+                    <form:input path="prebookAvailability.start" id="prebookAvailability.start" cssClass="field text date" size="11" maxlength="11" tabindex="8"/>
+                    <form:label path="prebookAvailability.start">From</form:label>
+                </span>
+                <span>
+                    <form:input path="prebookAvailability.end" id="prebookAvailability.end" cssClass="field text date" size="11" maxlength="11" tabindex="9"/>
+                    <form:label path="prebookAvailability.end">Until</form:label>
+                </span>
+                <span class="symbol desc">&nbsp;Near&nbsp;</span>
+                <span>
+                    <form:input path="prebookAvailability.zipCode" id="prebookAvailability.zipCode" cssClass="field text" size="5" maxlength="5" tabindex="10"/>
+                    <form:label path="prebookAvailability.zipCode">Zip Code</form:label>
+                </span>
+            </c:if>
         </li>
         <!--li class="section">
             <section>
@@ -71,14 +98,14 @@
         <li>
             <form:label path="summary" cssClass="desc">Teaser <span class="req">*</span></form:label>
             <div>
-                <form:textarea path="summary" id="summary" cssClass="field textarea" maxlength="200" tabindex="6"/>
+                <form:textarea path="summary" id="summary" cssClass="field textarea" maxlength="200" tabindex="11"/>
                 <form:label id="summaryCounter" path="summary">&nbsp;</form:label>
             </div>
         </li>
         <li>
             <form:label path="content" cssClass="desc">Content <span class="req">*</span></form:label>
             <div>
-                <form:textarea path="content" id="content" cssClass="field textarea large" maxlength="2000" tabindex="7"/>
+                <form:textarea path="content" id="content" cssClass="field textarea large" maxlength="2000" tabindex="12"/>
                 <form:label id="contentCounter" path="content">&nbsp;</form:label>
             </div>
         </li>
@@ -118,7 +145,7 @@
         <li class="middleThird">
             <form:label path="tagInput" cssClass="desc">Tags</form:label>
             <div>
-                <form:input path="tagInput" id="tagInput" cssClass="field text medium" maxlength="32" tabindex="8" />
+                <form:input path="tagInput" id="tagInput" cssClass="field text medium" maxlength="32" tabindex="13"/>
                 <form:label path="tagInput">Keywords or labels that categorize your ad with other, similar ads. Max of 10 tags.</form:label>
             </div>
             <div>
@@ -165,10 +192,10 @@
         <li class="buttons">
             <c:choose>
                 <c:when test="${isEdit}">
-                    <input id="saveBtn" class="btTxt" type="submit" tabindex="9" value="Update"/>
+                    <input id="saveBtn" class="btTxt" type="submit" tabindex="14" value="Update"/>
                 </c:when>
                 <c:otherwise>
-                    <input id="saveBtn" class="btTxt" type="submit" tabindex="9" value="Create"/>
+                    <input id="saveBtn" class="btTxt" type="submit" tabindex="14" value="Create"/>
                 </c:otherwise>
             </c:choose>
             <a href="${cancelUrl}">Or, cancel and return to the list of your ads.</a>

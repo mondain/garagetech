@@ -1,13 +1,17 @@
 package com.lewdlistings.web.post;
 
-import com.lewdlistings.entity.*;
+import com.lewdlistings.entity.Availability;
+import com.lewdlistings.entity.PhoneNumber;
+import com.lewdlistings.entity.Post;
+import com.lewdlistings.entity.PostAttribute;
+import com.lewdlistings.entity.PostAttributes;
+import com.lewdlistings.entity.Tag;
 import com.lewdlistings.io.Consumer;
 import com.lewdlistings.io.Producer;
 import org.apache.commons.collections.Factory;
 import org.apache.commons.collections.list.LazyList;
+import org.joda.time.DateMidnight;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -20,23 +24,12 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     private String guid;
     private String displayName;
-
-    @NotNull
-    @Size(min = 1, max = 200, message = "error.summary.min.max")
     private String summary;
-
-    @NotNull
-    @Size(min = 1, max = 2000, message = "error.content.min.max")
     private String content;
-
     private PhoneNumber phone;
-
-    @NotNull
-    private String location;
-
-    @NotNull
+    private Availability currentAvailability;
+    private Availability prebookAvailability;
     private Post.Type type;
-
     private String tagInput;
 
     @SuppressWarnings({"unchecked"})
@@ -68,6 +61,10 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     public static PostForm defaultForm() {
         PostForm form = new PostForm();
+        Availability current =
+                new Availability(new DateMidnight().toDateTime(),
+                        new DateMidnight().plusDays(3).toDateTime());
+        form.setCurrentAvailability(current);
         List<PostAttribute> attributes = form.getAttributes();
         for (PostAttributes attr : PostAttributes.values()) {
             attributes.add(new PostAttribute(attr.name(), PostAttribute.Type.DETAIL));
@@ -122,12 +119,20 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         this.phone = phone;
     }
 
-    public String getLocation() {
-        return location;
+    public Availability getCurrentAvailability() {
+        return currentAvailability;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setCurrentAvailability(Availability currentAvailability) {
+        this.currentAvailability = currentAvailability;
+    }
+
+    public Availability getPrebookAvailability() {
+        return prebookAvailability;
+    }
+
+    public void setPrebookAvailability(Availability prebookAvailability) {
+        this.prebookAvailability = prebookAvailability;
     }
 
     public Post.Type getType() {
@@ -191,7 +196,8 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         setContent(post.getContent());
         setType(post.getType());
         setPhone(post.getPhone());
-        setLocation(post.getLocation());
+        setCurrentAvailability(post.getCurrentAvailability());
+        setPrebookAvailability(post.getPrebookAvailability());
         setAttributes(post.getAttributesForType(PostAttribute.Type.DETAIL));
         setLinks(post.getAttributesForType(PostAttribute.Type.LINK));
         setTags(post.getTags());
@@ -205,7 +211,8 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         post.setContent(getContent());
         post.setType(getType());
         post.setPhone(getPhone());
-        post.setLocation(getLocation());
+        post.setCurrentAvailability(getCurrentAvailability());
+        post.setPrebookAvailability(getPrebookAvailability());
         Set<PostAttribute> attrs = new HashSet<PostAttribute>();
         attrs.addAll(getAttributes());
         attrs.addAll(getLinks());

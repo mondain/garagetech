@@ -268,9 +268,23 @@ span.symbol {
     line-height: 135%;
 }
 
+span.symbol.desc {
+    font-size: .9em;
+    line-height: 180%;
+}
+
 form li .datepicker {
     float: left;
     margin: .19em 5px 0 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer !important;
+}
+
+form li .ui-datepicker-trigger {
+    float: right;
+    margin: .19em 6px 0 2px;
     padding: 0;
     width: 16px;
     height: 16px;
