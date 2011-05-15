@@ -77,7 +77,7 @@
         var next = updateLinkIndices();
         $("#linkEditor").append(ich.newLinkTmpl({ idx: next }));
         // The backslashes are key to making the selector work here
-        $("#links\\[" + next + "\\]\\.alias").focus();
+        $("#links\\[" + next + "\\]\\.name").focus();
     }
 
     function deleteLink($elem) {

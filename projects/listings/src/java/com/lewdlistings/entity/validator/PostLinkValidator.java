@@ -1,6 +1,6 @@
 package com.lewdlistings.entity.validator;
 
-import com.lewdlistings.entity.PostLink;
+import com.lewdlistings.entity.PostAttribute;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -18,23 +18,23 @@ public class PostLinkValidator implements Validator {
 
     @Override
     public boolean supports(Class<?> clazz) {
-        return PostLink.class.equals(clazz);
+        return PostAttribute.class.equals(clazz);
     }
 
     @Override
     public void validate(Object obj, Errors errors) {
-        PostLink link = (PostLink) obj;
+        PostAttribute link = (PostAttribute) obj;
 
-        rejectIfEmptyOrWhitespace(errors, "url", "error.link.url.empty");
-        if (isNotBlank(link.getUrl())) {
+        rejectIfEmptyOrWhitespace(errors, "stringValue", "error.link.url.empty");
+        if (isNotBlank(link.getName())) {
             /*if (!urlValidator.isValid(link.getUrl())) {
                 errors.rejectValue("url", "error.link.url.invalid");
             }*/
         }
 
-        if (isNotBlank(link.getAlias())) {
-            if (!isAlphanumericSpace(link.getAlias())) {
-                errors.rejectValue("alias", "error.link.alias.illegal.chars", new Object[] { link.getAlias() }, "Url");
+        if (isNotBlank(link.getName())) {
+            if (!isAlphanumericSpace(link.getName())) {
+                errors.rejectValue("name", "error.link.alias.illegal.chars", new Object[] { link.getStringValue() }, "Url");
             }
         }
     }

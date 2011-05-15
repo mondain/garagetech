@@ -10,7 +10,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
@@ -56,11 +58,11 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
             });
 
     @SuppressWarnings({"unchecked"})
-    private List<PostLink> links =
-            LazyList.decorate(new ArrayList<PostLink>(), new Factory() {
+    private List<PostAttribute> links =
+            LazyList.decorate(new ArrayList<PostAttribute>(), new Factory() {
                 @Override
                 public Object create() {
-                    return new PostLink();
+                    return new PostAttribute();
                 }
             });
 
@@ -68,14 +70,14 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         PostForm form = new PostForm();
         List<PostAttribute> attributes = form.getAttributes();
         for (PostAttributes attr : PostAttributes.values()) {
-            attributes.add(new PostAttribute(attr.name()));
+            attributes.add(new PostAttribute(attr.name(), PostAttribute.Type.DETAIL));
         }
         form.setAttributes(attributes);
-        List<PostLink> links = form.getLinks();
-        links.add(new PostLink("Facebook", null));
-        links.add(new PostLink("Twitter", null));
-        links.add(new PostLink("Lovings", null));
-        links.add(new PostLink("Redbook", null));
+        List<PostAttribute> links = form.getLinks();
+        links.add(new PostAttribute("Facebook", PostAttribute.Type.LINK));
+        links.add(new PostAttribute("Twitter", PostAttribute.Type.LINK));
+        links.add(new PostAttribute("Lovings", PostAttribute.Type.LINK));
+        links.add(new PostAttribute("Redbook", PostAttribute.Type.LINK));
         form.setLinks(links);
         return form;
     }
@@ -161,12 +163,26 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         this.attributes = attributes;
     }
 
-    public List<PostLink> getLinks() {
+    public void setAttributes(Set<PostAttribute> attributes) {
+        if (!this.attributes.isEmpty()) {
+            this.attributes.clear();
+        }
+        this.attributes.addAll(attributes);
+    }
+
+    public List<PostAttribute> getLinks() {
         return links;
     }
 
-    public void setLinks(List<PostLink> links) {
+    public void setLinks(List<PostAttribute> links) {
         this.links = links;
+    }
+
+    public void setLinks(Set<PostAttribute> links) {
+        if (!this.links.isEmpty()) {
+            this.links.clear();
+        }
+        this.links.addAll(links);
     }
 
     @Override
@@ -176,11 +192,11 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         setType(post.getType());
         setPhone(post.getPhone());
         setLocation(post.getLocation());
-        setAttributes(post.getAttributes());
+        setAttributes(post.getAttributesForType(PostAttribute.Type.DETAIL));
+        setLinks(post.getAttributesForType(PostAttribute.Type.LINK));
         setTags(post.getTags());
         setGuid(post.getGuid());
         setDisplayName(post.getDisplayName());
-        setLinks(post.getLinks());
     }
 
     @Override
@@ -190,10 +206,12 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         post.setType(getType());
         post.setPhone(getPhone());
         post.setLocation(getLocation());
-        post.setAttributes(getAttributes());
+        Set<PostAttribute> attrs = new HashSet<PostAttribute>();
+        attrs.addAll(getAttributes());
+        attrs.addAll(getLinks());
+        post.setAttributes(attrs);
         post.setTags(getTags());
         post.setGuid(getGuid());
         post.setDisplayName(getDisplayName());
-        post.setLinks(getLinks());
     }
 }
