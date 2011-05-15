@@ -3,9 +3,7 @@ package com.lewdlistings.entity;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.annotations.Parent;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 import java.util.Comparator;
 
 import static org.apache.commons.lang.StringUtils.trimToEmpty;
@@ -20,11 +18,26 @@ public class PostAttribute extends Attribute implements Comparable<PostAttribute
     @Parent
     private Post post;
 
-    public PostAttribute() {
+    @Column(name = "type", length = 20, nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Type type;
+
+    public enum Type {
+        AVAILABILITY,
+        DETAIL,
+        LINK
     }
+
+    public PostAttribute() {}
 
     public PostAttribute(String name) {
         setName(name);
+        setType(Type.DETAIL);
+    }
+
+    public PostAttribute(String name, Type type) {
+        setName(name);
+        setType(type);
     }
 
     public Post getPost() {
@@ -33,6 +46,14 @@ public class PostAttribute extends Attribute implements Comparable<PostAttribute
 
     public void setPost(Post post) {
         this.post = post;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 
     @Override

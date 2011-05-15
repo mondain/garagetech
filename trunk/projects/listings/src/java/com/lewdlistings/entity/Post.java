@@ -5,12 +5,11 @@ import org.hibernate.annotations.ForeignKey;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
-
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.apache.commons.lang.builder.CompareToBuilder.reflectionCompare;
-import static org.apache.commons.lang.builder.EqualsBuilder.reflectionEquals;
-import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode;
 
 @Entity
 @Table(name = "posts")
@@ -65,7 +64,7 @@ public class Post extends BaseEntity implements Comparable<Post> {
             joinColumns = @JoinColumn(name = "post_id")
     )
     @OrderBy("name")
-    private List<PostAttribute> attributes;
+    private Set<PostAttribute> attributes;
 
     @OneToMany
     @JoinColumn(name = "post_id")
@@ -81,14 +80,6 @@ public class Post extends BaseEntity implements Comparable<Post> {
     @ForeignKey(name = "fk_post_tag_id", inverseName = "fk_tag_post_id")
     @OrderBy("name")
     private List<Tag> tags;
-
-    @ElementCollection
-    @CollectionTable(
-            name = "post_links",
-            joinColumns = @JoinColumn(name = "post_id")
-    )
-    @OrderBy("alias")
-    private List<PostLink> links;
 
     public enum Status {
         ACTIVE, ARCHIVED, DRAFT, FLAGGED, SUSPENDED
@@ -199,11 +190,21 @@ public class Post extends BaseEntity implements Comparable<Post> {
         this.expires = expires;
     }
 
-    public List<PostAttribute> getAttributes() {
+    public Set<PostAttribute> getAttributes() {
         return attributes;
     }
 
-    public void setAttributes(List<PostAttribute> attributes) {
+    public Set<PostAttribute> getAttributesForType(PostAttribute.Type type) {
+        Set<PostAttribute> attrs = new HashSet<PostAttribute>();
+        for (PostAttribute attribute : attributes) {
+            if (type.equals(attribute.getType())) {
+                attrs.add(attribute);
+            }
+        }
+        return attrs;
+    }
+
+    public void setAttributes(Set<PostAttribute> attributes) {
         this.attributes = attributes;
     }
 
@@ -223,14 +224,6 @@ public class Post extends BaseEntity implements Comparable<Post> {
         this.tags = tags;
     }
 
-    public List<PostLink> getLinks() {
-        return links;
-    }
-
-    public void setLinks(List<PostLink> links) {
-        this.links = links;
-    }
-
     @Override
     public String toString() {
         return new ToStringBuilder(this)
@@ -238,13 +231,24 @@ public class Post extends BaseEntity implements Comparable<Post> {
                 .toString();
     }
 
-    public boolean equals(Post post) {
-        return reflectionEquals(this, post);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Post post = (Post) o;
+
+        if (author != null ? !author.equals(post.author) : post.author != null) return false;
+        if (guid != null ? !guid.equals(post.guid) : post.guid != null) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return reflectionHashCode(17, 31, this);
+        int result = author != null ? author.hashCode() : 0;
+        result = 31 * result + (guid != null ? guid.hashCode() : 0);
+        return result;
     }
 
     public int compareTo(Post post) {

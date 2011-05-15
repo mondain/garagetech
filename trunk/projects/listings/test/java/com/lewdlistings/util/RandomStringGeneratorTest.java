@@ -8,7 +8,7 @@ public class RandomStringGeneratorTest {
     @Test
     public void testNextRandomString() {
         String random = RandomStringGenerator.getNextRandomString();
-        System.out.println("Random: " + random);
-        Assert.assertEquals(random.length(), 8);
+        System.out.println("Random: " + random.toLowerCase());
+        Assert.assertEquals(12, random.length());
     }
 }

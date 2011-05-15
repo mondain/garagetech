@@ -139,8 +139,10 @@
                 </header>
                 <dl>
                     <c:forEach var="attribute" items="${post.attributes}" varStatus="status">
-                        <dt>${attribute.name}</dt>
-                        <dd>${attribute.stringValue}</dd>
+                        <c:if test="${attribute.type == 'DETAIL'}">
+                            <dt>${attribute.name}</dt>
+                            <dd>${attribute.stringValue}</dd>
+                        </c:if>
                     </c:forEach>
                 </dl>
             </section>
@@ -157,14 +159,16 @@
             </ul>
             <p><a href="">Add your tags too!</a></p>
         </section>
-        <c:if test="${not empty post.links}">
+        <c:if test="${not empty post.attributes}">
             <section class="group">
                 <header>
                     <h1>Links</h1>
                 </header>
                 <ul class="links">
-                    <c:forEach var="link" items="${post.links}" varStatus="status">
-                        <li><a href="${link.url}">${link.alias}</a></li>
+                    <c:forEach var="link" items="${post.attributes}" varStatus="status">
+                        <c:if test="${link.type == 'LINK'}">
+                            <li><a href="${link.stringValue}">${link.name}</a></li>
+                        </c:if>
                     </c:forEach>
                 </ul>
             </section>

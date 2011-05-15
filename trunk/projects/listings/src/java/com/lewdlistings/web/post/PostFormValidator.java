@@ -1,7 +1,6 @@
 package com.lewdlistings.web.post;
 
 import com.lewdlistings.entity.PostAttribute;
-import com.lewdlistings.entity.PostLink;
 import com.lewdlistings.entity.validator.PhoneNumberValidator;
 import com.lewdlistings.entity.validator.PostAttributeValidator;
 import com.lewdlistings.entity.validator.PostLinkValidator;
@@ -77,7 +76,7 @@ public class PostFormValidator implements Validator {
 
     private void validateLinks(Errors errors, PostForm form) {
         int index = 0;
-        for (PostLink link : form.getLinks()) {
+        for (PostAttribute link : form.getLinks()) {
             try {
                 errors.pushNestedPath("links[" + index++ + "]");
                 ValidationUtils.invokeValidator(postLinkValidator, link, errors);

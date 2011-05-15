@@ -93,6 +93,9 @@
             <div id="attributeEditor">
             <c:forEach var="attribute" items="${editPostForm.attributes}" varStatus="status">
                 <div class="editor-row">
+                    <spring:bind path="editPostForm.attributes[${status.index}].type">
+                        <input type="hidden" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" value="<c:out value="${status.value}"/>"/>
+                    </spring:bind>
                     <spring:bind path="editPostForm.attributes[${status.index}].name">
                     <span class="left">
                         <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
@@ -137,13 +140,16 @@
             <div id="linkEditor">
             <c:forEach var="link" items="${editPostForm.links}" varStatus="status">
                 <div class="editor-row">
-                    <spring:bind path="editPostForm.links[${status.index}].alias">
+                    <spring:bind path="editPostForm.links[${status.index}].type">
+                        <input type="hidden" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" value="<c:out value="${status.value}"/>"/>
+                    </spring:bind>
+                    <spring:bind path="editPostForm.links[${status.index}].name">
                     <span class="left">
                         <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
                         <label for="<c:out value="${status.expression}"/>">Alias</label>
                     </span>
                     </spring:bind>
-                    <spring:bind path="editPostForm.links[${status.index}].url">
+                    <spring:bind path="editPostForm.links[${status.index}].stringValue">
                     <span class="middle">
                         <input type="text" name="<c:out value="${status.expression}"/>" id="<c:out value="${status.expression}"/>" class="field text addr" value="<c:out value="${status.value}"/>"/>
                         <label for="<c:out value="${status.expression}"/>">Url</label>
@@ -171,6 +177,7 @@
 </form:form>
 <script id="newAttributeTmpl" type="text/html">
     <div class="editor-row">
+        <input type="hidden" name="attributes[{{idx}}].type" id="attributes[{{idx}}].type" value="DETAIL"/>
         <span class="left">
             <input type="text" name="attributes[{{idx}}].name" id="attributes[{{idx}}].name" class="field text addr"/>
             <label for="attributes[{{idx}}].name">Name</label>
@@ -186,13 +193,14 @@
 </script>
 <script id="newLinkTmpl" type="text/html">
     <div class="editor-row">
+        <input type="hidden" name="links[{{idx}}].type" id="links[{{idx}}].type" value="LINK"/>
         <span class="left">
-            <input type="text" name="links[{{idx}}].alias" id="links[{{idx}}].alias" class="field text addr"/>
-            <label for="links[{{idx}}].alias">Alias</label>
+            <input type="text" name="links[{{idx}}].name" id="links[{{idx}}].name" class="field text addr"/>
+            <label for="links[{{idx}}].name">Alias</label>
         </span>
         <span class="middle">
-            <input type="text" name="links[{{idx}}].url" id="links[{{idx}}].url" class="field text addr"/>
-            <label for="links[{{idx}}].url">Url</label>
+            <input type="text" name="links[{{idx}}].stringValue" id="links[{{idx}}].stringValue" class="field text addr"/>
+            <label for="links[{{idx}}].stringValue">Url</label>
         </span>
         <span class="delete">
             <a class="ui-icon ui-icon-trash" href="#"></a>
