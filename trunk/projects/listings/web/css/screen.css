@@ -463,6 +463,13 @@ div.editor-row span.delete {
     width: 16px;
 }
 
+/* jquery-ui extensions */
+
+.ui-widget {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+    font-size: .85em;
+}
+
 /* datagrid */
 
 div.page-actions {
