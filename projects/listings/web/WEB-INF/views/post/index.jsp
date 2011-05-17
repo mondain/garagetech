@@ -4,16 +4,14 @@
 <c:url var="reviewsUrl" value="/ad/${post.guid}/reviews"/>
 <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
 <%@ include file="/WEB-INF/views/partials/messages.jsp" %>
-<header class="info">
+<header class="summary group">
+    <div class="avatar">
+        <a href="">
+            <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="72" height="72" border="0"/>
+        </a>
+    </div>
     <hgroup>
-        <h1>
-            ${name}
-            <span class="group">
-                <a href="${editUrl}">Edit</a>
-                <a href="${newReviewUrl}">Add your review</a>
-                <a class="delete" href="">Report</a>
-            </span>
-        </h1>
+        <h1>${name}</h1>
         <h2>
             <span class="rating">
                 <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
@@ -26,6 +24,11 @@
             <span>${post.currentAvailability.zipCode}</span>
         </h2>
     </hgroup>
+    <div class="actions group">
+        <a href="${editUrl}">Edit</a>
+        <a href="${newReviewUrl}">Add your review</a>
+        <a class="delete" href="">Report</a>
+    </div>
 </header>
 <section class="profile">
     <p>${post.summary}</p>
