@@ -33,6 +33,10 @@ Last Updated : March 2, 2010
     display: block;
 }
 
+.info img.avatar {
+    clear: left;
+}
+
 .info h1 {
     font-weight: normal;
     font-size: 1.4em;

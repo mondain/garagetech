@@ -315,6 +315,71 @@ section.posts article p {
 
 /* profiles */
 
+header.summary {
+    display: inline-block;
+    clear: both;
+    margin: 0 0 5px 0;
+    padding: 0 0 1.1em 0;
+    width: 100%;
+}
+
+header.summary div,
+header.summary hgroup {
+    display: inline-block;
+}
+
+header.summary div.avatar {
+    border: 1px solid #ddd;
+    height: 72px;
+    margin-right: 6px;
+    padding: 6px;
+    position: relative;
+    width: 72px;
+}
+
+header.summary div.actions {
+    clear: both;
+    float: right;
+    margin-bottom: 4px;
+}
+
+header.summary div.actions a {
+    margin-left: 24px;
+}
+
+header.summary h1 {
+    font-weight: normal;
+    font-size: 1.4em;
+    margin: 0 0 5px 0;
+}
+
+header.summary h1 em {
+    color: #555;
+    font-size: .8em;
+    font-style: normal;
+}
+
+header.summary h1 span {
+    float: right;
+    font-size: .65em;
+}
+
+header.summary h1 span a {
+    margin-left: 24px;
+}
+
+header.summary h2 {
+    font-weight: normal;
+    font-size: .9em;
+    margin: 0 0 5px 0;
+}
+
+header.summary h2 span {
+    display: block;
+    margin-bottom: 4px;
+    padding-right: 24px;
+}
+
 section.profile h1 {
     font-weight: bold;
     margin-bottom: 12px;
