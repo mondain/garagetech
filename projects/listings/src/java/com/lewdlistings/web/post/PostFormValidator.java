@@ -61,7 +61,7 @@ public class PostFormValidator implements Validator {
     private void validateCurrentAvailability(Errors errors, PostForm form) {
         try {
             errors.pushNestedPath("currentAvailability");
-            ValidationUtils.invokeValidator(new AvailabilityValidator(true), form.getCurrentAvailability(), errors);
+            ValidationUtils.invokeValidator(new AvailabilityValidator(false), form.getCurrentAvailability(), errors);
         } finally {
             errors.popNestedPath();
         }
@@ -70,7 +70,7 @@ public class PostFormValidator implements Validator {
     private void validatePrebookAvailability(Errors errors, PostForm form) {
         try {
             errors.pushNestedPath("prebookAvailability");
-            ValidationUtils.invokeValidator(new AvailabilityValidator(false), form.getPrebookAvailability(), errors);
+            ValidationUtils.invokeValidator(new AvailabilityValidator(true), form.getPrebookAvailability(), errors);
         } finally {
             errors.popNestedPath();
         }
