@@ -11,7 +11,11 @@ Tiered post types
     - Basic, Bump, Featured
 
 http://classifieds.myredbook.com/classified.php?adid=154617
+http://classifieds.myredbook.com/classified.php?adid=244757
 http://www.find-escorts.com/listing/1362/Young_And_Wild_NEW_GIRL.html
+http://eroticservices.cityvibe.com/escorts.php?do=list&city=576
+http://www.theeroticreview.com/main.asp
+https://www.verifiedplaymates.com/cgi-bin/playmates/register.cgi?pa=show_submit_ad
 
 
 Original Notes
