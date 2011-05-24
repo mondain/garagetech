@@ -38,10 +38,17 @@
         <dependency org="junit" name="junit" rev="4.8.2"/>
         <dependency org="mysql" name="mysql-connector-java" rev="5.1.13"/>
 		<dependency org="opensymphony" name="sitemesh" rev="2.4.2"/>
-		<dependency org="org.hibernate" name="hibernate-core" rev="3.5.4-Final" conf="default->*,optional"/>
-		<dependency org="org.hibernate" name="hibernate-annotations" rev="3.5.4-Final" conf="default->*,optional"/>
-		<dependency org="org.hibernate" name="hibernate-commons-annotations" rev="3.2.0.Final" conf="default->*,optional"/>
-		<dependency org="org.hibernate" name="hibernate-validator" rev="4.1.0.Final" conf="default->*,optional"/>
+        <dependency org="org.apache.lucene" name="lucene-core" rev="3.1.0"/>
+        <dependency org="org.apache.lucene" name="lucene-analyzers" rev="3.1.0"/>
+        <dependency org="org.apache.lucene" name="lucene-queries" rev="3.1.0"/>
+        <dependency org="org.apache.lucene" name="lucene-spatial" rev="3.1.0"/>
+        <dependency org="org.apache.solr" name="solr-core" rev="3.1.0"/>
+		<dependency org="org.hibernate" name="hibernate-core" rev="3.5.4-Final"/>
+		<dependency org="org.hibernate" name="hibernate-annotations" rev="3.5.4-Final"/>
+		<dependency org="org.hibernate" name="hibernate-commons-annotations" rev="3.2.0.Final"/>
+        <dependency org="org.hibernate" name="hibernate-search" rev="3.4.0.Final"/>
+        <dependency org="org.hibernate" name="hibernate-search-analyzers" rev="3.4.0.Final"/>
+		<dependency org="org.hibernate" name="hibernate-validator" rev="4.1.0.Final"/>
         <dependency org="org.hibernate.javax.persistence" name="hibernate-jpa-2.0-api" rev="1.0.0.Final"/>
         <dependency org="org.jasypt" name="jasypt" rev="1.6"/>
         <dependency org="org.json" name="json" rev="20090211"/>

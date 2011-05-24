@@ -4,9 +4,13 @@
       <w>addr</w>
       <w>attr</w>
       <w>attrs</w>
+      <w>crit</w>
       <w>datepicker</w>
+      <w>geohash</w>
       <w>prebook</w>
       <w>tmpl</w>
+      <w>zipcode</w>
+      <w>zipcodes</w>
     </words>
   </dictionary>
 </component>
