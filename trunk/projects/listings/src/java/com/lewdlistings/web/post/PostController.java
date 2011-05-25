@@ -157,8 +157,8 @@ public class PostController {
         binder.registerCustomEditor(PhoneNumber.class, new PhoneNumberPropertyEditor());
         binder.setAllowedFields("postId", "guid", "displayName", "summary", "content", "phone.areaCode",
                 "phone.prefix", "phone.suffix", "type", "tagInput",
-                "currentAvailability.start", "currentAvailability.end", "currentAvailability.zipCode",
-                "prebookAvailability.start", "prebookAvailability.end", "prebookAvailability.zipCode",
+                "availability.start", "availability.end", "availability.location.zipCode",
+                "availability.prebookStart", "availability.prebookEnd", "availability.prebookLocation.zipCode",
                 "attributes[*].name", "attributes[*].stringValue", "attributes[*].type",
                 "links[*].name", "links[*].stringValue", "links[*].type");
     }

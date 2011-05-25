@@ -21,7 +21,7 @@
                 <img src="${ctx}/img/rate_off_16x16.png" alt="rating" border="0"/>
             </span>
             <span>${post.phone}</span>
-            <span>${post.currentAvailability.zipCode}</span>
+            <span>${post.availability.location.zipCode}</span>
         </h2>
     </hgroup>
     <div class="actions group">

@@ -2,18 +2,15 @@ package com.lewdlistings.entity.validator;
 
 import com.lewdlistings.entity.Availability;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.apache.commons.lang.StringUtils.isNumeric;
-import static org.springframework.validation.ValidationUtils.rejectIfEmptyOrWhitespace;
 
 public class AvailabilityValidator implements Validator {
 
-    private boolean isPrebook;
+    private boolean required;
 
-    public AvailabilityValidator(boolean isPrebook) {
-        this.isPrebook = isPrebook;
+    public AvailabilityValidator(boolean required) {
+        this.required = required;
     }
 
     @Override
@@ -25,11 +22,11 @@ public class AvailabilityValidator implements Validator {
     public void validate(Object obj, Errors errors) {
         Availability availability = (Availability) obj;
         if (availability != null) {
-            if (!isPrebook) {
-                rejectIfEmptyOrWhitespace(errors, "zipCode", "error.currentAvailability.zipCode.empty");
-            }
-            if (isNotBlank(availability.getZipCode()) && !isNumeric(availability.getZipCode())) {
-                errors.rejectValue("zipCode", "error.currentAvailability.zipCode.illegal.chars");
+            try {
+                errors.pushNestedPath("location");
+                ValidationUtils.invokeValidator(new LocationValidator(required), availability.getLocation(), errors);
+            } finally {
+                errors.popNestedPath();
             }
             if (availability.getStart() != null && availability.getEnd() != null) {
                 if (availability.getStart().isAfter(availability.getEnd())) {

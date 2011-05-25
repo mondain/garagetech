@@ -5,8 +5,11 @@ import org.joda.time.DateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
+import static javax.persistence.FetchType.EAGER;
 import static org.apache.commons.lang.builder.CompareToBuilder.reflectionCompare;
 import static org.apache.commons.lang.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode;
@@ -16,25 +19,35 @@ public class Availability implements Serializable, Comparable<Availability> {
 
     private static final long serialVersionUID = -1932239095561486541L;
 
-    @Column(name = "zip_code", length = 10, nullable = false)
-    private String zipCode;
+    @ManyToOne(fetch = EAGER)
+    @JoinColumn(name = "current_zipcode")
+    private Location location;
 
-    @Column(name = "location", length = 255, nullable = true)
-    private String location;
-
-    @Column(name = "starts_at")
+    @Column(name = "current_ends_at")
     @org.hibernate.annotations.Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
     private DateTime start;
 
-    @Column(name = "ends_at")
+    @Column(name = "current_ends_at")
     @org.hibernate.annotations.Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
     private DateTime end;
+
+    @ManyToOne(fetch = EAGER)
+    @JoinColumn(name = "prebook_zipcode", nullable = true)
+    private Location prebookLocation;
+
+    @Column(name = "prebook_starts_at", nullable = true)
+    @org.hibernate.annotations.Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
+    private DateTime prebookStart;
+
+    @Column(name = "prebook_ends_at", nullable = true)
+    @org.hibernate.annotations.Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
+    private DateTime prebookEnd;
 
     public Availability() {
     }
 
-    public Availability(String zipCode) {
-        this.zipCode = zipCode;
+    public Availability(Location location) {
+        this.location = location;
     }
 
     public Availability(DateTime start, DateTime end) {
@@ -42,25 +55,17 @@ public class Availability implements Serializable, Comparable<Availability> {
         this.end = end;
     }
 
-    public Availability(String zipCode, DateTime start, DateTime end) {
-        this.zipCode = zipCode;
+    public Availability(Location location, DateTime start, DateTime end) {
+        this.location = location;
         this.start = start;
         this.end = end;
     }
 
-    public String getZipCode() {
-        return zipCode;
-    }
-
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
-    }
-
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
@@ -80,6 +85,30 @@ public class Availability implements Serializable, Comparable<Availability> {
         this.end = end;
     }
 
+    public Location getPrebookLocation() {
+        return prebookLocation;
+    }
+
+    public void setPrebookLocation(Location prebookLocation) {
+        this.prebookLocation = prebookLocation;
+    }
+
+    public DateTime getPrebookStart() {
+        return prebookStart;
+    }
+
+    public void setPrebookStart(DateTime prebookStart) {
+        this.prebookStart = prebookStart;
+    }
+
+    public DateTime getPrebookEnd() {
+        return prebookEnd;
+    }
+
+    public void setPrebookEnd(DateTime prebookEnd) {
+        this.prebookEnd = prebookEnd;
+    }
+
     public boolean equals(Availability availability) {
         return reflectionEquals(this, availability);
     }
@@ -91,11 +120,17 @@ public class Availability implements Serializable, Comparable<Availability> {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .append("zipCode", zipCode)
-                .append("start", start)
-                .append("end", end)
-                .toString();
+        ToStringBuilder toStringBuilder = new ToStringBuilder(this);
+        if (location != null) {
+            toStringBuilder.append("location", location.getZipCode());
+        }
+        if (start != null) {
+            toStringBuilder.append("start", start);
+        }
+        if (end != null) {
+            toStringBuilder.append("end", end);
+        }
+        return toStringBuilder.toString();
     }
 
     public int compareTo(Availability availability) {
