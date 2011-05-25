@@ -27,8 +27,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
     private String summary;
     private String content;
     private PhoneNumber phone;
-    private Availability currentAvailability;
-    private Availability prebookAvailability;
+    private Availability availability;
     private Post.Type type;
     private String tagInput;
 
@@ -61,10 +60,10 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
 
     public static PostForm defaultForm() {
         PostForm form = new PostForm();
-        Availability current =
-                new Availability(new DateMidnight().toDateTime(),
-                        new DateMidnight().plusDays(3).toDateTime());
-        form.setCurrentAvailability(current);
+        Availability current = new Availability(
+                new DateMidnight().toDateTime(),
+                new DateMidnight().plusDays(3).toDateTime());
+        form.setAvailability(current);
         List<PostAttribute> attributes = form.getAttributes();
         for (PostAttributes attr : PostAttributes.values()) {
             attributes.add(new PostAttribute(attr.name(), PostAttribute.Type.DETAIL));
@@ -119,20 +118,12 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         this.phone = phone;
     }
 
-    public Availability getCurrentAvailability() {
-        return currentAvailability;
+    public Availability getAvailability() {
+        return availability;
     }
 
-    public void setCurrentAvailability(Availability currentAvailability) {
-        this.currentAvailability = currentAvailability;
-    }
-
-    public Availability getPrebookAvailability() {
-        return prebookAvailability;
-    }
-
-    public void setPrebookAvailability(Availability prebookAvailability) {
-        this.prebookAvailability = prebookAvailability;
+    public void setAvailability(Availability availability) {
+        this.availability = availability;
     }
 
     public Post.Type getType() {
@@ -196,8 +187,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         setContent(post.getContent());
         setType(post.getType());
         setPhone(post.getPhone());
-        setCurrentAvailability(post.getCurrentAvailability());
-        setPrebookAvailability(post.getPrebookAvailability());
+        setAvailability(post.getAvailability());
         setAttributes(post.getAttributesForType(PostAttribute.Type.DETAIL));
         setLinks(post.getAttributesForType(PostAttribute.Type.LINK));
         setTags(post.getTags());
@@ -211,8 +201,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         post.setContent(getContent());
         post.setType(getType());
         post.setPhone(getPhone());
-        post.setCurrentAvailability(getCurrentAvailability());
-        post.setPrebookAvailability(getPrebookAvailability());
+        post.setAvailability(getAvailability());
         Set<PostAttribute> attrs = new HashSet<PostAttribute>();
         attrs.addAll(getAttributes());
         attrs.addAll(getLinks());

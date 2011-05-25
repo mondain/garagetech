@@ -1,6 +1,7 @@
 package com.lewdlistings.entity;
 
 import com.lewdlistings.search.bridge.CartesianTierFieldBridgeImpl;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.lucene.spatial.geohash.GeoHashUtils;
@@ -30,7 +31,7 @@ public class Location implements Serializable, Comparable<Location> {
     @Id
     @Column(name = "zipcode", length = 5, nullable = false, unique = true)
     @DocumentId(name = "zipcode")
-    private int zipCode;
+    private String zipCode;
 
     @Column(name = "state", length = 2, nullable = false)
     private String state;
@@ -49,17 +50,24 @@ public class Location implements Serializable, Comparable<Location> {
     public Location() {
     }
 
-    public Location(int zipCode, Double latitude, Double longitude) {
+    public Location(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public Location(String zipCode, Double latitude, Double longitude) {
         this.zipCode = zipCode;
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    public int getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(String zipCode) {
+        if (StringUtils.isBlank(zipCode)) {
+            zipCode = null;
+        }
         this.zipCode = zipCode;
     }
 
@@ -128,7 +136,7 @@ public class Location implements Serializable, Comparable<Location> {
 
     @Override
     public int hashCode() {
-        return zipCode;
+        return zipCode.hashCode();
     }
 
     @Override

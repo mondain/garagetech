@@ -56,36 +56,36 @@
             </span>
         </li>
         <li class="leftHalf complex">
-            <form:label path="currentAvailability.zipCode" cssClass="desc">Currently Available <span class="req">*</span></form:label>
+            <form:label path="availability.location.zipCode" cssClass="desc">Currently Available <span class="req">*</span></form:label>
             <span>
-                <form:input path="currentAvailability.start" id="currentAvailability.start" cssClass="field text date" size="11" maxlength="11" tabindex="5"/>
-                <form:label path="currentAvailability.start">From</form:label>
+                <form:input path="availability.start" id="availability.start" cssClass="field text date" size="11" maxlength="11" tabindex="5"/>
+                <form:label path="availability.start">From</form:label>
             </span>
             <span>
-                <form:input path="currentAvailability.end" id="currentAvailability.end" cssClass="field text date" size="11" maxlength="11" tabindex="6"/>
-                <form:label path="currentAvailability.end">Until</form:label>
+                <form:input path="availability.end" id="availability.end" cssClass="field text date" size="11" maxlength="11" tabindex="6"/>
+                <form:label path="availability.end">Until</form:label>
             </span>
             <span class="symbol desc">&nbsp;Near&nbsp;</span>
             <span>
-                <form:input path="currentAvailability.zipCode" id="currentAvailability.zipCode" cssClass="field text" size="5" maxlength="5" tabindex="7"/>
-                <form:label path="currentAvailability.zipCode">Zip Code</form:label>
+                <form:input path="availability.location.zipCode" id="availability.location.zipCode" cssClass="field text" size="5" maxlength="5" tabindex="7"/>
+                <form:label path="availability.location.zipCode">Zip Code</form:label>
             </span>
         </li>
         <li class="rightHalf complex">
             <c:if test="${editPostForm.type == 'FEATURED'}">
-                <form:label path="prebookAvailability.zipCode" cssClass="desc">Prebooking</form:label>
+                <form:label path="availability.prebookLocation.zipCode" cssClass="desc">Prebooking</form:label>
                 <span>
-                    <form:input path="prebookAvailability.start" id="prebookAvailability.start" cssClass="field text date" size="11" maxlength="11" tabindex="8"/>
-                    <form:label path="prebookAvailability.start">From</form:label>
+                    <form:input path="availability.prebookStart" id="availability.prebookStart" cssClass="field text date" size="11" maxlength="11" tabindex="8"/>
+                    <form:label path="availability.prebookStart">From</form:label>
                 </span>
                 <span>
-                    <form:input path="prebookAvailability.end" id="prebookAvailability.end" cssClass="field text date" size="11" maxlength="11" tabindex="9"/>
-                    <form:label path="prebookAvailability.end">Until</form:label>
+                    <form:input path="availability.prebookEnd" id="availability.prebookEnd" cssClass="field text date" size="11" maxlength="11" tabindex="9"/>
+                    <form:label path="availability.prebookEnd">Until</form:label>
                 </span>
                 <span class="symbol desc">&nbsp;Near&nbsp;</span>
                 <span>
-                    <form:input path="prebookAvailability.zipCode" id="prebookAvailability.zipCode" cssClass="field text" size="5" maxlength="5" tabindex="10"/>
-                    <form:label path="prebookAvailability.zipCode">Zip Code</form:label>
+                    <form:input path="availability.prebookLocation.zipCode" id="availability.prebookLocation.zipCode" cssClass="field text" size="5" maxlength="5" tabindex="10"/>
+                    <form:label path="availability.prebookLocation.zipCode">Zip Code</form:label>
                 </span>
             </c:if>
         </li>

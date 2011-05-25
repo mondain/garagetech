@@ -33,7 +33,7 @@ public class HibernateSpatialSearchTest {
     public static void setUp() throws Exception {
         ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{ "test-app-config.xml" });
         sessionFactory = (SessionFactory) context.getBean("sessionFactory");
-        //populateIndex();
+        populateIndex();
     }
 
     @Test
@@ -42,7 +42,7 @@ public class HibernateSpatialSearchTest {
         Session session = sessionFactory.openSession();
         Criteria crit = session.createCriteria(Location.class);
         List<Location> locations = crit.list();
-        Assert.assertTrue("Query should have returned some results", !locations.isEmpty());
+        Assert.assertTrue(locations.size() > 0);
         Assert.assertEquals(35587, locations.size());
     }
 
@@ -70,6 +70,7 @@ public class HibernateSpatialSearchTest {
     }
 
     @Test
+    @SuppressWarnings({"unchecked"})
     public void testHibernateSearchGeohash() {
         Spatial spatial = new Spatial();
         Session session = sessionFactory.openSession();

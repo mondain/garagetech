@@ -21,7 +21,7 @@ INSERT INTO user_role_assn (user_id, role_id) VALUES (
   (SELECT role_id FROM roles WHERE name = 'ROLE_USER')
 );
 
-INSERT INTO posts (created_at, avg_rating, content, expires_at, current_ends_at, current_starts_at, current_zip_code, num_reviews, phone, status, summary, `type`, author_id, guid, display_name) VALUES (
+INSERT INTO posts (created_at, avg_rating, content, expires_at, current_ends_at, current_starts_at, current_zipcode, num_reviews, phone, status, summary, `type`, author_id, guid, display_name) VALUES (
   NOW(),
   0,
   'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.',
@@ -43,7 +43,6 @@ INSERT INTO post_attributes (post_id, name, type, value) VALUES
 (1, 'Age', 'DETAIL', '{"Age":"36"}'),
 (1, 'Hair', 'DETAIL', '{"Hair":"Blonde"}'),
 (1, 'Eyes', 'DETAIL', '{"Eyes":"Blue"}'),
-(1, 'Height', 'DETAIL', '{"Height":"5\' 9\""}'),
 (1, 'Weight', 'DETAIL', '{"Weight":"195 lbs."}'),
 (1, 'Twitter', 'LINK', '{"Twitter":"http://twitter.com/carlsz"}'),
 (1, 'Facebook', 'LINK', '{"Facebook":"http://facebook.com/carlsz"}');

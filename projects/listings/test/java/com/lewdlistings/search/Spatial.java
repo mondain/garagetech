@@ -33,10 +33,10 @@ public class Spatial {
         document.add(new Field(LAT_FIELD, doubleToPrefixCoded(location.getLatitude()), YES, NOT_ANALYZED));
         document.add(new Field(LON_FIELD, doubleToPrefixCoded(location.getLongitude()), YES, NOT_ANALYZED));
         for (int tier = startTier; tier <= endTier; tier++) {
-          ctp = new CartesianTierPlotter(tier, projector, CartesianTierPlotter.DEFALT_FIELD_PREFIX);
-          double boxId = ctp.getTierBoxId(location.getLatitude(), location.getLongitude());
-          document.add(new Field(ctp.getTierFieldName(), doubleToPrefixCoded(boxId), YES, Field.Index.NOT_ANALYZED_NO_NORMS));
-       }
+            ctp = new CartesianTierPlotter(tier, projector, CartesianTierPlotter.DEFALT_FIELD_PREFIX);
+            double boxId = ctp.getTierBoxId(location.getLatitude(), location.getLongitude());
+            document.add(new Field(ctp.getTierFieldName(), doubleToPrefixCoded(boxId), YES, Field.Index.NOT_ANALYZED_NO_NORMS));
+        }
         writer.addDocument(document);
     }
 
