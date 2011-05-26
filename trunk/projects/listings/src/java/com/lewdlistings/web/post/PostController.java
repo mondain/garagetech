@@ -1,9 +1,6 @@
 package com.lewdlistings.web.post;
 
-import com.lewdlistings.entity.PhoneNumber;
-import com.lewdlistings.entity.Post;
-import com.lewdlistings.entity.Review;
-import com.lewdlistings.entity.User;
+import com.lewdlistings.entity.*;
 import com.lewdlistings.flash.FlashMap;
 import com.lewdlistings.service.PostService;
 import com.lewdlistings.service.ReviewService;
@@ -130,6 +127,11 @@ public class PostController {
             }
             if (post.getGuid() == null) {
                 post.setGuid(RandomStringGenerator.getNextRandomString().toLowerCase());
+            }
+            Availability availability = post.getAvailability();
+            Location prebookLocation = availability.getPrebookLocation();
+            if (prebookLocation != null && prebookLocation.getZipCode() == null) {
+                availability.setPrebookLocation(null);
             }
             post.setStatus(Post.Status.ACTIVE);
             postService.persist(post);

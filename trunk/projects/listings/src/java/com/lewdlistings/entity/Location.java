@@ -39,6 +39,9 @@ public class Location implements Serializable, Comparable<Location> {
     @Column(name = "city", length = 64, nullable = false)
     private String city;
 
+    @Column(name = "fips_regions", length = 2, nullable = false)
+    private String fipsRegions;
+
     @Column(name = "latitude", nullable = false)
     @Field(name = "latitude", index = Index.UN_TOKENIZED, store = Store.YES)
     private Double latitude;
@@ -85,6 +88,14 @@ public class Location implements Serializable, Comparable<Location> {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getFipsRegions() {
+        return fipsRegions;
+    }
+
+    public void setFipsRegions(String fipsRegions) {
+        this.fipsRegions = fipsRegions;
     }
 
     public double getLatitude() {

@@ -23,7 +23,7 @@ public class Availability implements Serializable, Comparable<Availability> {
     @JoinColumn(name = "current_zipcode")
     private Location location;
 
-    @Column(name = "current_ends_at")
+    @Column(name = "current_starts_at")
     @org.hibernate.annotations.Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
     private DateTime start;
 

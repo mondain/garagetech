@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="4df3984d-8de3-4b51-962e-2efd48c48aef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/LocationValidator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ivy.xml" afterPath="$PROJECT_DIR$/ivy.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Availability.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Availability.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Location.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Location.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/AvailabilityValidator.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/AvailabilityValidator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java" afterPath="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sql/populate.sql" afterPath="$PROJECT_DIR$/src/sql/populate.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/java/com/lewdlistings/search/HibernateSpatialSearchTest.java" afterPath="$PROJECT_DIR$/test/java/com/lewdlistings/search/HibernateSpatialSearchTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/java/com/lewdlistings/search/Spatial.java" afterPath="$PROJECT_DIR$/test/java/com/lewdlistings/search/Spatial.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sql/zipcodes.sql" afterPath="$PROJECT_DIR$/src/sql/zipcodes.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" afterPath="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/home.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp" />
     </list>
     <ignored path="$USER_HOME$/.griffon/" />
     <ignored path="$USER_HOME$/.grails/" />
@@ -27,7 +20,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
-  <component name="CoverageDataManager" choice="3" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
     <option name="REVERSE_PATCH" value="false" />
@@ -96,10 +88,8 @@
       <file leaf-file-name="Location.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Location.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="13" selection-start="3663" selection-end="3663" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="92" column="36" selection-start="2645" selection-end="2645" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,7 +97,7 @@
       <file leaf-file-name="Post.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="43" selection-start="4065" selection-end="4065" vertical-scroll-proportion="0.0">
+            <state line="105" column="11" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,7 +106,7 @@
       <file leaf-file-name="edit.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="61" selection-start="4349" selection-end="4349" vertical-scroll-proportion="-37.714287">
+            <state line="82" column="61" selection-start="4349" selection-end="4349" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,7 +115,7 @@
       <file leaf-file-name="index.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="26" selection-start="1188" selection-end="1188" vertical-scroll-proportion="5.142857">
+            <state line="23" column="26" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -134,7 +124,7 @@
       <file leaf-file-name="home.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="211" selection-start="4669" selection-end="4669" vertical-scroll-proportion="-44.04762">
+            <state line="84" column="211" selection-start="4669" selection-end="4669" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,18 +133,7 @@
       <file leaf-file-name="Availability.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Availability.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="23" selection-start="1913" selection-end="1913" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="populate.sql" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sql/populate.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="79" selection-start="1244" selection-end="1259" vertical-scroll-proportion="0.0">
+            <state line="33" column="28" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -163,10 +142,8 @@
       <file leaf-file-name="AvailabilityValidator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/AvailabilityValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="32" selection-start="415" selection-end="415" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="33" column="13" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -174,10 +151,8 @@
       <file leaf-file-name="LocationValidator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/LocationValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="9" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="18" column="13" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,7 +160,7 @@
       <file leaf-file-name="messages.properties" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="2573" selection-end="2573" vertical-scroll-proportion="0.0">
+            <state line="35" column="82" selection-start="2485" selection-end="2485" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -194,7 +169,7 @@
       <file leaf-file-name="PostFormValidator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="36" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0">
+            <state line="59" column="70" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -203,7 +178,7 @@
       <file leaf-file-name="PostController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="30" selection-start="6341" selection-end="6341" vertical-scroll-proportion="0.7314344">
+            <state line="137" column="70" selection-start="5878" selection-end="5878" vertical-scroll-proportion="0.7198839">
               <folding />
             </state>
           </provider>
@@ -212,7 +187,7 @@
       <file leaf-file-name="PostForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="16" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0">
+            <state line="62" column="42" selection-start="2038" selection-end="2038" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -232,28 +207,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/search/bridge/CartesianTierFieldBridgeImpl.java" />
-        <option value="$PROJECT_DIR$/test/java/com/lewdlistings/search/HibernateSpatialSearchTest.java" />
         <option value="$PROJECT_DIR$/test/java/com/lewdlistings/search/Spatial.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/AvailabilityValidator.java" />
         <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/LocationValidator.java" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Location.java" />
         <option value="$PROJECT_DIR$/src/sql/populate.sql" />
         <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java" />
         <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/home.jsp" />
-        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Availability.java" />
         <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties" />
+        <option value="$PROJECT_DIR$/ivy.xml" />
+        <option value="$PROJECT_DIR$/src/sql/zipcodes.sql" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Location.java" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/AvailabilityValidator.java" />
         <option value="$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java" />
+        <option value="$PROJECT_DIR$/src/java/com/lewdlistings/entity/Availability.java" />
       </list>
     </option>
   </component>
   <component name="JspContextManager">
-    <jsp-to-context jsp-file="file://$PROJECT_DIR$/web/WEB-INF/views/partials/taglibs.jsp" context-file="file://$PROJECT_DIR$/web/WEB-INF/views/decorators/default.jsp" />
     <jsp-to-context jsp-file="file://$PROJECT_DIR$/web/WEB-INF/views/partials/messages.jsp" context-file="file://$PROJECT_DIR$/web/WEB-INF/views/post/list.jsp" />
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/web/WEB-INF/views/partials/taglibs.jsp" context-file="file://$PROJECT_DIR$/web/WEB-INF/views/decorators/default.jsp" />
     <jsp-to-context jsp-file="file://$PROJECT_DIR$/web/WEB-INF/views/partials/nav.jsp" context-file="file://$PROJECT_DIR$/web/WEB-INF/views/decorators/default.jsp" />
   </component>
   <component name="LogFilters">
@@ -304,7 +279,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -338,54 +313,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -444,134 +371,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lewdlistings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lewdlistings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -659,36 +458,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="propertyeditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lewdlistings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="post" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -712,88 +481,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lewdlistings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lewdlistings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lewdlistings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lewdlistings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridge" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -855,6 +542,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -869,7 +557,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -878,7 +565,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="preferences.sourceCode.Imports" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="project.structure.side.proportion" value="0.19907407" />
@@ -906,6 +593,7 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
         <option name="ValidateXdebugSetup" enabled="true" />
       </method>
     </configuration>
@@ -919,6 +607,7 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" adl_options="" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" browser_family="FIREFOX" class_name="" debugger_sdk="Module SDK" html_or_swf_file_path="" launcher_type="OSDefault" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" player_path="/Applications/Flash Player.app/Contents/MacOS/Flash Player" port="0" run_mode="HtmlOrSwfFile" run_trusted="false" scope="Class" socket_policy_port="0" url_to_launch="http://">
@@ -927,6 +616,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -960,6 +650,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -978,6 +669,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -998,6 +690,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -1024,6 +717,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
@@ -1035,6 +729,7 @@
           <server_name />
         </option>
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
         <option name="ValidateXdebugSetup" enabled="true" />
       </method>
     </configuration>
@@ -1051,6 +746,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="false" name="All in Listings" type="JUnit" factoryName="JUnit">
@@ -1241,6 +937,8 @@
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
     <option name="LAST_MERGED_REVISION" />
     <option name="MERGE_DRY_RUN" value="false" />
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
@@ -1302,23 +1000,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1124" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32848838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14385027" sideWeight="0.67151165" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54457366" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14316547" sideWeight="0.67151165" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5420054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39631784" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39566395" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.55420053" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22513369" sideWeight="0.5416667" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22513369" sideWeight="0.45542637" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22517985" sideWeight="0.45799458" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40406978" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1329,6 +1028,15 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
     <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
@@ -1340,6 +1048,7 @@
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="Introducing a phone number entity. Reintroducing Spring based validators." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
@@ -1378,123 +1087,106 @@
       <treeView value="true" />
       <verbose value="true" />
       <viewClosedWhenNoErrors value="false" />
+      <expanded value="true" />
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/list.jsp">
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0997921">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/propertyeditor/PhoneNumberPropertyEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="266" selection-end="266" vertical-scroll-proportion="0.04883011">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/service/PostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="9" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/LocationValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="9" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="13" selection-start="3663" selection-end="3663" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="43" selection-start="4065" selection-end="4065" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="16" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="61" selection-start="4349" selection-end="4349" vertical-scroll-proportion="-37.714287">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="26" selection-start="1188" selection-end="1188" vertical-scroll-proportion="5.142857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="211" selection-start="4669" selection-end="4669" vertical-scroll-proportion="-44.04762">
-          <folding />
-        </state>
+        <state line="16" column="13" selection-start="507" selection-end="507" vertical-scroll-proportion="0.06103764" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sql/populate.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="79" selection-start="1244" selection-end="1259" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="23" column="79" selection-start="1244" selection-end="1259" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Availability.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/edit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="23" selection-start="1913" selection-end="1913" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="82" column="61" selection-start="4349" selection-end="4349" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/service/impl/PostServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/post/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="519" selection-end="519" vertical-scroll-proportion="0.07324517">
-          <folding />
-        </state>
+        <state line="23" column="26" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/HomeController.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="507" selection-end="507" vertical-scroll-proportion="0.06103764">
+        <state line="84" column="211" selection-start="4669" selection-end="4669" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/LocationValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostFormValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="36" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0">
+        <state line="59" column="70" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/i18n/messages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="82" selection-start="2485" selection-end="2485" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="8" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.67343974">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sql/zipcodes.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="30" selection-start="669" selection-end="669" vertical-scroll-proportion="0.48766327">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/validator/AvailabilityValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="13" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="11" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="42" selection-start="2038" selection-end="2038" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="36" selection-start="2645" selection-end="2645" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/entity/Availability.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="28" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/lewdlistings/web/post/PostController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="30" selection-start="6341" selection-end="6341" vertical-scroll-proportion="0.7314344">
+        <state line="137" column="70" selection-start="5878" selection-end="5878" vertical-scroll-proportion="0.7198839">
           <folding />
         </state>
       </provider>
