@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `zipcodes` (
   `latitude` float NOT NULL,
   `longitude` float NOT NULL,
   PRIMARY KEY  (`zipcode`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `zipcodes`

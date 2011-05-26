@@ -48,16 +48,16 @@ public class PostFormValidator implements Validator {
             }
         }
 
-        validateCurrentAvailability(errors, form);
+        validateAvailability(errors, form);
         validatePhone(errors, form);
         validateAttributes(errors, form);
         validateLinks(errors, form);
     }
 
-    private void validateCurrentAvailability(Errors errors, PostForm form) {
+    private void validateAvailability(Errors errors, PostForm form) {
         try {
             errors.pushNestedPath("availability");
-            ValidationUtils.invokeValidator(new AvailabilityValidator(true), form.getAvailability(), errors);
+            ValidationUtils.invokeValidator(new AvailabilityValidator(), form.getAvailability(), errors);
         } finally {
             errors.popNestedPath();
         }

@@ -1,17 +1,17 @@
 package com.lewdlistings.entity.validator;
 
 import com.lewdlistings.entity.Availability;
+import com.lewdlistings.entity.Location;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
+
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang.StringUtils.isNumeric;
+import static org.springframework.validation.ValidationUtils.rejectIfEmptyOrWhitespace;
 
 public class AvailabilityValidator implements Validator {
 
-    private boolean required;
-
-    public AvailabilityValidator(boolean required) {
-        this.required = required;
-    }
+    public AvailabilityValidator() {}
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -24,13 +24,35 @@ public class AvailabilityValidator implements Validator {
         if (availability != null) {
             try {
                 errors.pushNestedPath("location");
-                ValidationUtils.invokeValidator(new LocationValidator(required), availability.getLocation(), errors);
+                Location location = availability.getLocation();
+                rejectIfEmptyOrWhitespace(errors, "zipCode", "error.location.zipcode.empty");
+                if (location != null && isNotBlank(location.getZipCode()) && !isNumeric(location.getZipCode())) {
+                    errors.rejectValue("zipCode", "error.location.zipcode.illegal.chars");
+                }
             } finally {
                 errors.popNestedPath();
             }
             if (availability.getStart() != null && availability.getEnd() != null) {
                 if (availability.getStart().isAfter(availability.getEnd())) {
-                    errors.rejectValue("start", "error.currentAvailability.invalid.dates");
+                    errors.rejectValue("start", "error.availability.invalid.dates");
+                }
+            }
+
+            try {
+                errors.pushNestedPath("prebookLocation");
+                Location prebookLocation = availability.getPrebookLocation();
+                if (prebookLocation != null && isNotBlank(prebookLocation.getZipCode()) && !isNumeric(prebookLocation.getZipCode())) {
+                    errors.rejectValue("zipCode", "error.prebookLocation.zipcode.illegal.chars");
+                }
+            } finally {
+                errors.popNestedPath();
+            }
+            if (availability.getPrebookStart() != null && availability.getPrebookEnd() != null) {
+                if (availability.getPrebookStart().isAfter(availability.getPrebookEnd())) {
+                    errors.rejectValue("prebookStart", "error.prebookAvailability.invalid.dates");
+                }
+                if (availability.getPrebookStart().isBefore(availability.getEnd())) {
+                    errors.rejectValue("prebookStart", "error.prebookAvailability.invalid.dates");
                 }
             }
         }
