@@ -22,38 +22,45 @@ public class AvailabilityValidator implements Validator {
     public void validate(Object obj, Errors errors) {
         Availability availability = (Availability) obj;
         if (availability != null) {
-            try {
-                errors.pushNestedPath("location");
-                Location location = availability.getLocation();
-                rejectIfEmptyOrWhitespace(errors, "zipCode", "error.location.zipcode.empty");
-                if (location != null && isNotBlank(location.getZipCode()) && !isNumeric(location.getZipCode())) {
-                    errors.rejectValue("zipCode", "error.location.zipcode.illegal.chars");
-                }
-            } finally {
-                errors.popNestedPath();
-            }
-            if (availability.getStart() != null && availability.getEnd() != null) {
-                if (availability.getStart().isAfter(availability.getEnd())) {
-                    errors.rejectValue("start", "error.availability.invalid.dates");
-                }
-            }
+            validateCurrent(availability, errors);
+            validatePrebook(availability, errors);
+        }
+    }
 
-            try {
-                errors.pushNestedPath("prebookLocation");
-                Location prebookLocation = availability.getPrebookLocation();
-                if (prebookLocation != null && isNotBlank(prebookLocation.getZipCode()) && !isNumeric(prebookLocation.getZipCode())) {
-                    errors.rejectValue("zipCode", "error.prebookLocation.zipcode.illegal.chars");
-                }
-            } finally {
-                errors.popNestedPath();
+    private void validateCurrent(Availability availability, Errors errors) {
+        try {
+            errors.pushNestedPath("location");
+            Location location = availability.getLocation();
+            rejectIfEmptyOrWhitespace(errors, "zipCode", "error.location.zipcode.empty");
+            if (location != null && isNotBlank(location.getZipCode()) && !isNumeric(location.getZipCode())) {
+                errors.rejectValue("zipCode", "error.location.zipcode.illegal.chars");
             }
-            if (availability.getPrebookStart() != null && availability.getPrebookEnd() != null) {
-                if (availability.getPrebookStart().isAfter(availability.getPrebookEnd())) {
-                    errors.rejectValue("prebookStart", "error.prebookAvailability.invalid.dates");
-                }
-                if (availability.getPrebookStart().isBefore(availability.getEnd())) {
-                    errors.rejectValue("prebookStart", "error.prebookAvailability.invalid.dates");
-                }
+        } finally {
+            errors.popNestedPath();
+        }
+        if (availability.getStart() != null && availability.getEnd() != null) {
+            if (availability.getStart().isAfter(availability.getEnd())) {
+                errors.rejectValue("start", "error.availability.invalid.dates");
+            }
+        }
+    }
+
+    private void validatePrebook(Availability availability, Errors errors) {
+        try {
+            errors.pushNestedPath("prebookLocation");
+            Location prebookLocation = availability.getPrebookLocation();
+            if (prebookLocation != null && isNotBlank(prebookLocation.getZipCode()) && !isNumeric(prebookLocation.getZipCode())) {
+                errors.rejectValue("zipCode", "error.prebookLocation.zipcode.illegal.chars");
+            }
+        } finally {
+            errors.popNestedPath();
+        }
+        if (availability.getPrebookStart() != null && availability.getPrebookEnd() != null) {
+            if (availability.getPrebookStart().isAfter(availability.getPrebookEnd())) {
+                errors.rejectValue("prebookStart", "error.prebookAvailability.invalid.dates");
+            }
+            if (availability.getPrebookStart().isBefore(availability.getEnd())) {
+                errors.rejectValue("prebookStart", "error.prebookAvailability.invalid.dates");
             }
         }
     }
