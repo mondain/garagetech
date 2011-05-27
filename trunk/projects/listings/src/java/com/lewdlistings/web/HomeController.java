@@ -39,7 +39,7 @@ public class HomeController {
     }
 
     private void addPosts(Model model) {
-        List<Post> posts = postService.listRecent(0, 100);
+        List<Post> posts = postService.listRecent(0, 50);
         model.addAttribute("posts", posts);
     }
 }

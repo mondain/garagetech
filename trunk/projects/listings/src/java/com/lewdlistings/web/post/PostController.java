@@ -1,6 +1,11 @@
 package com.lewdlistings.web.post;
 
-import com.lewdlistings.entity.*;
+import com.lewdlistings.entity.Availability;
+import com.lewdlistings.entity.Location;
+import com.lewdlistings.entity.PhoneNumber;
+import com.lewdlistings.entity.Post;
+import com.lewdlistings.entity.Review;
+import com.lewdlistings.entity.User;
 import com.lewdlistings.flash.FlashMap;
 import com.lewdlistings.service.PostService;
 import com.lewdlistings.service.ReviewService;
@@ -130,6 +135,7 @@ public class PostController {
             }
             Availability availability = post.getAvailability();
             Location prebookLocation = availability.getPrebookLocation();
+            //TODO: This is an ugly hack. Need to find a better way around this.
             if (prebookLocation != null && prebookLocation.getZipCode() == null) {
                 availability.setPrebookLocation(null);
             }

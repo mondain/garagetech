@@ -24,18 +24,13 @@
     <form:hidden path="type"/>
     <ul>
         <form:errors path="*" cssClass="error" element="li"/>
-        <!--li class="section">
-            <section>
-                <h3>The Basics</h3>
-                <div>&nbsp;</div>
-            </section>
-        </li-->
         <li class="leftHalf">
             <form:label path="displayName" cssClass="desc">Display Name</form:label>
             <div>
                 <form:input path="displayName" id="displayName" cssClass="field text medium" maxlength="255" tabindex="1"/>
                 <form:label path="displayName">Displays instead of your username within the ad</form:label>
             </div>
+            <form:errors path="displayName" element="p" cssClass="error"/>
         </li>
         <li class="rightHalf">
             <form:label path="phone" cssClass="desc">Phone Number <span class="req">*</span></form:label>
@@ -89,18 +84,20 @@
                 </span>
             </c:if>
         </li>
-        <!--li class="section">
-            <section>
-                <h3>Content</h3>
-                <div>&nbsp;</div>
-            </section>
-        </li-->
-        <li>
+        <c:choose>
+            <c:when test="${requestScope['org.springframework.validation.BindingResult.editPostForm'].hasFieldErrors('summary')}">
+                <li class="error">
+            </c:when>
+            <c:otherwise>
+                <li>
+            </c:otherwise>
+        </c:choose>
             <form:label path="summary" cssClass="desc">Teaser <span class="req">*</span></form:label>
             <div>
                 <form:textarea path="summary" id="summary" cssClass="field textarea" maxlength="200" tabindex="11"/>
                 <form:label id="summaryCounter" path="summary">&nbsp;</form:label>
             </div>
+            <form:errors path="summary" element="p" cssClass="error"/>
         </li>
         <li>
             <form:label path="content" cssClass="desc">Content <span class="req">*</span></form:label>
@@ -108,13 +105,8 @@
                 <form:textarea path="content" id="content" cssClass="field textarea large" maxlength="2000" tabindex="12"/>
                 <form:label id="contentCounter" path="content">&nbsp;</form:label>
             </div>
+            <form:errors path="content" element="p" cssClass="error"/>
         </li>
-        <!--li class="section">
-            <section>
-                <h3>Details, Links & Tags</h3>
-                <div>&nbsp;</div>
-            </section>
-        </li-->
         <li class="leftThird complex">
             <form:label path="attributes" cssClass="desc">Details | <a id="newAttribute" href="#">Add details</a></form:label>
             <div id="attributeEditor">

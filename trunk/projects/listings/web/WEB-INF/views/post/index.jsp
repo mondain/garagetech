@@ -80,7 +80,7 @@
         </article>
     </section>
     <div class="content">
-        <p>${post.content}</p>
+        <p><c:out value="${post.content}" escapeXml="true"/></p>
         <p>I'm available anytime. Some screening may be required.</p>
         <section class="reviews group">
             <header>

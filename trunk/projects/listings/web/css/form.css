@@ -1152,7 +1152,6 @@ form li.paging-context {
 form li.error {
     display: block !important;
     background-color: #FFDFDF !important;
-    font-size: .8em;
     margin-bottom: 3px !important;
 }
 
@@ -1174,21 +1173,23 @@ form li.error label.desc {
     color: #DF0000 !important;
 }
 
-form p.error {
+form p.error,
+form span.error {
     display: none;
     margin: 0 !important;
     padding: 7px 0 0 0 !important;
     line-height: 10px !important;
     font-weight: bold;
-    font-size: 1.1em;
     color: #DF0000 !important;
     clear: both;
 }
 
-form li.error p.error {
+form li.error p.error,
+form li.error span.error {
     display: block;
 }
 
-form li.complex p.error {
+form li.complex p.error,
+form li.complex span.error {
     padding: 0 0 9px 0 !important;
 }
