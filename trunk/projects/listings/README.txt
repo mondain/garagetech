@@ -24,6 +24,9 @@ Five + Five type account with additional fee for each ad. So we would charge eve
 
 http://www.angieslist.com/
 
+JSONP with Spring MVC
+
+http://jpgmr.wordpress.com/2010/07/28/tutorial-implementing-a-servlet-filter-for-jsonp-callback-with-springs-delegatingfilterproxy/
 
 
 
