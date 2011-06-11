@@ -25,12 +25,10 @@
     </head>
     <body>
         <header>
-            <hgroup>
-                <h1><a href="${homeUrl}">Listings</a></h1>
-                <h2>Classifieds for the fun of it</h2>
-            </hgroup>
+            <%@ include file="/WEB-INF/views/partials/utilNav.jsp" %>
+            <h1><a href="${homeUrl}">Listings</a></h1>
+            <%@ include file="/WEB-INF/views/partials/nav.jsp" %>
         </header>
-        <%@ include file="/WEB-INF/views/partials/nav.jsp" %>
         <section class="group">
             <decorator:body/>
         </section>

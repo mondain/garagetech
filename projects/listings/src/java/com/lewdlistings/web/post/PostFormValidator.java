@@ -7,9 +7,9 @@ import com.lewdlistings.entity.validator.PostAttributeValidator;
 import com.lewdlistings.entity.validator.PostLinkValidator;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import static org.springframework.validation.ValidationUtils.invokeValidator;
 import static org.springframework.validation.ValidationUtils.rejectIfEmptyOrWhitespace;
 
 public class PostFormValidator implements Validator {
@@ -57,7 +57,7 @@ public class PostFormValidator implements Validator {
     private void validateAvailability(Errors errors, PostForm form) {
         try {
             errors.pushNestedPath("availability");
-            ValidationUtils.invokeValidator(new AvailabilityValidator(), form.getAvailability(), errors);
+            invokeValidator(new AvailabilityValidator(), form.getAvailability(), errors);
         } finally {
             errors.popNestedPath();
         }
@@ -66,7 +66,7 @@ public class PostFormValidator implements Validator {
     private void validatePhone(Errors errors, PostForm form) {
         try {
             errors.pushNestedPath("phone");
-            ValidationUtils.invokeValidator(phoneNumberValidator, form.getPhone(), errors);
+            invokeValidator(phoneNumberValidator, form.getPhone(), errors);
         } finally {
             errors.popNestedPath();
         }
@@ -77,7 +77,7 @@ public class PostFormValidator implements Validator {
         for (PostAttribute attribute : form.getAttributes()) {
             try {
                 errors.pushNestedPath("attributes[" + index++ + "]");
-                ValidationUtils.invokeValidator(postAttributeValidator, attribute, errors);
+                invokeValidator(postAttributeValidator, attribute, errors);
             } finally {
                 errors.popNestedPath();
             }
@@ -89,7 +89,7 @@ public class PostFormValidator implements Validator {
         for (PostAttribute link : form.getLinks()) {
             try {
                 errors.pushNestedPath("links[" + index++ + "]");
-                ValidationUtils.invokeValidator(postLinkValidator, link, errors);
+                invokeValidator(postLinkValidator, link, errors);
             } finally {
                 errors.popNestedPath();
             }
