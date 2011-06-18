@@ -29,7 +29,7 @@
                                         <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
                                         <img src="${ctx}/img/rate_off_16x16_white.png" alt="rating" border="0"/>
                                     </strong>
-                                    <em>${post.phone}<br/>${post.location}</em>
+                                    <em>${post.phone}<br/>${post.availability.location.zipCode}</em>
                                 </span>
                             </a>
                         </div>
