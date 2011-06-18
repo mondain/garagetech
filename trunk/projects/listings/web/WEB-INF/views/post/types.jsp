@@ -62,7 +62,7 @@
                 <ol>
                     <li>Basic blah...</li>
                     <li>Runs for 30 days</li>
-                    <li>Bumps automatically every 12 hours</li>
+                    <li>Bumps automatically every 8 hours</li>
                     <li>Searchable profile</li>
                     <li>Ratings and reviews</li>
                 </ol>
