@@ -49,6 +49,7 @@ public class PostController {
     }
 
     @RequestMapping(value = "/ads", method = GET)
+    // TODO: Remap this to return a complete list of ads
     public String list(Model model) {
         User user = UserThreadLocal.getCurrentUser();
         logger.debug("Listing all posts for user: {}", user.getUsername());

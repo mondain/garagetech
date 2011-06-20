@@ -21,15 +21,19 @@
         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css"/>
         <link rel="stylesheet" href="${ctx}/css/form.css" type="text/css"/>
         <link rel="stylesheet" href="${ctx}/css/screen.css" type="text/css"/>
+        <link rel="stylesheet" href="${ctx}/css/enriched.css" type="text/css"/>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     </head>
     <body>
+        <%@ include file="/WEB-INF/views/partials/utilNav.jsp" %>
         <header>
-            <%@ include file="/WEB-INF/views/partials/utilNav.jsp" %>
-            <h1><a href="${homeUrl}">Listings</a></h1>
-            <%@ include file="/WEB-INF/views/partials/nav.jsp" %>
+            <hgroup>
+                <h1><a href="${homeUrl}">Listings</a></h1>
+                <h2>Classifieds for the fun of it</h2>
+            </hgroup>
         </header>
-        <section class="group">
+        <%@ include file="/WEB-INF/views/partials/nav.jsp" %>
+        <section id="wrap" class="group">
             <decorator:body/>
         </section>
         <footer>

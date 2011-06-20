@@ -12,18 +12,22 @@ a, a:visited {
 }
 
 body > header {
-    margin: 8px 0 0;
+    height: 4em;
+    padding: 1.5em 0 1em;
 }
 
-body > header > h1 {
-    display: inline;
+body > header > hgroup > h1 {
     font-size: 2em;
-    position: relative;
-    top: 14px;
+    margin-bottom: .2em;
 }
 
-body > header > h1 > a {
+body > header > hgroup > h1 > a,
+body > header > hgroup > h1 > a:visited {
     color: #000;
+}
+
+body > header > hgroup > h2 {
+    font-size: 1em;
 }
 
 body > footer {
@@ -40,6 +44,7 @@ body > footer > p {
 #util-nav {
     float: right;
     font-size: .9em;
+    padding: 8px 0;
 }
 
 #util-nav span {
@@ -50,53 +55,95 @@ body > footer > p {
     color: #000;
 }
 
-#main-nav.tabs li a:link,
-#main-nav.tabs li a:visited {
-    float: right;
-    font-size: 1.15em;
+#main-nav ul {
+    margin: 0 auto;
 }
 
-#main-nav.tabs li.create a:link,
-#main-nav.tabs li.create a:visited {
-    background-color: #ddd;
-    border-bottom: 1px solid #fff;
+#main-nav ul li {
+    float: left;
+    width: 25%;
+}
+
+#main-nav ul li.create a {
+    background-color: #bef2a1;
+}
+
+#main-nav ul li.last a {
+    margin-right: 0;
+}
+
+#main-nav ul li a {
+    background-color: #eee;
+    display: block;
+    float: left;
+    width: 100%;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    border-left: 1px solid #fff;
+}
+
+#main-nav ul li a strong {
+    display: block;
+    padding: .8em 15px;
+}
+
+#main-nav ul li a em {
+    display: block;
+    font-size: .85em;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #444;
 }
 
 /* tabs */
 
-.tabs ul {
+.tab-row ul {
     border-bottom: 2px solid #ccc;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-.tabs li {
+.tab-row li {
+    margin: 0;
+    padding: 0;
     display: inline;
 }
 
-.tabs li a:link,
-.tabs li a:visited {
+.tab-row a:link,
+.tab-row a:visited {
     -moz-border-radius-topleft: 2px;
     -moz-border-radius-topright: 2px;
     -webkit-border-top-left-radius: 2px;
     -webkit-border-top-right-radius: 2px;
-    background-color: #eee;
+    background: #ddd;
     border-bottom: 1px solid #fff;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    color: #000;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #444;
     float: left;
-    margin: 0 2px;
-    padding: 6px 10px 5px;
+    font-weight: bold;
+    margin-left: 2px;
+    padding: 7px 14px;
+    text-decoration: none;
 }
 
-.tabs li.selected a:link,
-.tabs li.selected a:visited
-.tabs a:visited.active {
+.tab-row a span {
+    font-weight: normal;
+}
+
+.tab-row li.selected a:link,
+.tab-row li.selected a:visited,
+.tab-row a:visited.active {
     background-color: #ccc;
     border-bottom: 1px solid #ccc;
-}
-
-.tab-panel {
-    margin: 8px 0;
 }
 
 /* messages */
@@ -128,6 +175,10 @@ label.error {
 
 /* common page structure */
 
+#wrap {
+    padding-top: 20px;
+}
+
 div.content {
     float: left;
     margin-right: 20px;
@@ -146,6 +197,7 @@ section.featured {
     margin-bottom: 8px;
 }
 
+header.summary section,
 section.featured article {
     border: 1px solid #ddd;
     float: left;
@@ -159,12 +211,14 @@ section.featured article.last {
     margin-right: 0;
 }
 
+header.summary div.avatar,
 section.featured div.feature {
     margin: 10px;
     overflow: hidden;
     position: relative;
 }
 
+header.summary div.avatar a,
 section.featured div.feature a {
     color: #ddd;
 }
@@ -190,10 +244,6 @@ section.featured div.feature a:hover span {
     display: block;
 }
 
-section.featured div.feature a span {
-	background-color: rgba(0, 0, 0, .7);
-}
-
 section.featured div.feature a span strong {
     display: block;
     padding: 10px 10px 0 10px;
@@ -212,6 +262,7 @@ section.featured div.feature a span em {
     font-style: normal;
 }
 
+header.summary div.avatar-img img,
 section.featured div.feature-img img {
     max-width: 100%;
 }
@@ -343,7 +394,6 @@ section.posts article p {
     padding-bottom: 8px;
 }
 
-
 /* profiles */
 
 header.summary {
@@ -357,15 +407,6 @@ header.summary {
 header.summary div,
 header.summary hgroup {
     display: inline-block;
-}
-
-header.summary div.avatar {
-    border: 1px solid #ddd;
-    height: 72px;
-    margin-right: 6px;
-    padding: 6px;
-    position: relative;
-    width: 72px;
 }
 
 header.summary div.actions {
@@ -421,12 +462,8 @@ section.profile p {
     margin-bottom: 24px;
 }
 
-section.profile section {
-    font-size: .9em;
-}
-
-section.profile section.featured {
-    margin-bottom: 24px;
+section.profile div.tab-row {
+    margin-bottom: 20px;
 }
 
 section.profile div.meta dd,

@@ -5,11 +5,15 @@
 <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
 <%@ include file="/WEB-INF/views/partials/messages.jsp" %>
 <header class="summary group">
-    <div class="avatar">
-        <a href="">
-            <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="72" height="72" border="0"/>
-        </a>
-    </div>
+    <section class="group">
+        <div class="avatar">
+            <div class="avatar-img">
+                <a href="">
+                    <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
+                </a>
+            </div>
+        </div>
+    </section>
     <hgroup>
         <h1>${name}</h1>
         <h2>
@@ -32,53 +36,19 @@
 </header>
 <section class="profile">
     <p>${post.summary}</p>
-    <section class="featured group">
-        <article class="group">
-            <div class="feature">
-                <div class="feature-img">
-                    <a href="">
-                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
-                    </a>
-                </div>
-            </div>
-        </article>
-        <article class="group">
-            <div class="feature">
-                <div class="feature-img">
-                    <a href="">
-                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
-                    </a>
-                </div>
-            </div>
-        </article>
-        <article class="group">
-            <div class="feature">
-                <div class="feature-img">
-                    <a href="">
-                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
-                    </a>
-                </div>
-            </div>
-        </article>
-        <article class="group">
-            <div class="feature">
-                <div class="feature-img">
-                    <a href="">
-                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
-                    </a>
-                </div>
-            </div>
-        </article>
-        <article class="group last">
-            <div class="feature">
-                <div class="feature-img">
-                    <a href="">
-                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
-                    </a>
-                </div>
-            </div>
-        </article>
-    </section>
+    <div class="tab-row group">
+        <ul>
+            <li class="selected">
+                <a href="">Profile</a>
+            </li>
+            <li>
+                <a href="">Photos (8)</a>
+            </li>
+            <li>
+                <a href="">Reviews (32)</a>
+            </li>
+        </ul>
+    </div>
     <div class="content">
         <p><c:out value="${post.content}" escapeXml="true"/></p>
         <p>I'm available anytime. Some screening may be required.</p>

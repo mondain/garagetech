@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/views/partials/taglibs.jsp" %>
-<c:url var="cancelUrl" value="/ads"/>
+<c:url var="cancelUrl" value="/account"/>
 <c:choose>
     <c:when test="${isEdit}">
         <c:set var="title" value="Update my ${fn:toLowerCase(editPostForm.type)} ad"/>
