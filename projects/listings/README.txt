@@ -12,6 +12,8 @@ Tiered post types
 
 http://classifieds.myredbook.com/classified.php?adid=154617
 http://classifieds.myredbook.com/classified.php?adid=244757
+http://classifieds.myredbook.com/classified.php?adid=220647
+http://classifieds.myredbook.com/classified.php?adid=224560
 http://www.find-escorts.com/listing/1362/Young_And_Wild_NEW_GIRL.html
 http://eroticservices.cityvibe.com/escorts.php?do=list&city=576
 http://www.theeroticreview.com/main.asp
