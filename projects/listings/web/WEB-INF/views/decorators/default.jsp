@@ -17,29 +17,30 @@
         <!--[if lt IE 9]>
         <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <link rel="stylesheet" href="${ctx}/css/html5reset.css" type="text/css"/>
-        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css"/>
-        <link rel="stylesheet" href="${ctx}/css/form.css" type="text/css"/>
+        <link rel="stylesheet" href="${ctx}/css/bootstrap-1.1.0.css" type="text/css"/>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css"/>
         <link rel="stylesheet" href="${ctx}/css/screen.css" type="text/css"/>
         <link rel="stylesheet" href="${ctx}/css/enriched.css" type="text/css"/>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     </head>
     <body>
-        <%@ include file="/WEB-INF/views/partials/utilNav.jsp" %>
-        <header>
-            <hgroup>
-                <h1><a href="${homeUrl}">Listings</a></h1>
-                <h2>Classifieds for the fun of it</h2>
-            </hgroup>
-        </header>
-        <%@ include file="/WEB-INF/views/partials/nav.jsp" %>
-        <section id="wrap" class="group">
+        <div class="topbar">
+            <div class="fill">
+                <div class="container">
+                    <h3><a href="${homeUrl}">Listings</a></h3>
+                    <%@ include file="/WEB-INF/views/partials/nav.jsp" %>
+                    <%@ include file="/WEB-INF/views/partials/utilNav.jsp" %>
+                </div>
+            </div>
+        </div>
+        <div class="container">
             <decorator:body/>
-        </section>
-        <footer>
-            <p>Copyright &copy; 2011</p>
-        </footer>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+            <footer>
+                <p>Copyright &copy; 2011</p>
+            </footer>
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="${ctx}/js/application.js"></script>
         <%-- Use decorator:head to consolidate JS files at the bottom of the page for faster page rendering. --%>
         <decorator:head/>
     </body>

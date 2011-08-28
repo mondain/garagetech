@@ -7,6 +7,7 @@
       <w>clearfix</w>
       <w>contrib</w>
       <w>datagrid</w>
+      <w>dropdown</w>
       <w>endif</w>
       <w>entitymanager</w>
       <w>favicon</w>
@@ -31,6 +32,7 @@
       <w>tabindex</w>
       <w>taglibs</w>
       <w>textarea</w>
+      <w>topbar</w>
       <w>urlrewrite</w>
       <w>username</w>
       <w>usertype</w>

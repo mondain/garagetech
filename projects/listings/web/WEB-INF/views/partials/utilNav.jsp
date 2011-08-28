@@ -3,14 +3,19 @@
 <c:url var="joinUrl" value="/join"/>
 <c:url var="loginUrl" value="/login"/>
 <c:url var="logoutUrl" value="/logout"/>
-<div id="util-nav" class="group">
+<ul class="nav secondary-nav">
     <security:authorize ifAnyGranted="ROLE_USER">
-        <span>Hello, <a href="${accountUrl}">${currentUser.username}</a>.</span>
-        <span><a href="${accountUrl}">Account</a></span>
-        <span><a href="${logoutUrl}">Sign Out</a></span>
+        <li class="menu">
+            <a href="#" class="menu">${currentUser.username}</a>
+            <ul class="menu-dropdown">
+                <li><a href="${accountUrl}">Account</a></li>
+                <li class="divider"></li>
+                <li><a href="${logoutUrl}">Sign Out</a></li>
+            </ul>
+        </li>
     </security:authorize>
     <security:authorize ifNotGranted="ROLE_USER">
-        <span><a href="${joinUrl}">Join for free!</a></span>
-        <span><a href="${loginUrl}">Sign In</a></span>
+        <li><a href="${joinUrl}">Join for free!</a></li>
+        <li><a href="${loginUrl}">Sign In</a></li>
     </security:authorize>
-</div>
+</ul>
