@@ -1,6 +1,7 @@
 <%@ include file="/WEB-INF/views/partials/taglibs.jsp" %>
 <c:url var="editUrl" value="/ad/${post.guid}/edit"/>
 <c:url var="newReviewUrl" value="/review/new?post=${post.guid}"/>
+<c:url var="photosUrl" value="/ad/${post.guid}/photos"/>
 <c:url var="reviewsUrl" value="/ad/${post.guid}/reviews"/>
 <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
 <%@ include file="/WEB-INF/views/partials/messages.jsp" %>
@@ -42,10 +43,10 @@
                 <a href="">Profile</a>
             </li>
             <li>
-                <a href="">Photos (8)</a>
+                <a href="${photosUrl}">Photos (8)</a>
             </li>
             <li>
-                <a href="">Reviews (32)</a>
+                <a href="${reviewsUrl}">Reviews (32)</a>
             </li>
         </ul>
     </div>
