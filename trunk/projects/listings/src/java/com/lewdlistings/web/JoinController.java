@@ -62,6 +62,6 @@ public class JoinController {
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-        binder.setAllowedFields("email", "password", "confirm", "username", "agreeToTerms");
+        binder.setAllowedFields("email", "password", "username", "agreeToTerms");
     }
 }

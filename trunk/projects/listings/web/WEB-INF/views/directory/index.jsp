@@ -2,14 +2,12 @@
 <head>
     <title>Directory</title>
 </head>
-<header class="info">
-    <hgroup>
-        <h1>Directory</h1>
-        <h2>Directory of all active ads</h2>
-    </hgroup>
-</header>
 <%@ include file="/WEB-INF/views/partials/messages.jsp" %>
 <section class="featured group">
+    <header class="page-header">
+        <h2>Directory</h2>
+        <p>A to Z and then some</p>
+    </header>
     <c:choose>
         <c:when test="${not empty posts}">
             <c:forEach var="post" items="${posts}" varStatus="status">

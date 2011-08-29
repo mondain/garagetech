@@ -1,4 +1,23 @@
+/* body and structure */
+
+body {
+  background-color: #fff;
+  position: relative;
+}
+
+section {
+  padding-top: 60px;
+}
+
+section > .row {
+  margin-bottom: 10px;
+}
+
 /* common elements */
+
+footer {
+    border:  none;
+}
 
 footer p {
     text-align: center;
@@ -29,6 +48,16 @@ div.error {
 
 label.error {
     color: #f00;
+}
+
+span.req {
+    color: red !important;
+    font-weight: bold;
+}
+
+form div.alert-message.error {
+    margin-bottom: 18px;
+    padding: 8px 15px;
 }
 
 /* featured posts */
