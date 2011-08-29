@@ -5,37 +5,37 @@
 <c:url var="reviewsUrl" value="/ad/${post.guid}/reviews"/>
 <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
 <%@ include file="/WEB-INF/views/partials/messages.jsp" %>
-<header class="summary group">
-    <section class="group">
-        <div class="avatar">
-            <div class="avatar-img">
-                <a href="">
-                    <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
-                </a>
+<section id="profile">
+    <header class="summary group">
+        <section class="group">
+            <div class="avatar">
+                <div class="avatar-img">
+                    <a href="">
+                        <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="154" height="154" border="0"/>
+                    </a>
+                </div>
             </div>
+        </section>
+        <hgroup>
+            <h1>${name}</h1>
+            <h2>
+                <span class="rating">
+                    <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
+                    <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
+                    <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
+                    <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
+                    <img src="${ctx}/img/rate_off_16x16.png" alt="rating" border="0"/>
+                </span>
+                <span>${post.phone}</span>
+                <span>${post.availability.location.zipCode}</span>
+            </h2>
+        </hgroup>
+        <div class="actions group">
+            <a href="${editUrl}">Edit</a>
+            <a href="${newReviewUrl}">Add your review</a>
+            <a class="delete" href="">Report</a>
         </div>
-    </section>
-    <hgroup>
-        <h1>${name}</h1>
-        <h2>
-            <span class="rating">
-                <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
-                <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
-                <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
-                <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
-                <img src="${ctx}/img/rate_off_16x16.png" alt="rating" border="0"/>
-            </span>
-            <span>${post.phone}</span>
-            <span>${post.availability.location.zipCode}</span>
-        </h2>
-    </hgroup>
-    <div class="actions group">
-        <a href="${editUrl}">Edit</a>
-        <a href="${newReviewUrl}">Add your review</a>
-        <a class="delete" href="">Report</a>
-    </div>
-</header>
-<section class="profile">
+    </header>
     <p>${post.summary}</p>
     <div class="tab-row group">
         <ul>
