@@ -35,10 +35,10 @@
             <div class="input">
                 <ul class="inputs-list">
                     <li>
-                        <label>
-                            <form:checkbox path="agreeToTerms" cssClass="field checkbox" tabindex="5"/>
+                        <form:label path="agreeToTerms">
+                            <form:checkbox path="agreeToTerms" id="agreeToTerms" tabindex="5"/>
                             <span>I have read and agree to the <a href="#">Terms of Use</a>.</span>
-                        </label>
+                        </form:label>
                     </li>
                 </ul>
             </div>
