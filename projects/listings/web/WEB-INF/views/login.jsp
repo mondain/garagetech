@@ -12,7 +12,7 @@
     </header>
     <c:if test="${pageContext.request.queryString == 'error'}">
         <div class="alert-message error">
-            <a class="close" href="#">×</a>
+            <!--a class="close" href="#">×</a-->
             <p><fmt:message key="error.bad.credentials"/></p>
         </div>
     </c:if>
@@ -27,7 +27,7 @@
         <div class="clearfix">
             <label for="password" class="">Password</label>
             <div class="input">
-                <input type="password" name="j_password" id="password" class="xlarge" maxlength="32" tabindex="2" />
+                <input type="password" name="j_password" id="password" class="xlarge" maxlength="32" tabindex="2"/>
                 <span class="help-block">Remember, your password is case sensitive.<br/><a href="${lostPasswordUrl}">Forgot your password?</a></span>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 <ul class="inputs-list">
                     <li>
                         <label>
-                            <input type="checkbox" name="j_persist" id="persist" class="field checkbox" tabindex="3" />
+                            <input type="checkbox" name="j_persist" id="persist" tabindex="3"/>
                             <span>Remember Me?</span>
                         </label>
                     </li>
