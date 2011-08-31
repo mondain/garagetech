@@ -105,9 +105,6 @@
 
     function initDatePickers() {
         $(".date").datepicker({
-            showOn: "both",
-			buttonImage: "/img/calendar.png",
-            buttonImageOnly: true,
             dateFormat: "m/dd/yy"
         });
     }

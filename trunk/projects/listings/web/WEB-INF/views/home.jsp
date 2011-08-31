@@ -51,6 +51,10 @@
                 <header class="page-header">
                     <h2>Recent Ads <small>List of most recent ads.</small></h2>
                 </header>
+                <div class="alert-message block-message success hidden">
+                    <a class="close" href="#">×</a>
+                    <p>4 new ads</p>
+                </div>
                 <c:choose>
                     <c:when test="${not empty posts}">
                         <c:forEach var="post" items="${posts}" varStatus="status">
