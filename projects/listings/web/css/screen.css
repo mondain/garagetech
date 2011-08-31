@@ -23,6 +23,29 @@ footer p {
     text-align: center;
 }
 
+.hidden {
+    display: none;
+}
+
+/* form elements */
+
+.phone .inline-inputs input.small {
+    width: 35px;
+}
+
+.phone .inline-inputs input.mini {
+    width: 25px;
+}
+
+span.req {
+    display: inline;
+    float: none;
+    color: red !important;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
 /* featured posts */
 
 #featured .page-header {
@@ -76,6 +99,10 @@ footer p {
 
 #posts .content a {
     color: #000;
+}
+
+#posts .content p {
+    padding-right: 6px;
 }
 
 section.posts {
@@ -408,8 +435,8 @@ div.editor-row span.delete {
 /* jquery-ui extensions */
 
 .ui-widget {
-    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
-    font-size: .85em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
 }
 
 /* datagrid */
