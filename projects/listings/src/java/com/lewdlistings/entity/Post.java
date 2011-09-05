@@ -78,6 +78,7 @@ public class Post extends BaseEntity implements Comparable<Post> {
             joinColumns = @JoinColumn(name = "post_id")
     )
     @OrderBy("name")
+    //TODO: Refactor this to use a OneToMany relationship
     private Set<PostAttribute> attributes;
 
     @OneToMany
