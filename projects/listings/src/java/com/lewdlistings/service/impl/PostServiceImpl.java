@@ -25,11 +25,13 @@ public class PostServiceImpl implements PostService {
         this.postRepos = postRepos;
     }
 
+    @Transactional(readOnly = true)
     public Post findByGuid(String guid) {
         logger.debug("Finding post by guid: {}", guid);
         return postRepos.findByGuid(guid);
     }
 
+    @Transactional(readOnly = true)
     public List<Post> listActive() {
         logger.debug("Listing all active posts.");
         return postRepos.listActive();
