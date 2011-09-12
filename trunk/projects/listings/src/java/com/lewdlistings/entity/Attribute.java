@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Transient;
 import java.io.Serializable;
 
 @MappedSuperclass
@@ -26,6 +27,7 @@ public class Attribute implements Serializable {
         this.name = name;
     }
 
+    @Transient
     public boolean getBooleanValue() {
         return value != null ? value.optBoolean(getName()) : null;
     }
@@ -38,6 +40,7 @@ public class Attribute implements Serializable {
         }
     }
 
+    @Transient
     public long getLongValue() {
         return value != null ? value.optLong(getName()) : null;
     }
@@ -50,6 +53,7 @@ public class Attribute implements Serializable {
         }
     }
 
+    @Transient
     public Object getObjectValue() {
         return value != null ? value.opt(getName()) : null;
     }
@@ -62,6 +66,7 @@ public class Attribute implements Serializable {
         }
     }
 
+    @Transient
     public String getStringValue() {
         return value != null ? value.optString(getName()) : null;
     }

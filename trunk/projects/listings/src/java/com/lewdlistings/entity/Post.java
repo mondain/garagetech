@@ -19,6 +19,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -104,10 +105,7 @@ public class Post extends BaseEntity implements Comparable<Post> {
         AD_HOC, BASIC, BUMP, FEATURED
     }
 
-    public Post() {
-        this.status = Status.DRAFT;
-        this.type = Type.BASIC;
-    }
+    public Post() {}
 
     public User getAuthor() {
         return author;
@@ -209,6 +207,7 @@ public class Post extends BaseEntity implements Comparable<Post> {
         return attributes;
     }
 
+    @Transient
     public Set<PostAttribute> getAttributesForType(PostAttribute.Type type) {
         Set<PostAttribute> attrs = new HashSet<PostAttribute>();
         for (PostAttribute attribute : attributes) {
