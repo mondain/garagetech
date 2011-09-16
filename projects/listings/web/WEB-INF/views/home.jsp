@@ -24,20 +24,22 @@
                         <c:set var="postUrl" value="/ad/${post.guid}"/>
                         <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
                         <div class="span3">
-                            <a href="${postUrl}">
-                                <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="160" height="160" border="0"/>
-                                <span style="display: none;">
-                                    <strong>${name}</strong>
-                                    <strong class="rating">
-                                        <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
-                                        <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
-                                        <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
-                                        <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
-                                        <img src="${ctx}/img/rate_off_16x16_white.png" alt="rating" border="0"/>
-                                    </strong>
-                                    <em>${post.phone}<br/>${post.availability.location.zipCode}</em>
-                                </span>
-                            </a>
+                            <div class="avatar">
+                                <a href="${postUrl}">
+                                    <img alt="${name}" src="${ctx}/img/${post.author.username}.jpg" width="158" height="158" border="0"/>
+                                    <span style="display: none;">
+                                        <strong>${name}</strong>
+                                        <strong class="rating">
+                                            <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
+                                            <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
+                                            <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
+                                            <img src="${ctx}/img/rate_on_16x16_white.png" alt="rating" border="0"/>
+                                            <img src="${ctx}/img/rate_off_16x16_white.png" alt="rating" border="0"/>
+                                        </strong>
+                                        <em>${post.phone}<br/>${post.availability.location.zipCode}</em>
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </c:forEach>
                 </div>
@@ -51,7 +53,7 @@
                 <header class="page-header">
                     <h2>Recent Ads <small>List of most recent ads.</small></h2>
                 </header>
-                <div class="alert-message block-message success hidden">
+                <div class="alert-message block-message info">
                     <a class="close" href="#">×</a>
                     <p>4 new ads</p>
                 </div>

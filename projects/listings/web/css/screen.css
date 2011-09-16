@@ -27,6 +27,55 @@ footer p {
     display: none;
 }
 
+/* messages */
+
+.alert-message {
+    padding: 8px 15px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.alert-message.info {
+    background-color: #d7ebf9 !important;
+    background-image: none;
+}
+
+.alert-message.success {
+    background-color: #bef2a1 !important;
+}
+
+.alert-message.warning {
+    background-color: #fff6a9 !important;
+}
+
+.alert-message.error {
+    background-color: #ffdfdf !important;
+}
+
+label.error {
+    color: #f00;
+}
+
+/* avatars */
+
+.avatar, .avatar:link, .avatar:visited {
+    background-color: #fff;
+    border: solid 1px #e3e3e3;
+    -moz-box-shadow: 0 1px 3px #e3e3e3;
+    -webkit-box-shadow: 0 1px 3px #e3e3e3;
+    box-shadow: 0 1px 3px #e3e3e3;
+    border-bottom-color: #a2a2a2;
+    line-height: 0;
+}
+
+.avatar:hover {
+    -moz-box-shadow: 0 1px 4px #a2a2a2;
+    -webkit-box-shadow: 0 1px 4px #a2a2a2;
+    box-shadow: 0 1px 4px #a2a2a2;
+    border-color: #a2a2a2;
+}
+
 /* form elements */
 
 .phone .inline-inputs input.small {
@@ -61,6 +110,10 @@ span.req {
 
 /* posts */
 
+#posts .page-header {
+    margin-bottom: 0;
+}
+
 #posts article {
     border-bottom: 1px solid #ddd;
     margin-top: 17px;
@@ -75,7 +128,7 @@ span.req {
     float: left;
     margin-left: 20px;
     padding-top: 0;
-    width: 500px;
+    width: 498px;
 }
 
 #posts .content header {
