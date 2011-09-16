@@ -1,4 +1,5 @@
 <%@ include file="/WEB-INF/views/partials/taglibs.jsp" %>
+<c:url var="homeUrl" value="/"/>
 <c:url var="editUrl" value="/ad/${post.guid}/edit"/>
 <c:url var="newReviewUrl" value="/review/new?post=${post.guid}"/>
 <c:url var="photosUrl" value="/ad/${post.guid}/photos"/>
@@ -6,6 +7,9 @@
 <c:set var="name" value="${not empty post.displayName ? post.displayName : post.author.username}"/>
 <%@ include file="/WEB-INF/views/partials/messages.jsp" %>
 <section id="profile">
+    <div class="row breadcrumbs">
+        <a class="home" href="${homeUrl}">Ads</a> &rsaquo; ${name}
+    </div>
     <div class="row">
         <div class="span3">
             <a href="">
@@ -26,7 +30,7 @@
             <div class="row">${post.phone}</div>
             <div class="row">
                 Available from <strong><joda:format value="${post.availability.start}" style="M-"/></strong> to <strong><joda:format value="${post.availability.end}" style="M-"/></strong> near <strong>${post.availability.location.zipCode}</strong>
-                <br/>Prebooking from <strong><joda:format value="${post.availability.start}" style="M-"/></strong> to <strong><joda:format value="${post.availability.end}" style="M-"/></strong> near <strong>${post.availability.location.zipCode}</strong>
+                <br/>Prebooking from <strong><joda:format value="${post.availability.prebookStart}" style="M-"/></strong> to <strong><joda:format value="${post.availability.prebookEnd}" style="M-"/></strong> near <strong>${post.availability.prebookLocation.zipCode}</strong>
             </div>
             <p><em>${post.summary}</em></p>
         </div>

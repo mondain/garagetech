@@ -1,5 +1,6 @@
 package com.lewdlistings.web.post;
 
+import com.google.common.collect.Lists;
 import com.lewdlistings.entity.Availability;
 import com.lewdlistings.entity.PhoneNumber;
 import com.lewdlistings.entity.Post;
@@ -205,7 +206,7 @@ public class PostForm implements Consumer<Post>, Producer<Post>, Serializable {
         Set<PostAttribute> attrs = new HashSet<PostAttribute>();
         attrs.addAll(getAttributes());
         attrs.addAll(getLinks());
-        post.setAttributes(attrs);
+        post.setAttributes(Lists.newArrayList(attrs));
         post.setTags(getTags());
         post.setGuid(getGuid());
         post.setDisplayName(getDisplayName());

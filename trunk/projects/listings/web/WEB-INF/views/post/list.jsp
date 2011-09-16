@@ -15,7 +15,7 @@
         <div class="page-actions group">
             <a href="${newAdUrl}">New Ad</a>
         </div>
-        <table class="datagrid">
+        <table class="zebra-striped">
             <thead>
                 <tr>
                     <th class="checkbox" scope="col"><input type="checkbox"/></th>
@@ -40,11 +40,11 @@
                     <c:url var="editUrl" value="/ad/${post.guid}/edit"/>
                     <c:url var="postUrl" value="/ad/${post.guid}"/>
                     <tr class="${altClass}">
-                        <th class="checkbox" scope="row"><input type="checkbox" value="${post.guid}"/></th>
+                        <td class="checkbox"><input type="checkbox" value="${post.guid}"/></td>
                         <td class="name">
                             <a href="${postUrl}"><img class="profile" alt="${post.author.username}" src="${ctx}/img/${post.author.username}.jpg" width="52" height="52" border="0"/></a>
                             <a href="${postUrl}">${post.summary}</a>
-                            <div class="actions">
+                            <div class="">
                                 <a href="${editUrl}">Edit</a> |
                                 <c:if test="${post.status == 'ACTIVE' && (post.type == 'BUMP' || post.type == 'FEATURED')}">
                                     <a href="${bumpUrl}">Bump</a> |

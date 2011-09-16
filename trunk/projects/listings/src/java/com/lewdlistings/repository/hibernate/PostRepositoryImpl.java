@@ -32,6 +32,7 @@ public class PostRepositoryImpl extends GenericRepositoryImpl<Post, Long> implem
         Criteria criteria = criteria();
         criteria.add(gt("expires", new DateTime()));
         criteria.add(eq("status", Post.Status.ACTIVE));
+        criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
         criteria.addOrder(desc("averageRating"));
         criteria.addOrder(desc("numReviews"));
         criteria.addOrder(desc("created"));
@@ -44,6 +45,7 @@ public class PostRepositoryImpl extends GenericRepositoryImpl<Post, Long> implem
         criteria.add(gt("expires", new DateTime()));
         criteria.add(eq("type", Post.Type.FEATURED));
         criteria.add(eq("status", Post.Status.ACTIVE));
+        criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
         criteria.addOrder(desc("created"));
         return list(criteria);
     }
@@ -58,6 +60,7 @@ public class PostRepositoryImpl extends GenericRepositoryImpl<Post, Long> implem
         Criteria criteria = criteria();
         criteria.add(gt("expires", new DateTime()));
         criteria.add(eq("status", Post.Status.ACTIVE));
+        criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
         criteria.addOrder(desc("created"));
         if (start > 0 && limit > 0) {
             criteria.setFirstResult(start);

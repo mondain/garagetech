@@ -15,6 +15,7 @@
         <dependency org="cglib" name="cglib" rev="2.2"/>
 		<dependency org="ch.qos.logback" name="logback-classic" rev="0.9.24"/>
 		<dependency org="ch.qos.logback" name="logback-core" rev="0.9.24"/>
+        <dependency org="com.google.guava" name="guava" rev="r09"/>
         <dependency org="commons-beanutils" name="commons-beanutils" rev="1.8.3"/>
         <dependency org="commons-codec" name="commons-codec" rev="1.4"/>
         <dependency org="commons-collections" name="commons-collections" rev="3.2"/>

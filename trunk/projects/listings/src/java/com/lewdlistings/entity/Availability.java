@@ -1,6 +1,7 @@
 package com.lewdlistings.entity;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.hibernate.annotations.ForeignKey;
 import org.joda.time.DateTime;
 
 import javax.persistence.Column;
@@ -21,6 +22,7 @@ public class Availability implements Serializable, Comparable<Availability> {
 
     @ManyToOne(fetch = EAGER)
     @JoinColumn(name = "current_zipcode")
+    @ForeignKey(name = "fk_location_current_zipcode")
     private Location location;
 
     @Column(name = "current_starts_at")
@@ -33,6 +35,7 @@ public class Availability implements Serializable, Comparable<Availability> {
 
     @ManyToOne(fetch = EAGER)
     @JoinColumn(name = "prebook_zipcode", nullable = true)
+    @ForeignKey(name = "fk_location_prebook_zipcode")
     private Location prebookLocation;
 
     @Column(name = "prebook_starts_at", nullable = true)

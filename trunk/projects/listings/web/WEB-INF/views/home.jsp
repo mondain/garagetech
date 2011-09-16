@@ -70,10 +70,10 @@
                                 </div>
                                 <div class="content">
                                     <header>
-                                       <h5><a href="${postUrl}">${name}</a> <span>&#8226;</span><span><time datetime="<joda:format value="${post.created}" style="MS"/>" pubdate><joda:format value="${post.created}" style="MS"/></time></span><span>&#8226;</span><span>near ${post.availability.location.zipCode}</span></h5>
+                                       <h5><a href="${postUrl}">${name}</a> <span>&#8226;</span><span>${post.phone}</span><span>&#8226;</span><span>Near ${post.availability.location.zipCode}</span></h5>
                                     </header>
                                     <p><a href="${postUrl}">${post.summary}</a></p>
-                                    <p><a href="${postUrl}">Call me at ${post.phone}. I'm available anytime. Some screening may be required.</a></p>
+                                    <p><a href="${postUrl}">I'm available anytime. Some screening may be required.</a></p>
                                     <!--span class="rating">
                                         <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
                                         <img src="${ctx}/img/rate_on_16x16.png" alt="rating" border="0"/>
@@ -82,6 +82,9 @@
                                         <img src="${ctx}/img/rate_off_16x16.png" alt="rating" border="0"/>
                                     </span>
                                     <em>32 reviews</em-->
+                                    <footer>
+                                        <p>Posted <time datetime="<joda:format value="${post.created}" style="MS"/>" pubdate><joda:format value="${post.created}" style="MS"/></time></p>
+                                    </footer>
                                 </div>
                             </article>
                         </c:forEach>
