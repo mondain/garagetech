@@ -14,6 +14,6 @@ public class GlobalBindingInitializer implements WebBindingInitializer {
     @Override
     public void initBinder(WebDataBinder binder, WebRequest request) {
         logger.debug("Registering global web data binder");
-        binder.registerCustomEditor(String.class, new EscapedStringPropertyEditor(true, true, true));
+        binder.registerCustomEditor(String.class, new EscapedStringPropertyEditor(true, false, false));
     }
 }

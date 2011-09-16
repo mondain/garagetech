@@ -79,8 +79,7 @@ public class Post extends BaseEntity implements Comparable<Post> {
             joinColumns = @JoinColumn(name = "post_id")
     )
     @OrderBy("name")
-    //TODO: Refactor this to use a OneToMany relationship
-    private Set<PostAttribute> attributes;
+    private List<PostAttribute> attributes;
 
     @OneToMany
     @JoinColumn(name = "post_id")
@@ -203,7 +202,7 @@ public class Post extends BaseEntity implements Comparable<Post> {
         this.expires = expires;
     }
 
-    public Set<PostAttribute> getAttributes() {
+    public List<PostAttribute> getAttributes() {
         return attributes;
     }
 
@@ -218,7 +217,7 @@ public class Post extends BaseEntity implements Comparable<Post> {
         return attrs;
     }
 
-    public void setAttributes(Set<PostAttribute> attributes) {
+    public void setAttributes(List<PostAttribute> attributes) {
         this.attributes = attributes;
     }
 
